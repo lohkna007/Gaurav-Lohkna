@@ -1,3 +1,4 @@
+/* General styles */
 * {
     margin: 0;
     padding: 0;
@@ -15,6 +16,12 @@ body {
     background-color: #f7f3eb; /* Light beige background */
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header styles */
 header {
     display: flex;
     justify-content: space-between;
@@ -31,7 +38,7 @@ header {
 
 header h1 {
     font-size: 1.5rem;
-    color: #f7f3eb; /* Light text on warm brown */
+    color: #f7f3eb; /* Light text */
 }
 
 nav ul {
@@ -48,27 +55,23 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #d1a372; /* Warm tan hover effect */
+    color: #d1a372; /* Warm tan hover */
 }
 
-.hero, .about, .blog-posts, .contact {
-    padding: 4rem;
-    margin-top: 80px;
-}
-
-.hero h2, .about h2, .blog-posts h2, .contact h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
+/* Hero Section */
 .hero {
-    background-color: #f1ede8; /* Soft ivory background for hero */
+    background-color: #f1ede8; /* Soft ivory background */
     text-align: center;
     padding: 6rem 2rem;
-    background-image: url('banner-image.jpg'); /* Add soothing banner image here */
+    background-image: url('banner-image.jpg'); /* Add soothing banner image */
     background-size: cover;
     background-position: center;
     color: #2f2e2c; /* Warm dark brown text */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
@@ -76,20 +79,7 @@ nav ul li a:hover {
     color: #3a3a3a;
 }
 
-.hero button a {
-    text-decoration: none;
-    color: white;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: #8d6e4f; /* Earthy brown */
-    color: #f7f3eb; /* Light text */
-    margin-top: 2rem;
-}
-
-button {
+.hero button {
     background-color: #d98b57; /* Warm orange button */
     color: #f7f3eb; /* Light text */
     border: none;
@@ -99,6 +89,93 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+.hero button:hover {
     background-color: #e09462; /* Softer terracotta hover */
+}
+
+/* Featured Section */
+.featured {
+    display: flex;
+    justify-content: space-around;
+    padding: 4rem;
+    background-color: #f7f3eb;
+}
+
+.highlight {
+    text-align: center;
+    max-width: 300px;
+}
+
+.highlight h3 {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.highlight p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.highlight a {
+    color: #d98b57; /* Warm orange link */
+    font-weight: bold;
+}
+
+.highlight a:hover {
+    color: #e09462;
+}
+
+/* Quote Section */
+.quote {
+    padding: 3rem;
+    text-align: center;
+    background-color: #f1ede8;
+    font-style: italic;
+    font-size: 1.5rem;
+    color: #2f2e2c;
+    margin: 2rem 0;
+}
+
+.quote blockquote {
+    margin: 0;
+    padding: 0;
+}
+
+/* Call to Action Section */
+.call-to-action {
+    background-color: #f7f3eb;
+    padding: 4rem;
+    text-align: center;
+}
+
+.call-to-action h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.call-to-action p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.call-to-action button {
+    background-color: #d98b57; /* Warm orange button */
+    color: #f7f3eb; /* Light text */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.call-to-action button:hover {
+    background-color: #e09462; /* Softer terracotta hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #8d6e4f; /* Earthy brown */
+    color: #f7f3eb; /* Light text */
 }
