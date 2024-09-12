@@ -1,44 +1,45 @@
-/* General styles */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
-    font-family: Arial, sans-serif;
-    color: #3a3a3a;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FAF9F6; /* Soothing cream */
+    color: #2E2E2E; /* Warm dark grey */
     line-height: 1.6;
-    background-color: #f7f3eb; /* Light beige background */
 }
 
 a {
+    color: #D98157; /* Warm terracotta */
     text-decoration: none;
-    color: inherit;
 }
 
-/* Header styles */
+a:hover {
+    color: #BC6442; /* Darker terracotta */
+}
+
+/* Header Styles */
 header {
+    background-color: #FFFFFF;
+    padding: 1rem 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
-    background-color: #8d6e4f; /* Warm earthy brown */
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 1.5rem;
 }
 
 header h1 {
+    font-weight: 600;
     font-size: 1.5rem;
-    color: #f7f3eb; /* Light text */
 }
 
 nav ul {
@@ -47,135 +48,9 @@ nav ul {
     gap: 1.5rem;
 }
 
-nav ul li a {
-    text-decoration: none;
-    color: #f7f3eb; /* Light text */
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #d1a372; /* Warm tan hover */
+nav ul li {
+    font-size: 1rem;
 }
 
 /* Hero Section */
-.hero {
-    background-color: #f1ede8; /* Soft ivory background */
-    text-align: center;
-    padding: 6rem 2rem;
-    background-image: url('banner-image.jpg'); /* Add soothing banner image */
-    background-size: cover;
-    background-position: center;
-    color: #2f2e2c; /* Warm dark brown text */
-}
-
-.hero h2 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: #3a3a3a;
-}
-
-.hero button {
-    background-color: #d98b57; /* Warm orange button */
-    color: #f7f3eb; /* Light text */
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.hero button:hover {
-    background-color: #e09462; /* Softer terracotta hover */
-}
-
-/* Featured Section */
-.featured {
-    display: flex;
-    justify-content: space-around;
-    padding: 4rem;
-    background-color: #f7f3eb;
-}
-
-.highlight {
-    text-align: center;
-    max-width: 300px;
-}
-
-.highlight h3 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-}
-
-.highlight p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-}
-
-.highlight a {
-    color: #d98b57; /* Warm orange link */
-    font-weight: bold;
-}
-
-.highlight a:hover {
-    color: #e09462;
-}
-
-/* Quote Section */
-.quote {
-    padding: 3rem;
-    text-align: center;
-    background-color: #f1ede8;
-    font-style: italic;
-    font-size: 1.5rem;
-    color: #2f2e2c;
-    margin: 2rem 0;
-}
-
-.quote blockquote {
-    margin: 0;
-    padding: 0;
-}
-
-/* Call to Action Section */
-.call-to-action {
-    background-color: #f7f3eb;
-    padding: 4rem;
-    text-align: center;
-}
-
-.call-to-action h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.call-to-action p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-
-.call-to-action button {
-    background-color: #d98b57; /* Warm orange button */
-    color: #f7f3eb; /* Light text */
-    border: none;
-    padding: 10px 20px;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.call-to-action button:hover {
-    background-color: #e09462; /* Softer terracotta hover */
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    padding: 2rem;
-    background-color: #8d6e4f; /* Earthy brown */
-    color: #f7f3eb; /* Light text */
-}
+.hero
