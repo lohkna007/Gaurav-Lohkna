@@ -5,7 +5,7 @@
 }
 
 html {
-    scroll-behavior: smooth; /* This enables smooth scrolling */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -51,69 +51,14 @@ nav ul li a:hover {
     color: #007BFF;
 }
 
-.hero {
-    text-align: center;
+.hero, .about, .blog-posts, .contact {
     padding: 4rem;
-    background-color: #fff;
-    border-bottom: 2px solid #ddd;
-    margin-top: 80px; /* To avoid overlap with fixed header */
+    margin-top: 80px;
 }
 
-.hero h2 {
+.hero h2, .about h2, .blog-posts h2, .contact h2 {
     font-size: 2rem;
     margin-bottom: 1rem;
-    color: #333;
-}
-
-.hero p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-    color: #666;
-}
-
-.hero button {
-    padding: 0.8rem 1.5rem;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-.hero button a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.about,
-.blog-posts,
-.contact {
-    padding: 4rem;
-    background-color: #fff;
-    border-bottom: 1px solid #ddd;
-}
-
-.about h2, .blog-posts h2, .contact h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-}
-
-.about p, .contact p {
-    font-size: 1.2rem;
-    color: #666;
-}
-
-.blog-posts .post {
-    margin-bottom: 2rem;
-}
-
-.blog-posts .post h3 {
-    font-size: 1.5rem;
-}
-
-.blog-posts .post p {
-    font-size: 1rem;
-    color: #666;
 }
 
 footer {
@@ -122,7 +67,4 @@ footer {
     background-color: #333;
     color: #fff;
     margin-top: 2rem;
-}
-nav ul li a.active {
-    color: #007BFF;
 }
