@@ -146,9 +146,9 @@ footer {
 }
 
 footer {
-    background-color: #F5D6BA;
-    padding: 1rem;
+    background-color: #F6F5F3;
     text-align: center;
+    padding: 1.5rem;
     font-size: 0.9rem;
     color: #4B4B4B;
 }
@@ -156,3 +156,4 @@ footer {
 footer p {
     margin: 0;
 }
+
