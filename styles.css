@@ -53,4 +53,55 @@ nav ul li {
 }
 
 /* Hero Section */
-.hero
+.hero {
+    background-color: #FAF9F6;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    color: #2E2E2E;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #4B4B4B;
+}
+
+/* Featured Content */
+.featured-content {
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.featured-content img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* About Section */
+.about-section {
+    padding: 3rem 1.5rem;
+    background-color: #F6F5F3;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2rem;
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    color: #4B4B4B;
+}
+
+/* Footer */
+footer {
+    background-color: #F6F5F3;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: #4B4B4B;
+}
