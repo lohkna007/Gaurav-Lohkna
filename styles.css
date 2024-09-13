@@ -81,35 +81,23 @@ nav ul li {
     margin-bottom: 1rem;
 }
 
-/* About Section */
-.about-section {
-    padding: 3rem 1.5rem;
-    background-color: #F6F5F3;
-    text-align: center;
-}
-
-.about-section h2 {
-    font-size: 2rem;
-}
-
-.about-section p {
-    font-size: 1.1rem;
-    color: #4B4B4B;
-}
-
-/* Footer */
-footer {
-    background-color: #F6F5F3;
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9rem;
-    color: #4B4B4B;
-}
-/*change from here*/
 /* Blog Section */
 .blog-section {
     background-color: #FFF9F4;
     padding: 2rem 0;
+    text-align: center;
+}
+
+.blog-section h2 {
+    font-size: 2rem;
+    color: #2E2E2E;
+    margin-bottom: 1rem;
+}
+
+.blog-section p {
+    font-size: 1.1rem;
+    color: #4B4B4B;
+    margin-bottom: 2rem;
 }
 
 .blog-section article {
@@ -118,6 +106,7 @@ footer {
     margin-bottom: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
 }
 
 .blog-section article h3 {
@@ -145,6 +134,38 @@ footer {
     font-weight: 600;
 }
 
+/* Call to Action Section */
+.cta-section {
+    background-color: #F6F5F3;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    color: #2E2E2E;
+}
+
+.cta-section p {
+    font-size: 1.2rem;
+    color: #4B4B4B;
+    margin-bottom: 2rem;
+}
+
+.cta-section a.cta-button {
+    background-color: #D98157;
+    color: #FFF;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.cta-section a.cta-button:hover {
+    background-color: #BC6442;
+}
+
+/* Footer */
 footer {
     background-color: #F6F5F3;
     text-align: center;
@@ -156,4 +177,3 @@ footer {
 footer p {
     margin: 0;
 }
-
