@@ -90,7 +90,7 @@ nav ul li {
 .blog-section h2, .article-section h2 {
     font-size: 1.6rem;
     color: #2E2E2E;
-    text-align: center;
+    text-align: left;
     margin-bottom: 2rem;
 }
 
@@ -196,7 +196,7 @@ footer p {
 @media (max-width: 768px) {
     .blog-preview, .article-card {
         flex-direction: column;
-        text-align: center;
+        text-align: left;
     }
 
     .blog-preview img.blog-image, .article-image {
