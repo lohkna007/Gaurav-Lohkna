@@ -11,6 +11,10 @@ body {
     color: #2E2E2E; /* Warm dark grey */
     line-height: 1.6;
 }
+.active {
+    font-weight: bold;
+    color: #BC6442; /* Or any color you prefer */
+}
 
 a {
     color: #D98157; /* Warm terracotta */
