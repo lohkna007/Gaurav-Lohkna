@@ -81,7 +81,7 @@ nav ul li {
     margin-bottom: 1rem;
 }
 
-/* Blog & Article Sections - Unify Font Sizes and Layout */
+/* Blog & Article Sections - Unified Font Sizes and Layout */
 .blog-section, .article-section {
     background-color: #FAF9F5;
     padding: 2rem 0;
@@ -117,8 +117,9 @@ nav ul li {
     max-width: 70%;
 }
 
+/* Corrected Title Size for Blog to Match Article */
 .blog-content h3, .article-title {
-    font-size: 1.6rem;  /* Ensures consistency between titles */
+    font-size: 1.6rem;  /* Unified title size */
     font-weight: 600;
     margin-bottom: 0.5rem;
     color: #333333;
