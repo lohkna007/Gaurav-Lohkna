@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>About Me | Gaurav Lohkna</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- Navigation Bar (Same as Home) -->
     <header>
         <div class="container">
             <h1>About Me</h1>
@@ -17,18 +17,72 @@
                     <li><a href="index.html">Home</a></li>
                     <li><a href="article.html">Article</a></li>
                     <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section class="about-section">
+    <!-- Hero Section for About Me -->
+    <section class="hero">
+        <h2>Hi, I'm Gaurav</h2>
+        <p>I'm passionate about personal growth, data science, and the habits that shape our lives. I share research-backed insights to help you improve daily routines.</p>
+    </section>
+
+    <!-- Timeline Section with Animation -->
+    <section class="timeline-section">
         <div class="container">
-            <h2>Hi, I'm Gaurav</h2>
-            <p>I'm passionate about personal growth and habits that shape our lives. I share research-backed insights to help you improve daily routines.</p>
+            <h2 class="section-title">My Journey</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <img src="MAIN.png" alt="Yale University Logo">
+                    <div class="timeline-content">
+                        <h3>2018</h3>
+                        <p>Researcher at Yale University</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-arrow">→</div>
+
+                <div class="timeline-item">
+                    <img src="MAIN.png" alt="University of Delhi Logo">
+                    <div class="timeline-content">
+                        <h3>2021</h3>
+                        <p>Bachelors in Computer Science</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-arrow">→</div>
+
+                <div class="timeline-item">
+                    <img src="MAIN.png" alt="Berkeley and Plaksha University Logos">
+                    <div class="timeline-content">
+                        <h3>2022</h3>
+                        <p>Masters in Machine Learning and AI</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-arrow">→</div>
+
+                <div class="timeline-item">
+                    <img src="MAIN.png" alt="MinfyTech Logo">
+                    <div class="timeline-content">
+                        <h3>2022</h3>
+                        <p>Data Scientist at MinfyTech</p>
+                    </div>
+                </div>
+
+                <div class="timeline-arrow">→</div>
+
+                <div class="timeline-item">
+                    <img src="MAIN.png" alt="HRS Logo">
+                    <div class="timeline-content">
+                        <h3>2024</h3>
+                        <p>Data & Machine Learning Engineer at HRS</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -37,5 +91,6 @@
         <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
+    <script src="timeline-animation.js"></script> <!-- Link to JS file for animation -->
 </body>
 </html>
