@@ -36,18 +36,10 @@ header .container {
     margin: auto;
     padding: 0 1.5rem;
 }
-.active {
-    font-weight: bold;
-    color: #BC6442; /* Or any color you prefer */
-}
 
 header h1 {
     font-weight: 600;
     font-size: 1.5rem;
-}
-.active {
-    font-weight: bold;
-    color: #BC6442; /* Or any color you prefer */
 }
 
 nav ul {
@@ -55,17 +47,9 @@ nav ul {
     display: flex;
     gap: 1.5rem;
 }
-.active {
-    font-weight: bold;
-    color: #BC6442; /* Or any color you prefer */
-}
 
 nav ul li {
     font-size: 1rem;
-}
-.active {
-    font-weight: bold;
-    color: #BC6442; /* Or any color you prefer */
 }
 
 /* Hero Section */
