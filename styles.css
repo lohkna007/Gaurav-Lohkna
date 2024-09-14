@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #FAF9F6; /* Soothing cream */
+    background-color: #FAF9F5; /* Soothing cream */
     color: #2E2E2E; /* Warm dark grey */
     line-height: 1.6;
 }
@@ -54,7 +54,7 @@ nav ul li {
 
 /* Hero Section */
 .hero {
-    background-color: #FAF9F6;
+    background-color: #FAF9F5;
     padding: 3rem 0;
     text-align: center;
 }
@@ -83,7 +83,7 @@ nav ul li {
 
 /* Blog Section (Thoughts & Insights Wall) */
 .blog-section {
-    background-color: #FAF9F6;
+    background-color: #FAF9F5;
     padding: 2rem 0;
 }
 
