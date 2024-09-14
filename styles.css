@@ -81,20 +81,20 @@ nav ul li {
     margin-bottom: 1rem;
 }
 
-/* Blog Section (Thoughts & Insights Wall) */
-.blog-section {
+/* Blog & Article Sections - Unify Font Sizes and Layout */
+.blog-section, .article-section {
     background-color: #FAF9F5;
     padding: 2rem 0;
 }
 
-.blog-section h2 {
+.blog-section h2, .article-section h2 {
     font-size: 2.5rem;
     color: #2E2E2E;
     text-align: center;
     margin-bottom: 2rem;
 }
 
-.blog-preview {
+.blog-preview, .article-card {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -105,43 +105,45 @@ nav ul li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.blog-preview img.blog-image {
-    width: 150px;
-    height: 150px;
+.blog-preview img.blog-image, .article-card img.article-image {
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     border-radius: 10px;
     margin-right: 1.5rem;
 }
 
-.blog-content {
+.blog-content, .article-content {
     max-width: 70%;
 }
 
-.blog-content h3 {
-    font-size: 1.6rem;
-    color: #333333;
+.blog-content h3, .article-title {
+    font-size: 1.6rem;  /* Ensures consistency between titles */
+    font-weight: 600;
     margin-bottom: 0.5rem;
+    color: #333333;
 }
 
-.blog-content .meta {
+.blog-content .meta, .article-meta {
     font-size: 0.9rem;
     color: #999999;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1rem;
 }
 
-.blog-content p {
+.blog-content p, .article-description {
     font-size: 1rem;
+    line-height: 1.5;
     color: #666666;
     margin-bottom: 1rem;
 }
 
-.blog-preview a {
+.blog-preview a, .article-card a {
     font-weight: 600;
     color: #D98157;
     text-decoration: none;
 }
 
-.blog-preview a:hover {
+.blog-preview a:hover, .article-card a:hover {
     color: #BC6442;
 }
 
@@ -189,112 +191,31 @@ footer p {
     margin: 0;
 }
 
-/* Article Section */
-.article-section {
-    padding: 4rem 0;
-    background-color: #FAF9F5;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #333;
-}
-
-/* Article Card Styles */
-.article-card {
-    display: flex;
-    align-items: center;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    border-radius: 12px;
-    margin-bottom: 2rem;
-    padding: 1.5rem;
-}
-
-.article-image {
-    width: 120px;
-    height: 120px;
-    border-radius: 10px;
-    object-fit: cover;
-    margin-right: 2rem;
-}
-
-.article-content {
-    flex: 1;
-}
-
-.article-title {
-    font-size: 1.6rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: #2e2e2e;
-}
-
-.article-meta {
-    font-size: 0.9rem;
-    color: #888;
-    margin-bottom: 1rem;
-}
-
-.article-description {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #666;
-}
-
-.read-more-link {
-    font-size: 1rem;
-    font-weight: 600;
-    color: #0071e3;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.read-more-link:hover {
-    color: #005bb5;
-}
-
 /* Responsive Layout */
 @media (max-width: 768px) {
-    .blog-preview {
+    .blog-preview, .article-card {
         flex-direction: column;
         text-align: center;
     }
 
-    .blog-preview img.blog-image {
+    .blog-preview img.blog-image, .article-image {
         width: 100%;
         height: auto;
         margin-bottom: 1rem;
     }
 
-    .blog-content {
+    .blog-content, .article-content {
         max-width: 100%;
     }
-
-    .article-card {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .article-image {
-        width: 100px;
-        height: 100px;
-        margin-bottom: 1rem;
-    }
-
-    .article-content {
-        padding-left: 0;
-    }
 }
+
 .article-container {
     max-width: 1100px;
     margin: auto;
     padding: 0 0;
 }
+
 .active {
     font-weight: bold;
-    color: #BC6442; /* Or any color you prefer */
+    color: #BC6442;
 }
