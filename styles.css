@@ -294,3 +294,7 @@ footer p {
     margin: auto;
     padding: 0 0;
 }
+.active {
+    font-weight: bold;
+    color: #BC6442; /* Or any color you prefer */
+}
