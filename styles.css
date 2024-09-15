@@ -195,6 +195,86 @@ nav ul li {
 .cta-section a.cta-button:hover {
     background-color: #BC6442;
 }
+/* Contact Section */
+.contact-section {
+    background-color: #FAF9F5;
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    color: #2E2E2E;
+    margin-bottom: 1rem;
+}
+
+.contact-section p {
+    font-size: 1.2rem;
+    color: #4B4B4B;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-links a {
+    font-size: 2rem;
+    color: #D98157;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    color: #BC6442;
+}
+
+/* Contact Form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+form label {
+    font-size: 1rem;
+    color: #2E2E2E;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-bottom: 1rem;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    color: #2E2E2E;
+}
+
+form input:focus, form textarea:focus {
+    outline: none;
+    border-color: #D98157;
+}
+
+form button {
+    background-color: #D98157;
+    color: #FFF;
+    padding: 0.8rem 2rem;
+    border-radius: 4px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+form button:hover {
+    background-color: #BC6442;
+}
 
 /* Footer */
 footer {
