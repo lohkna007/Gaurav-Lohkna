@@ -5,7 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Quarter-Life Crisis</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #FAF9F5; /* Creamy background */
+            color: #2E2E2E; /* Warm dark grey */
+            line-height: 1.6;
+            margin: 0;
+            padding: 1rem;
+        }
+
+        a {
+            color: #D98157; /* Terracotta */
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #BC6442; /* Darker terracotta */
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #FFFFFF;
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 1.5rem;
+        }
+
+        header h1 {
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        nav ul li {
+            font-size: 1rem;
+        }
+
+        nav ul li a {
+            color: #2E2E2E;
+        }
+
+        nav ul li a:hover {
+            color: #BC6442;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            margin: 1rem 0;
+            font-size: 0.9rem;
+            color: #666666;
+        }
+
+        .breadcrumb a {
+            color: #D98157;
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: #BC6442;
+        }
+
+        /* Article Section */
+        .article-section {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 1rem;
+            background-color: #FFFFFF;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-section h2 {
+            font-size: 2rem;
+            color: #2E2E2E;
+            margin-bottom: 1rem;
+        }
+
+        .article-section h3 {
+            font-size: 1.4rem;
+            color: #333333;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .article-section p {
+            font-size: 1rem;
+            color: #4B4B4B;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .article-section p strong {
+            color: #2E2E2E;
+        }
+
+        .article-section p em {
+            font-style: italic;
+            color: #666666;
+        }
+
+        /* Back to Blog Button */
+        .back-button-section {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .back-button-section a {
+            display: inline-block;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #D98157;
+            text-decoration: none;
+            margin-top: 1.5rem;
+        }
+
+        .back-button-section a:hover {
+            color: #BC6442;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #F6F5F3;
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.9rem;
+            color: #4B4B4B;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -26,14 +169,14 @@
 
     <!-- Breadcrumb -->
     <nav class="breadcrumb">
-        <div class="article-container">
+        <div class="container">
             <a href="index.html">Home</a> &gt; <a href="blog.html">Blog</a> &gt; The Quarter-Life Crisis
         </div>
     </nav>
 
     <!-- Main Article -->
     <section class="article-section">
-        <div class="article-container">
+        <div class="container">
             <h2>The Quarter-Life Crisis</h2>
             <p><strong>Published on November 16, 2024</strong></p>
 
@@ -54,17 +197,9 @@
                 In my opinion, what once took a decade to achieve can now be reached in just 3-4 years (at least for those of us going through a quarter-life crisis). We have securities, earn sustainable salaries, and yet feel empty when it comes to fulfilling our personal dreams.
             </p>
 
-            <p>
-                Maybe, until now, we’ve been fulfilling the wishes others had for us. Now, we’re at a stage where options abound—each seeming achievable. We want to explore paths and experiences but also have responsibilities—family, loved ones, and people we care about.
-            </p>
-
             <h3>The Questions We Face</h3>
             <p>
                 This phase of life, I call the quarter-life crisis. Maybe I’m too young to experience all this, or maybe I just want too much. But having a variety of dreams is what makes us human.
-            </p>
-
-            <p>
-                Some dreams come true, others fade away with time. You can’t have the best of all worlds—every dream comes with gains and losses. Your desires keep you alive, your needs keep you grounded, and your sense of self-actualization is a journey.
             </p>
 
             <p>
@@ -75,16 +210,12 @@
 
     <!-- Back to Blog Button -->
     <section class="back-button-section">
-        <div class="article-container">
-            <a href="blog.html" class="back-button">← Back to Blog</a>
-        </div>
+        <a href="blog.html">← Back to Blog</a>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 </body>
 </html>
