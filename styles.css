@@ -7,18 +7,18 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #FAF9F5; /* Soothing cream */
-    color: #2E2E2E; /* Warm dark grey */
+    background-color: #FAF9F5;
+    color: #2E2E2E;
     line-height: 1.6;
 }
 
 a {
-    color: #D98157; /* Warm terracotta */
+    color: #D98157;
     text-decoration: none;
 }
 
 a:hover {
-    color: #BC6442; /* Darker terracotta */
+    color: #BC6442;
 }
 
 /* Header Styles */
@@ -48,8 +48,34 @@ nav ul {
     gap: 1.5rem;
 }
 
-nav ul li {
-    font-size: 1rem;
+nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    position: absolute;
+    top: 60px;
+    right: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    z-index: 1000;
+    padding: 1rem;
+    gap: 1rem;
+}
+
+nav ul.active {
+    display: flex;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    z-index: 1100;
 }
 
 /* Hero Section */
@@ -57,61 +83,26 @@ nav ul li {
     background-color: #FAF9F5;
     padding: 3rem 0;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.hero-content {
-    max-width: 800px;
-    margin-bottom: 2rem;
 }
 
 .hero h2 {
-    font-size: 2rem;
-    color: #2E2E2E;
+    font-size: clamp(2rem, 5vw, 3rem);
     margin-bottom: 1rem;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     color: #4B4B4B;
 }
 
-.hero img.hero-image {
+img {
     max-width: 100%;
     height: auto;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Featured Content */
-.featured-content {
-    padding: 2rem 0;
-    text-align: center;
-}
-
-.featured-content img {
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 1rem;
-}
-
-/* Blog & Article Sections - Unified Font Sizes and Layout */
-.blog-section, .article-section {
-    background-color: #FAF9F5;
-    padding: 2rem 0;
-}
-
-.blog-section h2, .article-section h2 {
-    font-size: 1.6rem;
-    color: #2E2E2E;
-    text-align: left;
-    margin-bottom: 2rem;
-}
-
-.blog-preview, .article-card {
+/* Blog Section */
+.blog-preview {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -122,7 +113,7 @@ nav ul li {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.blog-preview img.blog-image, .article-card img.article-image {
+.blog-preview img {
     width: 120px;
     height: 120px;
     object-fit: cover;
@@ -130,39 +121,20 @@ nav ul li {
     margin-right: 1.5rem;
 }
 
-.blog-content, .article-content {
+.blog-content {
     max-width: 70%;
 }
 
-/* Corrected Title Size for Blog to Match Article */
-.blog-content h3, .article-title {
-    font-size: 1.6rem;  /* Unified title size */
-    font-weight: 600;
+.blog-content h3 {
+    font-size: 1.6rem;
     margin-bottom: 0.5rem;
     color: #333333;
 }
 
-.blog-content .meta, .article-meta {
-    font-size: 0.9rem;
-    color: #999999;
-    margin-bottom: 1rem;
-}
-
-.blog-content p, .article-description {
+.blog-content p {
     font-size: 1rem;
-    line-height: 1.5;
     color: #666666;
     margin-bottom: 1rem;
-}
-
-.blog-preview a, .article-card a {
-    font-weight: 600;
-    color: #D98157;
-    text-decoration: none;
-}
-
-.blog-preview a:hover, .article-card a:hover {
-    color: #BC6442;
 }
 
 /* Call to Action Section */
@@ -179,150 +151,32 @@ nav ul li {
 
 .cta-section p {
     font-size: 1.2rem;
-    color: #4B4B4B;
     margin-bottom: 2rem;
 }
 
-.cta-section a.cta-button {
+.cta-section a {
     background-color: #D98157;
     color: #FFF;
     padding: 0.8rem 2rem;
     border-radius: 4px;
     font-weight: 600;
     text-transform: uppercase;
-}
-
-.cta-section a.cta-button:hover {
-    background-color: #BC6442;
-}
-/* Contact Section */
-.contact-section {
-    background-color: #FAF9F5;
-    padding: 3rem 0;
-    text-align: center;
-}
-
-.contact-section h2 {
-    font-size: 2rem;
-    color: #2E2E2E;
-    margin-bottom: 1rem;
-}
-
-.contact-section p {
-    font-size: 1.2rem;
-    color: #4B4B4B;
-    margin-bottom: 2rem;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 2rem;
-}
-
-.social-links a {
-    font-size: 2rem;
-    color: #D98157;
-    text-decoration: none;
-}
-
-.social-links a:hover {
-    color: #BC6442;
-}
-
-/* Contact Form */
-form {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-form label {
-    font-size: 1rem;
-    color: #2E2E2E;
-    margin-bottom: 0.5rem;
-    display: block;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 0.8rem;
-    margin-bottom: 1rem;
-    border: 1px solid #DDD;
-    border-radius: 5px;
-    font-size: 1rem;
-    font-family: 'Poppins', sans-serif;
-    color: #2E2E2E;
-}
-
-form input:focus, form textarea:focus {
-    outline: none;
-    border-color: #D98157;
-}
-
-form button {
-    background-color: #D98157;
-    color: #FFF;
-    padding: 0.8rem 2rem;
-    border-radius: 4px;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    text-transform: uppercase;
-}
-
-form button:hover {
-    background-color: #BC6442;
-}
-
-/* Footer */
-footer {
-    background-color: #F6F5F3;
-    text-align: center;
-    padding: 1.5rem;
-    font-size: 0.9rem;
-    color: #4B4B4B;
-}
-
-footer p {
-    margin: 0;
 }
 
 /* Responsive Layout */
 @media (max-width: 768px) {
-    .hero-content {
-        padding: 0 1rem;
+    .hamburger {
+        display: block;
     }
 
-    .hero img.hero-image {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .blog-preview, .article-card {
+    .blog-preview {
         flex-direction: column;
         text-align: left;
     }
 
-    .blog-preview img.blog-image, .article-image {
+    .blog-preview img {
         width: 100%;
         height: auto;
         margin-bottom: 1rem;
     }
-
-    .blog-content, .article-content {
-        max-width: 100%;
-    }
-}
-
-.article-container {
-    max-width: 1100px;
-    margin: auto;
-    padding: 0 0;
-}
-
-.active {
-    font-weight: bold;
-    color: #BC6442;
 }
