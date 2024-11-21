@@ -4,6 +4,7 @@ document.querySelector('.hamburger').addEventListener('click', () => {
     navMenu.classList.toggle('active');
 });
 
+
 // Highlight the current section in the navigation bar
 window.addEventListener('scroll', () => {
     const sections = document.querySelectorAll('section');
