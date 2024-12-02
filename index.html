@@ -4,65 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaurav Lohkna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="font-sans bg-gray-50 text-gray-900">
 
-    <header>
-        <div class="container">
-            <h1>Gaurav Lohkna</h1>
-            <nav>
-                <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="article.html">Article</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Gaurav Lohkna</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="article.html" class="text-gray-700 hover:text-blue-600">Article</a>
+                <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h2>Merging data, neural sciences, and human progress</h2>
-            <p>Big data, deep thoughts, and meaningful life stories—one space for it all</p>
-            <img src="Main_Hero_2.png" alt="Gverse Cover" class="hero-image">
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold">Merging data, neural sciences, and human progress</h2>
+            <p class="mt-4 text-lg text-gray-600">Big data, deep thoughts, and meaningful life stories—one space for it all</p>
+            <img src="Main_Hero_2.png" alt="Gverse Cover" class="mt-8 mx-auto rounded-lg shadow-lg">
         </div>
     </section>
 
     <!-- Blog Section -->
-    <section class="blog-section">
-        <div class="container">
-            <article class="blog-preview">
-                <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="blog-image">
-                <div class="blog-content">
-                    <h3>The Quarter-Life Crisis</h3>
-                    <p class="meta">Published on November 16, 2024</p>
-                    <p>Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
-                    <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html">Read more</a>
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <h3 class="text-2xl font-bold mb-6">Recent Blogs</h3>
+            <article class="flex space-x-6 bg-white p-6 rounded-lg shadow-md">
+                <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-32 h-32 object-cover rounded">
+                <div>
+                    <h4 class="text-xl font-bold">The Quarter-Life Crisis</h4>
+                    <p class="text-sm text-gray-500">Published on November 16, 2024</p>
+                    <p class="mt-2 text-gray-600">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
+                    <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html" class="text-blue-600 mt-2 inline-block">Read more</a>
                 </div>
             </article>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2>Partner Up: Let’s Make It Happen</h2>
-            <p>Have an idea worth pursuing? Let’s talk and see where it can go.</p>
-            <a href="contact.html" class="cta-button">Contact Me</a>
+    <!-- CTA Section -->
+    <section class="bg-blue-600 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl font-bold">Partner Up: Let’s Make It Happen</h2>
+            <p class="mt-4">Have an idea worth pursuing? Let’s talk and see where it can go.</p>
+            <a href="contact.html" class="mt-6 inline-block bg-white text-blue-600 px-6 py-2 rounded hover:bg-gray-200">Contact Me</a>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
+    <footer class="bg-gray-900 text-white py-4">
+        <p class="text-center">&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
 </body>
 </html>
