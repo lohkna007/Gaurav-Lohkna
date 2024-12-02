@@ -3,161 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaurav Lohkna</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Articles | Gaurav Lohkna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="font-sans bg-gray-50 text-gray-900">
 
-    <!-- Navigation Bar (from index.html) -->
-    <header>
-        <div class="container">
-            <h1>Articles</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="article.html" class="active">Article</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Articles</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="article.html" class="text-gray-700 hover:text-blue-600 font-semibold">Article</a>
+                <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
             </nav>
         </div>
     </header>
 
     <!-- Article Section -->
-    <section class="article-section">
-        <div class="article-container">
-            
-            <!-- Yale Articles -->
-            <!-- Article 1 -->
-            <article class="article-card">
-                <img src="article_images/yale_image.png" alt="Nature Cause and Effect in Molecular Biology" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">The Inference of Nature: Cause and Effect in Molecular Biology</h2>
-                    <p class="article-meta">Published on September 20, 2021 | 3 min read</p>
-                    <p class="article-description">A molecular structure that is three-dimensional, such as the double helix, can be approached either using a crystal graphic experimental approach that...</p>
-                    <a href="https://inferenceproject.yale.edu/post-talk-blog-post-teichmann-event-inference-nature-cause-and-effect-molecular-biology" class="read-more-link">Read more</a>
-                </div>
-            </article>
-
-            <!-- Article 2 -->
-            <article class="article-card">
-                <img src="article_images/yale_image.png" alt="No Cause for Concern: Indefinite Causal Ordering in Science" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">No Cause for Concern: Indefinite Causal Ordering as a Tool for Understanding Entanglement</h2>
-                    <p class="article-meta">Published on July 16, 2021 | 4 min read</p>
-                    <p class="article-description">A fundamental point of quantum mechanics is that causality is hard to comprehend because of non-local correlation. This peculiar quality of causality and space-time...</p>
-                    <a href="https://inferenceproject.yale.edu/pre-talk-blog-post-crull-event-no-cause-concern-indefinite-causal-ordering-tool-understanding" class="read-more-link">Read more</a>
-                </div>
-            </article>
-
-            <!-- Article 3 -->
-            <article class="article-card">
-                <img src="article_images/yale_image.png" alt="Causation from the Viewpoint of Physics" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">Causation from the Point of View of Physics</h2>
-                    <p class="article-meta">Published on September 24, 2021 | 5 min read</p>
-                    <p class="article-description">As humans, we are always striving to deduce the cause of everything we go through in order to comprehend what has happened to us and to make...</p>
-                    <a href="https://inferenceproject.yale.edu/pre-talk-blog-post-ismael-event-causation-point-view-physics" class="read-more-link">Read more</a>
-                </div>
-            </article>
-
-            <!-- Other Articles -->
-            
-            <!-- Article 4 -->
-            <article class="article-card">
-                <img src="article_images/framework.webp" alt="AI-driven Healthcare Framework" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">Bridging the Gap: Proposing a Framework for AI-driven Healthcare Solutions</h2>
-                    <p class="article-meta">Published on Mar 29, 2024 | 10 min read</p>
-                    <p class="article-description">In my experience as a consultant, explaining AI-powered solutions in healthcare and their potential risks is met with skepticism and doubt every time ...</p>
-                    <a href="https://medium.com/@lohkna007/bridging-the-gap-proposing-a-framework-for-ai-driven-healthcare-solutions-481a2c8d66a9" class="read-more-link">Read more</a>
-                </div>
-            </article>
-
-            <!-- Article 5 -->
-            <article class="article-card">
-                <img src="article_images/unstructured_data_insights.webp" alt="Unstructured Healthcare Data Analytics" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">Making Use of Unstructured Healthcare Data to Perform Advanced Analytics</h2>
-                    <p class="article-meta">Published on Aug 5, 2023 | 6 min read</p>
-                    <p class="article-description"> In healthcare data analytics, the challenge lies in using the vast amount of unstructured data that constitutes approximately 80% of all healthcare data...</p>
-                    <a href="https://medium.com/nerd-for-tech/making-use-of-unstructured-healthcare-data-to-perform-advanced-analytics-5c7cea54c430" class="read-more-link">Read more</a>
-                </div>
-            </article>
-
-            <!-- Article 6 -->
-            <article class="article-card">
-                <img src="article_images/smart_report.webp" alt="Smart Health Reports" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">Smart Health Reports: Improving Healthcare Efficiency</h2>
-                    <p class="article-meta">Published on Jun 3, 2023 | 9 min read</p>
-                    <p class="article-description">In the fast-paced landscape of healthcare, technology has emerged as a catalyst, propelling us into a new era of transformative change...</p>
-                    <a href="https://medium.com/nerd-for-tech/smart-health-reports-improving-healthcare-efficiency-9ee80dbba0c6" class="read-more-link">Read more</a>
-                </div>
-            </article>
-
-            <!-- Article 7 -->
-            <article class="article-card">
-                <img src="article_images/quantum.webp" alt="Quantum Computing" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">Quantum Computing: The Future</h2>
-                    <p class="article-meta">Published on May 8, 2021 | 7 min read</p>
-                    <p class="article-description">According to Moore’s law, “the numbers of transistors in a dense integrated circuit double about every two years and hence the processing power increases”...</p>
-                    <a href="https://medium.com/nerd-for-tech/quantum-computing-the-future-68ffedec5559" class="read-more-link">Read more</a>
-                </div>
-            </article>
-
-            <!-- Article 8 -->
-            <article class="article-card">
-                <img src="article_images/superintelligence.webp" alt="Superintelligence" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">Can We Achieve Superintelligence?</h2>
-                    <p class="article-meta">Published on Mar 25, 2021 | 5 min read</p>
-                    <p class="article-description">University of Oxford philosopher Nick Bostrom defines Superintelligence as “any intellect that greatly exceeds the cognitive performance of humans in virtually all domains of interest” ...</p>
-                    <a href="https://medium.com/@lohkna007/can-we-achieve-superintelligence-d6bbf331599" class="read-more-link">Read more</a>
-                </div>
-            </article>
-
-            <!-- Article 9 -->
-            <article class="article-card">
-                <img src="article_images/DNA.webp" alt="DNA Data Storage" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">DNA Data Storage</h2>
-                    <p class="article-meta">Published on Jun 18, 2020 | 4 min read</p>
-                    <p class="article-description">Today, we have more than 4 billion Internet users around the globe and these users produce 2.5 exabytes or 2.5*10¹⁸ bytes of data daily...</p>
-                    <a href="https://medium.com/@lohkna007/dna-data-storage-6d23796c54d" class="read-more-link">Read more</a>
-                </div>
-            </article>
-
-            <!-- Article 10 -->
-            <article class="article-card">
-                <img src="article_images/compute_brain.webp"" alt="Computational Power of the Brain" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">The Computational Power of a Brain</h2>
-                    <p class="article-meta">Published on Mar 27, 2020 | 3 min read</p>
-                    <p class="article-description">The human brain is a complex structure of some 100 billion neuron cells and each of these cells is connected to 10,000 of its colleague cells ...</p>
-                    <a href="https://medium.com/@lohkna007/the-computational-power-of-a-brain-1f4e39957056" class="read-more-link">Read more</a>
-                </div>
-            </article>
-
-            <!-- Article 11 -->
-            <article class="article-card">
-                <img src="article_images/mimicking.webp"" alt="Contributor Gaurav Lohkna" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">Mimicking The Mind- AI</h2>
-                    <p class="article-meta">Published on Sep 17, 2019 | 10 min read</p>
-                    <p class="article-description">Let’s take the anatomy of the human mind or brain and observe how it works. You will lead to a very fascinating branch of computer science...</p>
-                    <a href="https://medium.com/@lohkna007/contributor-gaurav-lohkna-aaf6566f47d6" class="read-more-link">Read more</a>
-                </div>
-            </article>
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6">Featured Articles</h2>
+            <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <!-- Article Card -->
+                <article class="bg-white shadow-md rounded-lg p-6">
+                    <img src="article_images/yale_image.png" alt="Nature Cause and Effect in Molecular Biology" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">The Inference of Nature</h3>
+                    <p class="text-sm text-gray-500">Published on September 20, 2021</p>
+                    <p class="mt-2 text-gray-600">A molecular structure that is three-dimensional, such as the double helix...</p>
+                    <a href="#" class="text-blue-600 mt-4 inline-block">Read more</a>
+                </article>
+                <!-- Repeat similar structure for other articles -->
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
+    <footer class="bg-gray-900 text-white py-4">
+        <p class="text-center">&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
 </body>
