@@ -3,58 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Blog | Gaurav Lohkna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="font-sans bg-gray-50 text-gray-900">
 
-    <!-- Navigation Bar (from index.html) -->
-    <header>
-        <div class="container">
-            <h1>Blogs</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="article.html">Article</a></li>
-                    <li><a href="blog.html" class="active">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Blogs</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="article.html" class="text-gray-700 hover:text-blue-600">Article</a>
+                <a href="blog.html" class="text-gray-700 hover:text-blue-600 font-semibold">Blog</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
             </nav>
         </div>
     </header>
 
     <!-- Blog Section -->
-    <section class="blog-section">
-        <div class="article-container"> <!-- Renamed container for consistency -->
-            <!-- Blog Post 1 -->
-<!--             <article class="article-card">
-                <img src="banner_image.jpg" alt="AI in Healthcare" class="article-image">
-                <div class="article-content">
-                    <h2 class="article-title">The Future of AI in Healthcare</h2>
-                    <p class="article-meta">Published on September 12, 2024</p>
-                    <p class="article-description">In this blog post, I explore how AI is changing healthcare and improving patient outcomes...</p>
-                    <a href="blog_post_1.html" class="read-more-link">Read more</a>
-                </div>
-            </article> -->
-
-            <!-- Blog Post 2 -->
-            <article class="blog-preview">
-                <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="blog-image">
-                <div class="blog-content">
-                    <h3>The Quarter-Life Crisis</h3>
-                    <p class="meta">Published on November 16, 2024</p>
-                    <p>Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
-                    <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html">Read more</a>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
-    </footer>
-
-</body>
-</html>
+    <section class="py-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6">Latest Blogs</h2>
+            <article class="bg-white shadow-md rounded-lg p-6 flex space-x-6">
+                <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-32 h-32 object
