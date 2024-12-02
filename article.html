@@ -5,19 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Articles | Gaurav Lohkna</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background-color: #faf9f5;
+        }
+    </style>
 </head>
-<body class="font-sans bg-gray-50 text-gray-900">
+<body class="font-sans text-[#2e2e2e] leading-relaxed">
 
     <!-- Header -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold">Articles</h1>
             <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-                <a href="article.html" class="text-gray-700 hover:text-blue-600 font-semibold">Article</a>
-                <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
-                <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
-                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="index.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Home</a>
+                <a href="article.html" class="text-[#2e2e2e] font-semibold hover:text-[#bc6442]">Article</a>
+                <a href="blog.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
+                <a href="about.html" class="text-[#2e2e2e] hover:text-[#bc6442]">About</a>
+                <a href="contact.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Contact</a>
             </nav>
         </div>
     </header>
@@ -27,21 +32,66 @@
         <div class="container mx-auto px-6">
             <h2 class="text-3xl font-bold mb-6">Featured Articles</h2>
             <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-                <!-- Article Card -->
+                <!-- Article 1 -->
                 <article class="bg-white shadow-md rounded-lg p-6">
                     <img src="article_images/yale_image.png" alt="Nature Cause and Effect in Molecular Biology" class="w-full h-40 object-cover rounded-md">
                     <h3 class="text-xl font-semibold mt-4">The Inference of Nature</h3>
                     <p class="text-sm text-gray-500">Published on September 20, 2021</p>
-                    <p class="mt-2 text-gray-600">A molecular structure that is three-dimensional, such as the double helix...</p>
-                    <a href="#" class="text-blue-600 mt-4 inline-block">Read more</a>
+                    <p class="mt-2 text-[#4b4b4b]">A molecular structure that is three-dimensional, such as the double helix...</p>
+                    <a href="https://inferenceproject.yale.edu/post-talk-blog-post-teichmann-event-inference-nature-cause-and-effect-molecular-biology" 
+                       class="text-[#d98157] hover:text-[#bc6442] mt-4 inline-block">Read more</a>
                 </article>
-                <!-- Repeat similar structure for other articles -->
+                <!-- Article 2 -->
+                <article class="bg-white shadow-md rounded-lg p-6">
+                    <img src="article_images/yale_image.png" alt="No Cause for Concern" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">No Cause for Concern</h3>
+                    <p class="text-sm text-gray-500">Published on July 16, 2021</p>
+                    <p class="mt-2 text-[#4b4b4b]">A fundamental point of quantum mechanics is that causality...</p>
+                    <a href="https://inferenceproject.yale.edu/pre-talk-blog-post-crull-event-no-cause-concern-indefinite-causal-ordering-tool-understanding" 
+                       class="text-[#d98157] hover:text-[#bc6442] mt-4 inline-block">Read more</a>
+                </article>
+                <!-- Article 3 -->
+                <article class="bg-white shadow-md rounded-lg p-6">
+                    <img src="article_images/framework.webp" alt="AI-driven Healthcare Framework" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">AI-driven Healthcare Framework</h3>
+                    <p class="text-sm text-gray-500">Published on March 29, 2024</p>
+                    <p class="mt-2 text-[#4b4b4b]">Exploring AI-powered solutions in healthcare and their potential risks...</p>
+                    <a href="https://medium.com/@lohkna007/bridging-the-gap-proposing-a-framework-for-ai-driven-healthcare-solutions-481a2c8d66a9" 
+                       class="text-[#d98157] hover:text-[#bc6442] mt-4 inline-block">Read more</a>
+                </article>
+                <!-- Article 4 -->
+                <article class="bg-white shadow-md rounded-lg p-6">
+                    <img src="article_images/unstructured_data_insights.webp" alt="Unstructured Healthcare Data" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">Unstructured Healthcare Data</h3>
+                    <p class="text-sm text-gray-500">Published on August 5, 2023</p>
+                    <p class="mt-2 text-[#4b4b4b]">In healthcare data analytics, the challenge lies in using vast amounts of unstructured data...</p>
+                    <a href="https://medium.com/nerd-for-tech/making-use-of-unstructured-healthcare-data-to-perform-advanced-analytics-5c7cea54c430" 
+                       class="text-[#d98157] hover:text-[#bc6442] mt-4 inline-block">Read more</a>
+                </article>
+                <!-- Article 5 -->
+                <article class="bg-white shadow-md rounded-lg p-6">
+                    <img src="article_images/quantum.webp" alt="Quantum Computing" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">Quantum Computing: The Future</h3>
+                    <p class="text-sm text-gray-500">Published on May 8, 2021</p>
+                    <p class="mt-2 text-[#4b4b4b]">According to Moore’s law, the numbers of transistors in a dense integrated circuit...</p>
+                    <a href="https://medium.com/nerd-for-tech/quantum-computing-the-future-68ffedec5559" 
+                       class="text-[#d98157] hover:text-[#bc6442] mt-4 inline-block">Read more</a>
+                </article>
+                <!-- Article 6 -->
+                <article class="bg-white shadow-md rounded-lg p-6">
+                    <img src="article_images/smart_report.webp" alt="Smart Health Reports" class="w-full h-40 object-cover rounded-md">
+                    <h3 class="text-xl font-semibold mt-4">Smart Health Reports</h3>
+                    <p class="text-sm text-gray-500">Published on June 3, 2023</p>
+                    <p class="mt-2 text-[#4b4b4b]">In the fast-paced landscape of healthcare, technology has emerged as a catalyst...</p>
+                    <a href="https://medium.com/nerd-for-tech/smart-health-reports-improving-healthcare-efficiency-9ee80dbba0c6" 
+                       class="text-[#d98157] hover:text-[#bc6442] mt-4 inline-block">Read more</a>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-4">
+    <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-4">
         <p class="text-center">&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
