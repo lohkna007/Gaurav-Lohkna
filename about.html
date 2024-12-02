@@ -3,40 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>About Me | Gaurav Lohkna</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="font-sans bg-gray-50 text-gray-900">
 
-    <!-- Navigation Bar (Same as Home) -->
-    <header>
-        <div class="container">
-            <h1>About Me</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="article.html">Article</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
+    <!-- Header -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">About Me</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
+                <a href="article.html" class="text-gray-700 hover:text-blue-600">Article</a>
+                <a href="blog.html" class="text-gray-700 hover:text-blue-600">Blog</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600 font-semibold">About</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section with Journey Photo -->
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Hi, I'm Gaurav</h2>
-            <p>Ivy League labs taught me to ask questions, AI taught me to find answers—and I’m just getting started. </p>
+    <!-- Hero Section -->
+    <section class="bg-gray-100 py-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-extrabold">Hi, I'm Gaurav</h2>
+            <p class="mt-4 text-lg text-gray-600">Ivy League labs taught me to ask questions, AI taught me to find answers—and I’m just getting started.</p>
+            <img src="timeline_journey_2png.png" alt="Journey Timeline" class="mt-8 mx-auto rounded-lg shadow-lg">
         </div>
-        <!-- Hero Image that represents the journey -->
-        <img src="timeline_journey_2png.png" alt="Journey Timeline" class="hero-image">
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
+    <footer class="bg-gray-900 text-white py-4">
+        <p class="text-center">&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
 </body>
