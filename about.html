@@ -8,6 +8,12 @@
     <style>
         body {
             background-color: #fbfbf3;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1; /* Ensures the main content stretches to push the footer down */
         }
     </style>
 </head>
@@ -27,14 +33,16 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold">Hi, I'm Gaurav</h2>
-            <p class="mt-4 text-lg text-[#4b4b4b]">Ivy League labs taught me to ask questions, AI taught me to find answers—and I’m just getting started.</p>
-            <img src="timeline_journey_2png.png" alt="Journey Timeline" class="mt-8 mx-auto rounded-lg shadow-lg">
-        </div>
-    </section>
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-white py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold">Hi, I'm Gaurav</h2>
+                <p class="mt-4 text-lg text-[#4b4b4b]">Ivy League labs taught me to ask questions, AI taught me to find answers—and I’m just getting started.</p>
+                <img src="timeline_journey_2png.png" alt="Journey Timeline" class="mt-8 mx-auto rounded-lg shadow-lg">
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-4">
