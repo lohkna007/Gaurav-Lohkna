@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me | Gaurav Lohkna</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Ensure footer stays at the bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1; /* This makes the main content take up available space */
+        }
+    </style>
 </head>
 <body class="font-sans bg-[#faf9f5] text-gray-900">
 
@@ -22,17 +33,20 @@
         </div>
     </header>
 
-    <!-- Contact Section -->
-    <section class="py-12">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
-            <p class="text-gray-600 mb-8">Got ideas, questions, or just good vibes? Let’s talk.</p>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="text-blue-600 hover:text-blue-800 text-3xl"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:gauravlohknabusinessonly@gmail.com" class="text-blue-600 hover:text-blue-800 text-3xl"><i class="fas fa-envelope"></i></a>
+    <!-- Main Content -->
+    <main>
+        <!-- Contact Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+                <p class="text-gray-600 mb-8">Got ideas, questions, or just good vibes? Let’s talk.</p>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" class="text-blue-600 hover:text-blue-800 text-3xl"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:gauravlohknabusinessonly@gmail.com" class="text-blue-600 hover:text-blue-800 text-3xl"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-4">
