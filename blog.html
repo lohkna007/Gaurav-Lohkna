@@ -6,56 +6,46 @@
     <title>Blog | Gaurav Lohkna</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Ensure footer stays at the bottom */
         body {
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        main {
-            flex: 1; /* This makes the main content take up available space */
+            background-color: #fbfbf3;
         }
     </style>
 </head>
-<body class="font-sans bg-gray-50 text-gray-900">
+<body class="font-sans text-[#2e2e2e] leading-relaxed">
 
     <!-- Header -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold">Blogs</h1>
             <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-gray-700 hover:text-blue-600">Home</a>
-                <a href="article.html" class="text-gray-700 hover:text-blue-600">Article</a>
-                <a href="blog.html" class="text-gray-700 hover:text-blue-600 font-semibold">Blog</a>
-                <a href="about.html" class="text-gray-700 hover:text-blue-600">About</a>
-                <a href="contact.html" class="text-gray-700 hover:text-blue-600">Contact</a>
+                <a href="index.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Home</a>
+                <a href="article.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
+                <a href="blog.html" class="text-[#2e2e2e] font-semibold hover:text-[#bc6442]">Blog</a>
+                <a href="about.html" class="text-[#2e2e2e] hover:text-[#bc6442]">About</a>
+                <a href="contact.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Contact</a>
             </nav>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Blog Section -->
-        <section class="py-12">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold mb-6">Latest Blogs</h2>
-                <article class="bg-white shadow-md rounded-lg p-6 flex space-x-6">
-                    <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-32 h-32 object-cover rounded">
-                    <div>
-                        <h3 class="text-xl font-bold">The Quarter-Life Crisis</h3>
-                        <p class="text-sm text-gray-500">Published on November 16, 2024</p>
-                        <p class="mt-2 text-gray-600">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
-                        <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html" class="text-blue-600 mt-4 inline-block">Read more</a>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
+    <!-- Blog Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold mb-6">Latest Blogs</h2>
+            <article class="bg-[#faf9f5] shadow-md rounded-lg p-6 flex space-x-6">
+                <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-32 h-32 object-cover rounded">
+                <div>
+                    <h3 class="text-xl font-bold">The Quarter-Life Crisis</h3>
+                    <p class="text-sm text-gray-500">Published on November 16, 2024</p>
+                    <p class="mt-2 text-[#4b4b4b]">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
+                    <a href="#" class="text-[#bc6442] hover:text-[#d98157] mt-4 inline-block">Read more</a>
+                </div>
+            </article>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-4">
         <p class="text-center">&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
-
 </body>
 </html>
