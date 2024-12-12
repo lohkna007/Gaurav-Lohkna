@@ -8,6 +8,12 @@
     <style>
         body {
             background-color: #fbfbf3;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1; /* Ensures the main content stretches to push the footer down */
         }
     </style>
 </head>
@@ -27,21 +33,23 @@
         </div>
     </header>
 
-    <!-- Blog Section -->
-    <section class="bg-white py-12">
-        <div class="container mx-auto px-6">
-            <h2 class="text-3xl font-bold mb-6">Latest Blogs</h2>
-            <article class="bg-[#faf9f5] shadow-md rounded-lg p-6 flex space-x-6">
-                <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-32 h-32 object-cover rounded">
-                <div>
-                    <h3 class="text-xl font-bold">The Quarter-Life Crisis</h3>
-                    <p class="text-sm text-gray-500">Published on November 16, 2024</p>
-                    <p class="mt-2 text-[#4b4b4b]">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
-                    <a href="#" class="text-[#bc6442] hover:text-[#d98157] mt-4 inline-block">Read more</a>
-                </div>
-            </article>
-        </div>
-    </section>
+    <main>
+        <!-- Blog Section -->
+        <section class="bg-white py-12">
+            <div class="container mx-auto px-6">
+                <h2 class="text-3xl font-bold mb-6">Latest Blogs</h2>
+                <article class="bg-[#faf9f5] shadow-md rounded-lg p-6 flex space-x-6">
+                    <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-32 h-32 object-cover rounded">
+                    <div>
+                        <h3 class="text-xl font-bold">The Quarter-Life Crisis</h3>
+                        <p class="text-sm text-gray-500">Published on November 16, 2024</p>
+                        <p class="mt-2 text-[#4b4b4b]">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
+                        <a href="#" class="text-[#bc6442] hover:text-[#d98157] mt-4 inline-block">Read more</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-4">
