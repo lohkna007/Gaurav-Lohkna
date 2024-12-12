@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me | Gaurav Lohkna</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Ensure footer stays at the bottom */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex: 1; /* This makes the main content take up available space */
+        }
+    </style>
 </head>
 <body class="font-sans bg-[#faf9f5] text-gray-900">
 
@@ -22,14 +33,17 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="bg-gray-100 py-12">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-extrabold">Hi, I'm Gaurav</h2>
-            <p class="mt-4 text-lg text-gray-600">Ivy League labs taught me to ask questions, AI taught me to find answers—and I’m just getting started.</p>
-            <img src="timeline_journey_2png.png" alt="Journey Timeline" class="mt-8 mx-auto rounded-lg shadow-lg">
-        </div>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gray-100 py-12">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-extrabold">Hi, I'm Gaurav</h2>
+                <p class="mt-4 text-lg text-gray-600">Ivy League labs taught me to ask questions, AI taught me to find answers—and I’m just getting started.</p>
+                <img src="timeline_journey_2png.png" alt="Journey Timeline" class="mt-8 mx-auto rounded-lg shadow-lg">
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="bg-gray-900 text-white py-4">
