@@ -10,6 +10,7 @@
         body {
             font-family: 'Georgia', serif;
             line-height: 1.8;
+            background-color: #f9f9f6; /* Subtle off-white background */
         }
         header h1 {
             font-family: 'Arial', sans-serif;
@@ -46,12 +47,20 @@
             z-index: 50;
             transition: width 0.1s ease-out;
         }
+        .content-container {
+            max-width: 750px;
+            margin: 3rem auto;
+            padding: 2rem;
+            background-color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
         h1, p {
             margin-bottom: 1.5rem;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="text-gray-900">
 
     <!-- Progress Bar -->
     <div id="progressBar" class="progress-bar"></div>
@@ -72,65 +81,42 @@
     </header>
 
     <!-- Main Article Section -->
-    <main class="container mx-auto px-6 py-12">
-        <!-- Article Header -->
-        <div class="mb-8 text-center">
-            <h1 class="text-5xl font-bold leading-tight text-gray-900 mb-4">The Quarter-Life Crisis</h1>
-            <p class="text-gray-600 text-lg">Published on <strong>November 16, 2024</strong></p>
-        </div>
-
-        <!-- Author and Social Sharing -->
-        <div class="flex items-center justify-between border-b pb-6 mb-12">
-            <div>
-                <p class="text-gray-600">By <strong>Gaurav Lohkna</strong></p>
+    <main>
+        <div class="content-container">
+            <!-- Breadcrumb -->
+            <p class="text-sm text-[#bc6442] mb-4">
+                <a href="../../blog.html" class="hover:underline">Home</a> > <a href="../../blog.html" class="hover:underline">Blog</a> > The Quarter-Life Crisis
+            </p>
+            
+            <!-- Article Header -->
+            <div class="mb-8">
+                <h1 class="text-4xl font-bold leading-tight text-gray-900 mb-4">The Quarter-Life Crisis</h1>
+                <p class="text-gray-600 text-lg">Published on <strong>November 16, 2024</strong></p>
             </div>
-            <div class="flex space-x-4">
-                <!-- Social Icons -->
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook-f text-blue-600"></i>
-                </a>
-                <a href="https://twitter.com/intent/tweet?url=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html&text=Check%20out%20this%20article:" target="_blank" class="social-icon">
-                    <i class="fab fa-twitter text-blue-400"></i>
-                </a>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in text-blue-700"></i>
-                </a>
-                <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article:%20https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
-                    <i class="fab fa-whatsapp text-green-500"></i>
-                </a>
-                <a href="mailto:?subject=I%20wanted%20to%20share%20this%20article&body=Check%20out%20this%20link:%20https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
-                    <i class="fas fa-envelope text-gray-700"></i>
-                </a>
-            </div>
-        </div>
 
-        <!-- Article Content -->
-        <article class="prose max-w-none leading-relaxed text-gray-800">
-            <p>
-                You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.
-            </p>
-            <p>
-                But let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.
-            </p>
-            <p>
-                As long as I can remember, or at least from observing those around me while growing up, people used to take about 12-15 years on average to achieve these basics and some sort of financial security—savings, investments, assets, and collaterals for rainy days or special occasions like weddings.
-            </p>
-            <p>
-                So, people generally spent about 12-15 years (starting from around age 21-23) working to secure these needs and build a stable life. Now imagine a time when you’ve met your basic needs and established some sense of safety and security. What's your next challenge? Is it to become more secure? Yes, but that’s an ongoing process, and it will never feel like enough. So, what's next?
-            </p>
-            <p>
-                This is the stage where you start wondering: Should I chase after the things I truly want? Or should I keep doing what I’ve been doing, which is allowing me the luxury of contemplating these dreams? These are tough choices. Sometimes, they’re life-defining, sometimes not. They can lead to a fulfilling life with no regrets, or to misery with thoughts of missed opportunities and unfulfilled dreams.
-            </p>
-            <p>
-                Your desires keep you alive, your basic needs keep you grounded, and your sense of self-actualization is the journey, not the end goal.
-            </p>
-        </article>
+            <!-- Article Content -->
+            <article class="prose max-w-none leading-relaxed text-gray-800">
+                <p>
+                    You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.
+                </p>
+                <p>
+                    But let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.
+                </p>
+                <p>
+                    As long as I can remember, or at least from observing those around me while growing up, people used to take about 12-15 years on average to achieve these basics and some sort of financial security—savings, investments, assets, and collaterals for rainy days or special occasions like weddings.
+                </p>
+                <p>
+                    So, people generally spent about 12-15 years (starting from around age 21-23) working to secure these needs and build a stable life. Now imagine a time when you’ve met your basic needs and established some sense of safety and security. What's your next challenge? Is it to become more secure? Yes, but that’s an ongoing process, and it will never feel like enough. So, what's next?
+                </p>
+                <p>
+                    This is the stage where you start wondering: Should I chase after the things I truly want? Or should I keep doing what I’ve been doing, which is allowing me the luxury of contemplating these dreams? These are tough choices. Sometimes, they’re life-defining, sometimes not. They can lead to a fulfilling life with no regrets, or to misery with thoughts of missed opportunities and unfulfilled dreams.
+                </p>
+                <p>
+                    Your desires keep you alive, your basic needs keep you grounded, and your sense of self-actualization is the journey, not the end goal.
+                </p>
+            </article>
+        </div>
     </main>
-
-    <!-- Back to Blog Button -->
-    <div class="container mx-auto px-6 py-6 text-center">
-        <a href="../../blog.html" class="text-[#bc6442] hover:text-[#d98157] text-lg font-medium">← Back to Blog</a>
-    </div>
 
     <!-- Footer -->
     <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-6">
