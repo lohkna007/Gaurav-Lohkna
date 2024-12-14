@@ -11,6 +11,21 @@
             font-family: 'Georgia', serif;
             line-height: 1.8;
         }
+        header h1 {
+            font-family: 'Arial', sans-serif;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .subtitle {
+            font-family: 'Arial', sans-serif;
+            font-size: 18px;
+            font-weight: 300;
+            color: #4b4b4b;
+        }
+        h1, h2 {
+            font-family: 'Merriweather', serif;
+            line-height: 1.4;
+        }
         .social-icon {
             display: flex;
             align-items: center;
@@ -35,10 +50,6 @@
             z-index: 50;
             transition: width 0.1s ease-out;
         }
-        h1, h2 {
-            font-family: 'Merriweather', serif;
-            line-height: 1.4;
-        }
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -47,23 +58,24 @@
     <div id="progressBar" class="progress-bar"></div>
 
     <!-- Header -->
-    <header class="bg-white shadow-md">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold text-gray-900">Gaurav Lohkna</h1>
-            <nav class="hidden md:flex space-x-6">
-                <a href="../../index.html" class="text-gray-700 hover:text-[#bc6442]">Home</a>
-                <a href="../../article.html" class="text-gray-700 hover:text-[#bc6442]">Article</a>
-                <a href="../../blog.html" class="text-gray-700 hover:text-[#bc6442] font-semibold">Blog</a>
-                <a href="../../about.html" class="text-gray-700 hover:text-[#bc6442]">About</a>
-                <a href="../../contact.html" class="text-gray-700 hover:text-[#bc6442]">Contact</a>
-            </nav>
+    <header class="bg-white shadow-md py-6">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-gray-900">Gaurav Lohkna</h1>
+            <p class="subtitle">Merging Data, Neural Sciences, and Human Progress</p>
         </div>
+        <nav class="container mx-auto px-6 mt-6 text-center space-x-6">
+            <a href="../../index.html" class="text-gray-700 hover:text-[#bc6442]">Home</a>
+            <a href="../../article.html" class="text-gray-700 hover:text-[#bc6442]">Article</a>
+            <a href="../../blog.html" class="text-gray-700 hover:text-[#bc6442] font-semibold">Blog</a>
+            <a href="../../about.html" class="text-gray-700 hover:text-[#bc6442]">About</a>
+            <a href="../../contact.html" class="text-gray-700 hover:text-[#bc6442]">Contact</a>
+        </nav>
     </header>
 
     <!-- Main Article Section -->
     <main class="container mx-auto px-6 py-12">
         <!-- Article Header -->
-        <div class="mb-8">
+        <div class="mb-8 text-center">
             <h1 class="text-5xl font-bold leading-tight text-gray-900 mb-4">The Quarter-Life Crisis</h1>
             <p class="text-gray-600 text-lg">Published on <strong>November 16, 2024</strong></p>
         </div>
@@ -113,6 +125,16 @@
             <h2 class="text-3xl font-bold text-gray-900">The Modern Struggle</h2>
             <p>
                 In my opinion, what once took a decade to achieve can now be reached in just 3-4 years (at least for those of us going through a quarter-life crisis). We have some securities, we earn sustainable, high-paying salaries (putting us in the top 10% of earners in India), and yet...we feel empty when it comes to fulfilling our personal dreams.
+            </p>
+
+            <h2 class="text-3xl font-bold text-gray-900">Balancing Responsibilities</h2>
+            <p>
+                Maybe, until now, we’ve been fulfilling the wishes and dreams others had for us, becoming what others expected. Now, we’re at a stage in life where options abound—each one seeming achievable. We want to do everything, explore different paths and experiences. But we also have responsibilities—family, loved ones, and the people we prioritize because they give us that sense of love and belonging.
+            </p>
+
+            <h2 class="text-3xl font-bold text-gray-900">The Journey Ahead</h2>
+            <p>
+                Your desires keep you alive, your basic needs keep you grounded, and your sense of self-actualization is the journey, not the end goal. The quarter-life crisis is a chance to redefine yourself, rediscover your priorities, and balance your responsibilities with your dreams.
             </p>
         </article>
     </main>
