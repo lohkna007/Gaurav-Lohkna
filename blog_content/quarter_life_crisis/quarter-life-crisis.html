@@ -5,17 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Quarter-Life Crisis</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <style>
         body {
             font-family: 'Georgia', serif;
+            line-height: 1.8;
         }
         .social-icon {
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
             background-color: #f4f4f4;
             transition: transform 0.2s, background-color 0.2s;
         }
@@ -24,7 +26,7 @@
             background-color: #e5e5e5;
         }
         .progress-bar {
-            height: 5px;
+            height: 4px;
             background-color: #bc6442;
             width: 0;
             position: fixed;
@@ -32,6 +34,10 @@
             left: 0;
             z-index: 50;
             transition: width 0.1s ease-out;
+        }
+        h1, h2 {
+            font-family: 'Merriweather', serif;
+            line-height: 1.4;
         }
     </style>
 </head>
@@ -41,9 +47,9 @@
     <div id="progressBar" class="progress-bar"></div>
 
     <!-- Header -->
-    <header class="bg-white shadow-sm">
+    <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-3xl font-bold">Gaurav Lohkna</h1>
+            <h1 class="text-3xl font-bold text-gray-900">Gaurav Lohkna</h1>
             <nav class="hidden md:flex space-x-6">
                 <a href="../../index.html" class="text-gray-700 hover:text-[#bc6442]">Home</a>
                 <a href="../../article.html" class="text-gray-700 hover:text-[#bc6442]">Article</a>
@@ -58,7 +64,7 @@
     <main class="container mx-auto px-6 py-12">
         <!-- Article Header -->
         <div class="mb-8">
-            <h1 class="text-4xl font-bold leading-tight text-gray-900 mb-4">The Quarter-Life Crisis</h1>
+            <h1 class="text-5xl font-bold leading-tight text-gray-900 mb-4">The Quarter-Life Crisis</h1>
             <p class="text-gray-600 text-lg">Published on <strong>November 16, 2024</strong></p>
         </div>
 
@@ -68,6 +74,7 @@
                 <p class="text-gray-600">By <strong>Gaurav Lohkna</strong></p>
             </div>
             <div class="flex space-x-4">
+                <!-- Social Icons -->
                 <a href="https://www.facebook.com/sharer/sharer.php?u=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
                     <i class="fab fa-facebook-f text-blue-600"></i>
                 </a>
@@ -88,22 +95,22 @@
 
         <!-- Article Content -->
         <article class="prose max-w-none leading-relaxed text-gray-800">
-            <h2>What Is a Quarter-Life Crisis?</h2>
+            <h2 class="text-3xl font-bold text-gray-900">What Is a Quarter-Life Crisis?</h2>
             <p>
                 You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.
             </p>
-            
-            <h2>Understanding the Mid-Life Crisis</h2>
+
+            <h2 class="text-3xl font-bold text-gray-900">Understanding the Mid-Life Crisis</h2>
             <p>
                 Let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.
             </p>
-            
-            <h2>How Quarter-Life Crises Manifest</h2>
+
+            <h2 class="text-3xl font-bold text-gray-900">How Quarter-Life Crises Manifest</h2>
             <p>
                 People generally spend about 12-15 years (starting from around age 21-23) working to secure these needs and build a stable life. But once these needs are fulfilled, new challenges arise: What's next? Is it to become more secure? Yes, but that’s an ongoing process, and it will never feel like enough. So, what's next?
             </p>
-            
-            <h2>The Modern Struggle</h2>
+
+            <h2 class="text-3xl font-bold text-gray-900">The Modern Struggle</h2>
             <p>
                 In my opinion, what once took a decade to achieve can now be reached in just 3-4 years (at least for those of us going through a quarter-life crisis). We have some securities, we earn sustainable, high-paying salaries (putting us in the top 10% of earners in India), and yet...we feel empty when it comes to fulfilling our personal dreams.
             </p>
@@ -120,8 +127,7 @@
         <p class="text-center">&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
-    <!-- FontAwesome for icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- JavaScript -->
     <script>
         // Progress Bar Script
         const progressBar = document.getElementById("progressBar");
