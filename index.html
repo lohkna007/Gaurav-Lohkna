@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaurav Lohkna</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-MF3rZvj2MYp5EE+PxyI2owPvlNSzMTXj0SCiX7ZJ5CekRUmArps8MiF3FoUnwvIm4Iu3lYZjKGBQ46DJYEdBNQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             background-color: #fbfbf3; /* Light beige background */
         }
         .mobile-menu {
-            transition: all 0.3s ease;
+            transition: all 0.3s ease-in-out;
         }
     </style>
 </head>
@@ -34,7 +35,7 @@
             <!-- Mobile Hamburger Menu -->
             <div class="md:hidden flex items-center">
                 <button id="menu-toggle" class="text-[#2e2e2e] focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
+                    <i class="fa-solid fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
