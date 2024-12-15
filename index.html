@@ -8,12 +8,12 @@
     <!-- Tailwind CSS Precompiled for Production -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-    <!-- Font Awesome CSS -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
 
     <style>
         body {
-            background-color: #fbfbf3; /* Light beige background */
+            background-color: #ffffff;
         }
     </style>
 </head>
@@ -33,7 +33,7 @@
                 <a href="contact.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Contact</a>
             </nav>
 
-            <!-- Mobile Hamburger Menu Button -->
+            <!-- Mobile Hamburger Menu -->
             <div class="md:hidden flex items-center">
                 <button id="menu-toggle" class="text-[#2e2e2e] focus:outline-none">
                     <i class="fa-solid fa-bars text-2xl"></i>
@@ -41,14 +41,14 @@
             </div>
         </div>
 
-        <!-- Mobile Navigation with Slide-in Animation -->
+        <!-- Mobile Navigation -->
         <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
             <div class="p-6">
                 <button id="menu-close" class="text-[#2e2e2e] focus:outline-none mb-4">
                     <i class="fa-solid fa-times text-2xl"></i>
                 </button>
                 <nav class="flex flex-col space-y-4">
-                    <a href="index.html" class="block text-[#2e2e2e] hover:text-[#bc6442] font-semibold">Home</a>
+                    <a href="index.html" class="block text-[#2e2e2e] font-semibold hover:text-[#bc6442]">Home</a>
                     <a href="article.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
                     <a href="blog.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
                     <a href="about.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">About</a>
@@ -57,14 +57,14 @@
             </div>
         </div>
 
-        <!-- Overlay Background -->
+        <!-- Overlay -->
         <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
     </header>
 
     <!-- Hero Section -->
     <section class="bg-white py-12 shadow-md">
         <div class="container mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-4">Merging Data, Neural Sciences, and Human Progress</h2>
+            <h2 class="text-4xl font-bold mb-4 text-[#2e2e2e]">Merging Data, Neural Sciences, and Human Progress</h2>
             <p class="text-lg text-[#4b4b4b]">Big data, deep thoughts, and meaningful life stories—one space for it all.</p>
             <img src="Main_Hero_3.png" alt="Gverse Cover" class="mt-8 mx-auto rounded-lg">
         </div>
@@ -73,11 +73,11 @@
     <!-- Blog Section -->
     <section class="bg-white py-12">
         <div class="container mx-auto px-6">
-            <h3 class="text-3xl font-bold text-[#2e2e2e] mb-6">Recent Blogs</h3>
-            <article class="bg-[#faf9f5] shadow-md rounded-lg p-6 flex flex-col md:flex-row space-x-0 md:space-x-6">
-                <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-full md:w-32 h-32 object-cover rounded mb-4 md:mb-0">
+            <h2 class="text-3xl font-bold text-[#2e2e2e] mb-6">Latest Blogs</h2>
+            <article class="bg-[#faf9f5] shadow-md rounded-lg p-6 flex space-x-6">
+                <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-32 h-32 object-cover rounded">
                 <div>
-                    <h4 class="text-xl font-bold">The Quarter-Life Crisis</h4>
+                    <h3 class="text-xl font-bold">The Quarter-Life Crisis</h3>
                     <p class="text-sm text-gray-500">Published on November 16, 2024</p>
                     <p class="mt-2 text-[#4b4b4b]">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
                     <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html" class="text-[#bc6442] hover:text-[#d98157] mt-4 inline-block">Read more</a>
@@ -86,12 +86,12 @@
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="bg-white text-black py-12">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl font-bold">Partner Up: Let’s Make It Happen</h2>
-            <p class="mt-4">Have an idea worth pursuing? Let’s talk and see where it can go.</p>
-            <a href="contact.html" class="mt-6 inline-block bg-[#faf9f5] text-[#d98157] px-6 py-2 rounded hover:bg-gray-200">Contact Me</a>
+    <!-- Call to Action -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto text-center px-6">
+            <h2 class="text-3xl font-bold text-[#2e2e2e]">Partner Up: Let’s Make It Happen</h2>
+            <p class="text-[#4b4b4b] mt-4">Have an idea worth pursuing? Let’s talk and see where it can go.</p>
+            <a href="contact.html" class="mt-6 inline-block bg-[#faf9f5] text-[#bc6442] px-6 py-2 rounded hover:bg-gray-200">Contact Me</a>
         </div>
     </section>
 
@@ -100,7 +100,7 @@
         <p class="text-center">&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
-    <!-- Mobile Menu Toggle Script -->
+    <!-- Mobile Menu Script -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const menuClose = document.getElementById('menu-close');
