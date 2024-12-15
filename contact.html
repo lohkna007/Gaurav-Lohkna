@@ -5,51 +5,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me | Gaurav Lohkna</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <!-- Google Calendar Scheduling CSS -->
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
     <style>
         body {
-            background-color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
+            background: linear-gradient(to bottom, #fff, #f9f9f6);
+            font-family: 'Georgia', serif;
+            color: #2e2e2e;
         }
-        main {
-            flex: 1; /* Ensures the main content stretches to push the footer down */
+        .hover-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        .hover-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #a75a3c;
+            transform: scale(1.05);
         }
     </style>
 </head>
-<body class="font-sans text-[#2e2e2e] leading-relaxed">
+<body class="flex flex-col min-h-screen">
 
     <!-- Header -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Contact Me</h1>
+            <h1 class="text-3xl font-bold">Contact Me</h1>
             <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Home</a>
-                <a href="article.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
-                <a href="blog.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
-                <a href="about.html" class="text-[#2e2e2e] hover:text-[#bc6442]">About</a>
-                <a href="contact.html" class="text-[#2e2e2e] font-semibold hover:text-[#bc6442]">Contact</a>
+                <a href="index.html" class="hover:text-[#bc6442]">Home</a>
+                <a href="article.html" class="hover:text-[#bc6442]">Article</a>
+                <a href="blog.html" class="hover:text-[#bc6442]">Blog</a>
+                <a href="about.html" class="hover:text-[#bc6442]">About</a>
+                <a href="contact.html" class="text-[#bc6442] font-semibold">Contact</a>
             </nav>
         </div>
     </header>
 
-    <main>
-        <!-- Contact Section -->
-        <section class="bg-white py-12">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
-                <p class="text-[#4b4b4b] mb-8">Got ideas, questions, or just good vibes? Let’s talk.</p>
-                <div class="flex justify-center space-x-6">
-                    <a href="#" class="text-[#bc6442] hover:text-[#d98157] text-3xl"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:gauravlohknabusinessonly@gmail.com" class="text-[#bc6442] hover:text-[#d98157] text-3xl"><i class="fas fa-envelope"></i></a>
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Introduction Section -->
+        <section class="text-center py-12">
+            <h2 class="text-4xl font-bold mb-4">Hey, I’m Gaurav 👋</h2>
+            <p class="text-gray-600 text-lg max-w-2xl mx-auto">
+                Whether you’re looking to collaborate, share ideas, or simply chat over a virtual coffee, I’d love to connect!
+            </p>
+        </section>
+
+        <!-- Contact Preference Cards -->
+        <section class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Email -->
+            <div class="hover-card bg-white shadow-lg rounded-lg p-6 text-center">
+                <i class="fas fa-envelope text-4xl text-[#bc6442] mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Email Me</h3>
+                <p class="text-gray-600 mb-4">Feel free to drop me an email!</p>
+                <a href="mailto:gauravlohknabusinessonly@gmail.com" class="text-[#bc6442] font-semibold hover:underline">gauravlohknabusinessonly@gmail.com</a>
+            </div>
+            <!-- LinkedIn -->
+            <div class="hover-card bg-white shadow-lg rounded-lg p-6 text-center">
+                <i class="fab fa-linkedin text-4xl text-[#0077b5] mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">LinkedIn</h3>
+                <p class="text-gray-600 mb-4">Let’s connect professionally.</p>
+                <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/" class="text-[#0077b5] font-semibold hover:underline" target="_blank">LinkedIn Profile</a>
+            </div>
+            <!-- Virtual Coffee Chat -->
+            <div class="hover-card bg-white shadow-lg rounded-lg p-6 text-center">
+                <i class="fas fa-coffee text-4xl text-[#bc6442] mb-4"></i>
+                <h3 class="text-2xl font-bold mb-2">Virtual Coffee ☕</h3>
+                <p class="text-gray-600 mb-4">Schedule a coffee chat and let’s talk!</p>
+                <!-- Google Calendar Button -->
+                <div class="mt-4">
+                    <button id="calendar-button" class="cta-button bg-[#bc6442] text-white font-semibold py-3 px-6 rounded-lg shadow hover:bg-[#a75a3c]">
+                        Book an Appointment
+                    </button>
                 </div>
+            </div>
+        </section>
+
+        <!-- Personal Quote -->
+        <section class="bg-[#f6f5f3] py-8">
+            <div class="container mx-auto text-center px-6">
+                <p class="text-xl italic font-semibold mb-4">“Great conversations start with a simple hello. Let’s connect and create something amazing.”</p>
+                <p class="text-gray-600">Looking forward to hearing from you!</p>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-4">
-        <p class="text-center">&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
+    <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-6 text-center">
+        <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
+
+    <!-- Google Calendar Appointment Scheduling -->
+    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+    <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+    <script>
+        (function() {
+            var target = document.getElementById('calendar-button');
+            window.addEventListener('load', function() {
+                calendar.schedulingButton.load({
+                    url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3UOpeOMOz-G_EluIJTUwsCkp9WgvRhSZrA2KeAhFodo14uAeRQhVfOhHRgnfdvs-Rqu57CJoRj?gv=true',
+                    color: '#039BE5',
+                    label: 'Book an Appointment',
+                    target,
+                });
+            });
+        })();
+    </script>
 </body>
 </html>
