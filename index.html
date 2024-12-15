@@ -4,28 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gaurav Lohkna</title>
+
     <!-- Tailwind CSS Precompiled for Production -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-    <!-- Font Awesome CDN -->
+    <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
 
     <style>
         body {
             background-color: #fbfbf3; /* Light beige background */
         }
-        .mobile-menu {
-            transition: all 0.3s ease-in-out;
-        }
     </style>
 </head>
 <body class="font-sans text-[#2e2e2e] leading-relaxed">
 
     <!-- Header -->
-    <header class="bg-white shadow-md">
+    <header class="bg-white shadow-md relative">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <!-- Site Title -->
             <h1 class="text-2xl font-bold">Gaurav Lohkna</h1>
+
             <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-6">
                 <a href="index.html" class="text-[#2e2e2e] font-semibold hover:text-[#bc6442]">Home</a>
@@ -35,7 +33,7 @@
                 <a href="contact.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Contact</a>
             </nav>
 
-            <!-- Mobile Hamburger Menu -->
+            <!-- Mobile Hamburger Menu Button -->
             <div class="md:hidden flex items-center">
                 <button id="menu-toggle" class="text-[#2e2e2e] focus:outline-none">
                     <i class="fa-solid fa-bars text-2xl"></i>
@@ -43,14 +41,24 @@
             </div>
         </div>
 
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-white shadow-md">
-            <a href="index.html" class="block px-6 py-2 text-[#2e2e2e] hover:text-[#bc6442]">Home</a>
-            <a href="article.html" class="block px-6 py-2 text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
-            <a href="blog.html" class="block px-6 py-2 text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
-            <a href="about.html" class="block px-6 py-2 text-[#2e2e2e] hover:text-[#bc6442]">About</a>
-            <a href="contact.html" class="block px-6 py-2 text-[#bc6442] font-semibold">Contact</a>
+        <!-- Mobile Navigation with Slide-in Animation -->
+        <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+            <div class="p-6">
+                <button id="menu-close" class="text-[#2e2e2e] focus:outline-none mb-4">
+                    <i class="fa-solid fa-times text-2xl"></i>
+                </button>
+                <nav class="flex flex-col space-y-4">
+                    <a href="index.html" class="block text-[#2e2e2e] hover:text-[#bc6442] font-semibold">Home</a>
+                    <a href="article.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
+                    <a href="blog.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
+                    <a href="about.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">About</a>
+                    <a href="contact.html" class="block text-[#bc6442] font-semibold">Contact</a>
+                </nav>
+            </div>
         </div>
+
+        <!-- Overlay Background -->
+        <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
     </header>
 
     <!-- Hero Section -->
@@ -95,11 +103,22 @@
     <!-- Mobile Menu Toggle Script -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
 
         menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.remove('translate-x-full');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
         });
+
+        menuClose.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        function closeMenu() {
+            mobileMenu.classList.add('translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+        }
     </script>
 </body>
 </html>
