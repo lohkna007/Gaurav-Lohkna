@@ -30,6 +30,33 @@
             border-radius: 50%;
             font-weight: bold;
         }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f3f4f6;
+            border-radius: 50%;
+            transition: background-color 0.2s, transform 0.2s;
+        }
+
+        .social-icon:hover {
+            background-color: #e5e7eb;
+            transform: scale(1.1);
+        }
+
+        .delete-btn {
+            color: #ef4444;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .delete-btn:hover {
+            color: #dc2626;
+        }
     </style>
 </head>
 <body class="text-gray-900">
@@ -189,18 +216,27 @@
         function addCommentToDOM(comment) {
             const avatar = `<div class="comment-avatar">${comment.name.charAt(0).toUpperCase()}</div>`;
             const commentItem = document.createElement("div");
-            commentItem.className = "flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md";
+            commentItem.className = "flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md relative";
             commentItem.innerHTML = `
                 ${avatar}
-                <div>
+                <div class="flex-grow">
                     <div class="flex justify-between text-sm text-gray-500 mb-2">
                         <span>${comment.name}</span>
                         <span>${comment.time}</span>
                     </div>
                     <p>${comment.comment}</p>
                 </div>
+                <button class="absolute top-2 right-2 delete-btn" onclick="deleteComment(${comment.id})">Delete</button>
             `;
             commentsList.appendChild(commentItem);
+        }
+
+        // Delete a comment
+        function deleteComment(id) {
+            const updatedComments = savedComments.filter(comment => comment.id !== id);
+            localStorage.setItem("comments", JSON.stringify(updatedComments));
+            const commentElement = document.querySelector(`[data-id="${id}"]`);
+            if (commentElement) commentElement.remove();
         }
     </script>
 </body>
