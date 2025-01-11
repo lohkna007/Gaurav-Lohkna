@@ -34,8 +34,8 @@
         }
 
         .social-icon {
-            width: 40px;
-            height: 40px;
+            width: 36px; /* Smaller size for better fit on mobile */
+            height: 36px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -43,11 +43,23 @@
             border-radius: 50%;
             transition: background-color 0.2s, transform 0.2s;
         }
-
+        
         .social-icon:hover {
             background-color: #e5e7eb;
             transform: scale(1.1);
         }
+        
+        @media (max-width: 768px) {
+            /* Ensure proper alignment for mobile */
+            .author-image {
+                width: 40px;
+                height: 40px;
+            }
+            .social-icon {
+                margin: 0 4px; /* Reduce spacing for smaller screens */
+            }
+        }
+
 
         .comment-avatar {
             width: 40px;
@@ -124,28 +136,31 @@
     </section>
 
     <!-- Author and Social Sharing Section -->
-    <section class="container mx-auto px-6 py-4 max-w-4xl flex justify-between items-center border-b border-gray-200">
-        <div class="flex items-center space-x-4">
+    <!-- Author and Social Sharing Section -->
+    <section class="container mx-auto px-6 py-4 max-w-4xl flex flex-col md:flex-row justify-between items-center border-b border-gray-200">
+        <!-- Author Section -->
+        <div class="flex items-center space-x-4 mb-4 md:mb-0">
             <img src="../../Main_Hero_3.png" alt="Author Image" class="author-image">
             <div>
                 <p class="text-gray-800 font-semibold">Gaurav Lohkna</p>
-                <p class="text-sm text-gray-500">10 min read · 10 Jan 2025</p>
+                <p class="text-sm text-gray-500">10 Jan 2025</p>
             </div>
         </div>
-        <div class="flex items-center space-x-4">
-            <a href="https://www.facebook.com/sharer/sharer.php?u=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
+        <!-- Social Sharing Section -->
+        <div class="flex items-center space-x-4 justify-center md:justify-end">
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://gauravlohkna.com" target="_blank" class="social-icon">
                 <i class="fab fa-facebook-f text-blue-600"></i>
             </a>
-            <a href="https://twitter.com/intent/tweet?url=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html&text=Check%20out%20this%20article:" target="_blank" class="social-icon">
+            <a href="https://twitter.com/intent/tweet?url=https://gauravlohkna.com&text=Check%20out%20this%20article:" target="_blank" class="social-icon">
                 <i class="fab fa-twitter text-blue-400"></i>
             </a>
-            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://gauravlohkna.com" target="_blank" class="social-icon">
                 <i class="fab fa-linkedin-in text-blue-700"></i>
             </a>
-            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article:%20https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
+            <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article:%20https://gauravlohkna.com" target="_blank" class="social-icon">
                 <i class="fab fa-whatsapp text-green-500"></i>
             </a>
-            <a href="mailto:?subject=I%20wanted%20to%20share%20this%20article&body=Check%20out%20this%20link:%20https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
+            <a href="mailto:?subject=Check%20out%20this%20article&body=URL" class="social-icon">
                 <i class="fas fa-envelope text-gray-700"></i>
             </a>
         </div>
