@@ -23,18 +23,18 @@
         img.author-image {
             width: 48px;
             height: 48px;
-            object-fit: cover; /* Ensures the image fits the circle properly */
+            object-fit: cover;
             border-radius: 50%;
         }
 
         .reading-section {
-            background-color: #fbfbfb; /* Warm beige background */
+            background-color: #fbfbfb;
             border-radius: 8px;
             padding: 20px;
         }
 
         .social-icon {
-            width: 36px; /* Smaller size for better fit on mobile */
+            width: 36px;
             height: 36px;
             display: flex;
             align-items: center;
@@ -48,18 +48,6 @@
             background-color: #e5e7eb;
             transform: scale(1.1);
         }
-        
-        @media (max-width: 768px) {
-            /* Ensure proper alignment for mobile */
-            .author-image {
-                width: 40px;
-                height: 40px;
-            }
-            .social-icon {
-                margin: 0 4px; /* Reduce spacing for smaller screens */
-            }
-        }
-
 
         .comment-avatar {
             width: 40px;
@@ -84,8 +72,16 @@
             transform: scale(1.1);
         }
 
-        .hidden {
-            display: none;
+        @media (max-width: 768px) {
+            .author-image {
+                width: 40px;
+                height: 40px;
+            }
+            .social-icon {
+                width: 32px;
+                height: 32px;
+                margin: 0 8px;
+            }
         }
     </style>
 </head>
@@ -136,9 +132,7 @@
     </section>
 
     <!-- Author and Social Sharing Section -->
-    <!-- Author and Social Sharing Section -->
     <section class="container mx-auto px-6 py-4 max-w-4xl flex flex-col md:flex-row justify-between items-center border-b border-gray-200">
-        <!-- Author Section -->
         <div class="flex items-center space-x-4 mb-4 md:mb-0">
             <img src="../../Main_Hero_3.png" alt="Author Image" class="author-image">
             <div>
@@ -146,7 +140,6 @@
                 <p class="text-sm text-gray-500">10 Jan 2025</p>
             </div>
         </div>
-        <!-- Social Sharing Section -->
         <div class="flex items-center space-x-4 justify-center md:justify-end">
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://gauravlohkna.com" target="_blank" class="social-icon">
                 <i class="fab fa-facebook-f text-blue-600"></i>
@@ -169,8 +162,7 @@
     <!-- Blog Content -->
     <main class="container mx-auto px-6 py-12 max-w-4xl">
         <article class="reading-section">
-            <!-- Blog content -->
-            <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
+                <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
                 <br>
                 <p>But let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.</p>
                 <br>
@@ -221,7 +213,6 @@
                 <br>
 
                 <p>Self-actualization is a journey, filled with experiences that can’t be rushed or bypassed. So, how will you decide your life?</p>
-
         </article>
     </main>
 
@@ -245,8 +236,9 @@
         <div id="commentsList" class="space-y-4"></div>
     </section>
 
-    <!-- Mobile Menu Script -->
+    <!-- JavaScript -->
     <script>
+        // Mobile Menu
         const menuToggle = document.getElementById('menu-toggle');
         const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -263,6 +255,58 @@
         function closeMenu() {
             mobileMenu.classList.add('translate-x-full');
             overlay.classList.add('opacity-0', 'pointer-events-none');
+        }
+
+        // Comments Section
+        const submitComment = document.getElementById('submitComment');
+        const commentsList = document.getElementById('commentsList');
+        const commentName = document.getElementById('commentName');
+        const commentText = document.getElementById('commentText');
+
+        const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
+
+        // Load saved comments on page load
+        window.addEventListener("DOMContentLoaded", () => {
+            savedComments.forEach(addCommentToDOM);
+        });
+
+        // Add comment
+        submitComment.addEventListener('click', () => {
+            const name = commentName.value.trim();
+            const text = commentText.value.trim();
+
+            if (!name || !text) {
+                alert("Both fields are required!");
+                return;
+            }
+
+            const comment = {
+                id: Date.now(),
+                name,
+                text,
+                time: new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }),
+            };
+
+            savedComments.push(comment);
+            localStorage.setItem("comments", JSON.stringify(savedComments));
+            addCommentToDOM(comment);
+
+            commentName.value = '';
+            commentText.value = '';
+        });
+
+        function addCommentToDOM(comment) {
+            const commentItem = document.createElement('div');
+            commentItem.className = 'bg-white p-4 rounded-lg shadow-md flex items-start space-x-4';
+            commentItem.innerHTML = `
+                <div class="comment-avatar">${comment.name.charAt(0).toUpperCase()}</div>
+                <div class="flex-grow">
+                    <p class="font-semibold text-gray-800">${comment.name}</p>
+                    <p class="text-sm text-gray-500">${comment.time}</p>
+                    <p class="mt-2">${comment.text}</p>
+                </div>
+            `;
+            commentsList.appendChild(commentItem);
         }
     </script>
 </body>
