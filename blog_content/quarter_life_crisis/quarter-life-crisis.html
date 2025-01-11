@@ -5,63 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Quarter-Life Crisis</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <style>
         body {
-            background-color: #f9f9f6;
+            background-color: #ffffff; /* Clean white background */
             font-family: 'Poppins', sans-serif;
             line-height: 1.8;
+            color: #1a1a1a;
         }
-        .progress-bar {
-            height: 4px;
-            background-color: #bc6442;
-            width: 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 50;
-            transition: width 0.1s ease-out;
+
+        .separator {
+            height: 1px;
+            background-color: #e5e7eb;
+            margin: 32px 0;
         }
-        .rounded-img {
-            border-radius: 20px;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
-        }
-        .social-icon {
+
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #d1d5db;
+            color: white;
             display: flex;
-            align-items: center;
             justify-content: center;
+            align-items: center;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            background-color: #f4f4f4;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-        .social-icon:hover {
-            transform: scale(1.1);
-            background-color: #e5e5e5;
-        }
-        .thought-item:hover {
-            background-color: #fef2f2;
-            transition: background-color 0.3s ease;
-        }
-        .thought-delete:hover {
-            color: #bc6442;
-            cursor: pointer;
+            font-weight: bold;
         }
     </style>
 </head>
 <body class="text-gray-900">
 
-    <!-- Progress Bar -->
-    <div id="progressBar" class="progress-bar"></div>
-
     <!-- Header -->
     <header class="bg-white shadow-md py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <div>
-                <h1 class="text-2xl font-bold text-gray-900">Gaurav Lohkna</h1>
-            </div>
-            <nav class="space-x-6">
+            <h1 class="text-2xl font-bold text-gray-900">Gaurav Lohkna</h1>
+            <nav class="hidden md:flex space-x-6">
                 <a href="../../index.html" class="text-gray-700 hover:text-[#bc6442]">Home</a>
                 <a href="../../article.html" class="text-gray-700 hover:text-[#bc6442]">Article</a>
                 <a href="../../blog.html" class="text-gray-700 hover:text-[#bc6442] font-semibold">Blog</a>
@@ -71,38 +48,12 @@
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Blog Section -->
-        <div class="container mx-auto px-6 py-12 max-w-4xl">
-            <!-- Article Header -->
-            <div class="mb-8">
-                <h1 class="text-5xl font-bold leading-tight text-gray-900 mb-4">The Quarter-Life Crisis</h1>
-                <p class="text-gray-600 text-lg mb-4">Published on <strong>November 16, 2024</strong></p>
-
-                <!-- Social Sharing -->
-                <div class="flex space-x-4">
-                    <a href="#" target="_blank" class="social-icon">
-                        <i class="fab fa-facebook-f text-blue-600"></i>
-                    </a>
-                    <a href="#" target="_blank" class="social-icon">
-                        <i class="fab fa-twitter text-blue-400"></i>
-                    </a>
-                    <a href="#" target="_blank" class="social-icon">
-                        <i class="fab fa-linkedin-in text-blue-700"></i>
-                    </a>
-                    <a href="#" target="_blank" class="social-icon">
-                        <i class="fab fa-whatsapp text-green-500"></i>
-                    </a>
-                    <a href="mailto:?subject=Check%20out%20this%20article&body=URL" class="social-icon">
-                        <i class="fas fa-envelope text-gray-700"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Article Content -->
-            <article class="prose max-w-none leading-relaxed text-gray-800">
-                <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
+    <!-- Blog Content -->
+    <main class="container mx-auto px-6 py-12 max-w-4xl">
+        <article class="bg-white shadow-lg rounded-lg p-6">
+            <h1 class="text-4xl font-bold mb-6 leading-tight">The Quarter-Life Crisis</h1>
+            <p class="text-gray-600 mb-6">Published on <strong>November 16, 2024</strong></p>
+            <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
                 <br>
                 <p>But let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.</p>
                 <br>
@@ -153,120 +104,104 @@
                 <br>
 
                 <p>Self-actualization is a journey, filled with experiences that can’t be rushed or bypassed. So, how will you decide your life?</p>
-            </article>
-        </div>
+            
+            <div class="separator"></div>
 
-<!--         <div class="container mx-auto px-6 py-12 max-w-4xl">
-     -->
-    <!-- Updated Comment Section -->
-<div class="container mx-auto px-6 py-12 max-w-4xl">
-    <!-- Leave Your Thoughts -->
-    <h2 class="text-4xl font-bold mb-8 text-gray-800">Leave Your Thoughts</h2>
-    <form id="commentForm" class="space-y-6 bg-white shadow-lg p-8 rounded-xl border border-gray-200">
-        <div class="flex flex-col gap-4">
-            <div>
-                <label for="name" class="block text-xl font-medium text-gray-800 mb-2">Your Name</label>
-                <input 
-                    type="text" 
-                    id="name" 
-                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-lg" 
-                    placeholder="Enter your name" 
-                    required
-                />
+            <!-- Social Sharing -->
+            <div class="flex space-x-4 mt-6">
+                <a href="#" class="social-icon">
+                    <i class="fab fa-facebook-f text-blue-600"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-twitter text-blue-400"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-linkedin-in text-blue-700"></i>
+                </a>
+                <a href="#" class="social-icon">
+                    <i class="fab fa-whatsapp text-green-500"></i>
+                </a>
             </div>
-            <div>
-                <label for="comment" class="block text-xl font-medium text-gray-800 mb-2">Your Thoughts</label>
-                <textarea 
-                    id="comment" 
-                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-lg" 
-                    rows="4" 
-                    placeholder="Share your thoughts..." 
-                    required
-                ></textarea>
-            </div>
-        </div>
-        <button 
-            type="submit" 
-            class="w-full bg-teal-600 text-white font-semibold py-3 rounded-lg text-lg hover:bg-teal-700 transition-all"
-        >
-            Submit
-        </button>
-    </form>
+        </article>
 
-    <!-- Responses Section -->
-    <div class="mt-12">
-        <h3 class="text-3xl font-bold mb-6 text-gray-800">Responses</h3>
-        <div id="commentsList" class="space-y-8">
-            <!-- Comment Template -->
-            <!-- New Comments will append here -->
-        </div>
-    </div>
-</div>
+        <!-- Separator -->
+        <div class="separator"></div>
 
-<!-- Updated JavaScript for Handling Comments -->
-<script>
-    const commentForm = document.getElementById('commentForm');
-    const commentsList = document.getElementById('commentsList');
-    const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
-
-    // Load saved comments on page load
-    window.addEventListener('DOMContentLoaded', () => {
-        savedComments.forEach(addCommentToDOM);
-    });
-
-    // Add a comment
-    commentForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value.trim();
-        const comment = document.getElementById('comment').value.trim();
-
-        if (!name || !comment) return alert('Please fill out all fields!');
-
-        const newComment = { id: Date.now(), name, comment, time: new Date().toLocaleString() };
-        savedComments.push(newComment);
-        localStorage.setItem('comments', JSON.stringify(savedComments));
-        addCommentToDOM(newComment);
-
-        commentForm.reset();
-    });
-
-    // Add a comment to the DOM
-    function addCommentToDOM(comment) {
-        const commentItem = document.createElement('div');
-        commentItem.classList.add('bg-white', 'shadow-md', 'rounded-lg', 'p-6', 'relative', 'border', 'border-gray-200');
-        commentItem.setAttribute('data-id', comment.id);
-        commentItem.innerHTML = `
-            <div class="flex items-start space-x-4">
-                <div class="h-12 w-12 bg-gray-300 rounded-full flex-shrink-0"></div>
-                <div class="flex-grow">
-                    <div class="flex justify-between items-center">
-                        <h4 class="font-semibold text-lg text-gray-900">${comment.name}</h4>
-                        <span class="text-gray-500 text-sm">${comment.time}</span>
-                    </div>
-                    <p class="text-gray-700 mt-2 text-base">${comment.comment}</p>
-                    <div class="flex items-center space-x-4 mt-4">
-                        <button class="text-gray-500 hover:text-teal-500 text-sm">Reply</button>
-                        <button class="text-gray-500 hover:text-teal-500 text-sm">Like</button>
-                    </div>
+        <!-- Leave Your Thoughts -->
+        <section class="bg-gray-50 p-8 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold mb-6">Leave Your Thoughts</h2>
+            <form id="commentForm" class="space-y-6">
+                <div>
+                    <label for="name" class="block text-lg font-medium mb-2">Your Name</label>
+                    <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500" placeholder="Enter your name" required>
                 </div>
+                <div>
+                    <label for="comment" class="block text-lg font-medium mb-2">Your Thoughts</label>
+                    <textarea id="comment" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-teal-500" rows="4" placeholder="Share your thoughts..." required></textarea>
+                </div>
+                <button type="submit" class="w-full bg-teal-600 text-white py-2 rounded-lg font-medium hover:bg-teal-700 transition-all">
+                    Submit
+                </button>
+            </form>
+        </section>
+
+        <!-- Responses -->
+        <section class="mt-12">
+            <h3 class="text-2xl font-bold mb-6">Responses</h3>
+            <div id="commentsList" class="space-y-4">
+                <!-- Comments will be dynamically added here -->
             </div>
-            <button 
-                class="absolute top-4 right-4 text-red-500 hover:text-red-700" 
-                onclick="deleteComment(${comment.id})"
-            >
-                Delete
-            </button>
-        `;
-        commentsList.appendChild(commentItem);
-    }
+        </section>
+    </main>
 
-    // Delete a comment
-    function deleteComment(id) {
-        const updatedComments = savedComments.filter(comment => comment.id !== id);
-        localStorage.setItem('comments', JSON.stringify(updatedComments));
-        document.querySelector(`[data-id="${id}"]`).remove();
-    }
-</script>
+    <script>
+        const commentForm = document.getElementById("commentForm");
+        const commentsList = document.getElementById("commentsList");
+        const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
 
+        // Load existing comments
+        window.addEventListener("DOMContentLoaded", () => {
+            savedComments.forEach(addCommentToDOM);
+        });
+
+        // Handle comment submission
+        commentForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const comment = document.getElementById("comment").value.trim();
+
+            if (!name || !comment) return;
+
+            const newComment = {
+                id: Date.now(),
+                name,
+                comment,
+                time: new Date().toLocaleString(),
+            };
+            savedComments.push(newComment);
+            localStorage.setItem("comments", JSON.stringify(savedComments));
+            addCommentToDOM(newComment);
+
+            commentForm.reset();
+        });
+
+        // Add a comment to the DOM
+        function addCommentToDOM(comment) {
+            const avatar = `<div class="comment-avatar">${comment.name.charAt(0).toUpperCase()}</div>`;
+            const commentItem = document.createElement("div");
+            commentItem.className = "flex items-start space-x-4 bg-white p-4 rounded-lg shadow-md";
+            commentItem.innerHTML = `
+                ${avatar}
+                <div>
+                    <div class="flex justify-between text-sm text-gray-500 mb-2">
+                        <span>${comment.name}</span>
+                        <span>${comment.time}</span>
+                    </div>
+                    <p>${comment.comment}</p>
+                </div>
+            `;
+            commentsList.appendChild(commentItem);
+        }
+    </script>
 </body>
 </html>
