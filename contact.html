@@ -11,9 +11,6 @@
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
 
-    <!-- Google Calendar Scheduling CSS -->
-    <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
-
     <style>
         body {
             background-color: #ffffff; /* Light card color as background */
@@ -30,10 +27,12 @@
             transition: all 0.3s ease;
         }
         .cta-button {
+            background-color: #bc6442; /* Ensures visibility by default */
+            color: #ffffff; /* Contrast for the text */
             transition: all 0.3s ease;
         }
         .cta-button:hover {
-            background-color: #d98157;
+            background-color: #d98157; /* Slightly darker color on hover */
         }
     </style>
 </head>
@@ -120,7 +119,7 @@
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Virtual Coffee ☕</h3>
                 <p class="text-[#4b4b4b] mb-4">Book a virtual coffee chat with me.</p>
                 <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3UOpeOMOz-G_EluIJTUwsCkp9WgvRhSZrA2KeAhFodo14uAeRQhVfOhHRgnfdvs-Rqu57CJoRj?gv=true" 
-                   class="cta-button bg-[#bc6442] text-white font-semibold py-3 px-6 rounded-lg hover:bg-[#d98157]" target="_blank">
+                   class="cta-button py-3 px-6 font-semibold text-white rounded-lg">
                     Book an Appointment
                 </a>
             </div>
