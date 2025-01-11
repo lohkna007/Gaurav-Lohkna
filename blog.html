@@ -21,6 +21,14 @@
         main {
             flex: 1; /* Ensures the main content stretches to push the footer down */
         }
+        .read-more {
+            font-weight: bold; /* Bold for emphasis */
+            text-decoration: underline; /* Underline for better visibility */
+            transition: color 0.3s ease; /* Smooth transition for hover */
+        }
+        .read-more:hover {
+            color: #d98157; /* Highlight color on hover */
+        }
     </style>
 </head>
 <body class="font-sans text-[#2e2e2e] leading-relaxed">
@@ -78,7 +86,16 @@
                         <h3 class="text-xl font-bold">The Quarter-Life Crisis</h3>
                         <p class="text-sm text-gray-500">Published on November 16, 2024</p>
                         <p class="mt-2 text-[#4b4b4b]">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
-                        <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html" class="text-[#bc6442] hover:text-[#d98157] mt-4 inline-block">Read more</a>
+                        <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html" class="read-more mt-4 inline-block">Read more</a>
+                    </div>
+                </article>
+                <article class="bg-[#faf9f5] shadow-md rounded-lg p-6 flex space-x-6">
+                    <img src="blog_content/life_balance/life-balance-thumbnail.jpg" alt="Life Balance" class="w-32 h-32 object-cover rounded">
+                    <div>
+                        <h3 class="text-xl font-bold">Finding Life Balance</h3>
+                        <p class="text-sm text-gray-500">Published on October 10, 2023</p>
+                        <p class="mt-2 text-[#4b4b4b]">Learn how to find balance in life, align goals, and maintain well-being in a fast-paced world.</p>
+                        <a href="blog_content/life_balance/life-balance.html" class="read-more mt-4 inline-block">Read more</a>
                     </div>
                 </article>
             </div>
