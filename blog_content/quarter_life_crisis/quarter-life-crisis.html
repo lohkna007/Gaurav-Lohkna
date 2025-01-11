@@ -13,7 +13,6 @@
             line-height: 1.8;
             color: #1a1a1a;
         }
-        
 
         .separator {
             height: 1px;
@@ -27,7 +26,6 @@
             object-fit: cover; /* Ensures the image fits the circle properly */
             border-radius: 50%;
         }
-
 
         .reading-section {
             background-color: #fbfbfb; /* Warm beige background */
@@ -85,6 +83,7 @@
     <header class="bg-white shadow-md py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-900">Gaurav Lohkna</h1>
+            <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-6">
                 <a href="../../index.html" class="text-gray-700 hover:text-[#bc6442]">Home</a>
                 <a href="../../article.html" class="text-gray-700 hover:text-[#bc6442]">Article</a>
@@ -92,7 +91,31 @@
                 <a href="../../about.html" class="text-gray-700 hover:text-[#bc6442]">About</a>
                 <a href="../../contact.html" class="text-gray-700 hover:text-[#bc6442]">Contact</a>
             </nav>
+            <!-- Mobile Hamburger Menu -->
+            <div class="md:hidden flex items-center">
+                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+            <div class="p-6">
+                <button id="menu-close" class="text-gray-700 focus:outline-none mb-4">
+                    <i class="fa-solid fa-times text-2xl"></i>
+                </button>
+                <nav class="flex flex-col space-y-4">
+                    <a href="../../index.html" class="block text-gray-700 font-semibold hover:text-[#bc6442]">Home</a>
+                    <a href="../../article.html" class="block text-gray-700 hover:text-[#bc6442]">Article</a>
+                    <a href="../../blog.html" class="block text-gray-700 hover:text-[#bc6442]">Blog</a>
+                    <a href="../../about.html" class="block text-gray-700 hover:text-[#bc6442]">About</a>
+                    <a href="../../contact.html" class="block text-gray-700 hover:text-[#bc6442]">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <!-- Overlay -->
+        <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
     </header>
 
     <!-- Blog Title -->
@@ -109,7 +132,7 @@
                 <p class="text-sm text-gray-500">10 min read · 10 Jan 2025</p>
             </div>
         </div>
-       <div class="flex items-center space-x-4">
+        <div class="flex items-center space-x-4">
             <a href="https://www.facebook.com/sharer/sharer.php?u=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
                 <i class="fab fa-facebook-f text-blue-600"></i>
             </a>
@@ -126,77 +149,22 @@
                 <i class="fas fa-envelope text-gray-700"></i>
             </a>
         </div>
-
     </section>
 
     <!-- Blog Content -->
     <main class="container mx-auto px-6 py-12 max-w-4xl">
         <article class="reading-section">
-            <!-- Blog content here -->
-            <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
-                <br>
-                <p>But let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.</p>
-                <br>
-                <p>As long as I can remember, or at least from observing those around me while growing up, people used to take about 12-15 years on average to achieve these basics and some sort of financial security—savings, investments, assets, and collaterals for rainy days or special occasions like weddings.</p>
-                <br>
-
-                <p>So, people generally spent about 12-15 years (starting from around age 21-23) working to secure these needs and build a stable life. Now imagine a time when you’ve met your basic needs and established some sense of safety and security. What's your next challenge? Is it to become more secure? Yes, but that’s an ongoing process, and it will never feel like enough. So, what's next?</p>
-                <br>
-                <div class="my-8 text-center">
-                    <img src="quarter-life-crisis-thumbnail.jpg" 
-                         alt="Illustration for Quarter-Life Crisis" 
-                         class="rounded-lg shadow-md mx-auto" />
-                    <p class="text-gray-600 mt-2 italic">An image representing the quarter-life crisis journey.</p>
-                </div>
-                
-
-                <p>This is where the mid-life crisis enters. You’ve spent your youth working to achieve these basics, and now, with some security, you're faced with a different struggle. You want to climb higher, to earn more, to save more—that pursuit never ends. But in the back of your mind, you long for the things you put off to get here. You want to study again, take the trip you missed during those stressful workdays, or finally buy that SUV.</p>
-                <br>
-
-                <p>You now have just enough to survive and just enough to dream. This is the dilemma. You dream of studying abroad, but double-guess whether it still makes sense. It feels like a risky bet with much to lose, but you can’t shake the thought.</p>
-                <br>
-
-                <p>In my opinion, what once took a decade to achieve can now be reached in just 3-4 years (at least for those of us going through a quarter-life crisis). We have some securities, we earn sustainable, high-paying salaries (putting us in the top 10% of earners in India), and yet...we feel empty when it comes to fulfilling our personal dreams.</p>
-                <br>
-
-                <p>Maybe, until now, we’ve been fulfilling the wishes and dreams others had for us, becoming what others expected. Now, we’re at a stage in life where options abound—each one seeming achievable. We want to do everything, explore different paths and experiences. But we also have responsibilities—family, loved ones, and the people we prioritize because they give us that sense of love and belonging.</p>
-                <br>
-
-                <p>You’re constantly juggling these demands—physiological needs, love and belonging. You work one third of your day, spend time with family, your partner, and friends. But somewhere along the way, you place yourself, your self-actualization, at the very end of the list.</p>
-                <br>
-
-                <p>You hear it every day: "Prioritize yourself, prioritize your dreams," from success gurus and the like. But is it even feasible? I don’t think so. It’s hard, and perhaps it’s part of the natural process. We move from basic needs to love and belonging, and then later, self-actualization. It’s only once we’ve met our more immediate needs that we begin to contemplate our dreams—because now, maybe for the first time, we can afford them, whether it’s with money or time.</p>
-                <br>
-
-                <p>This is the stage where you start wondering: Should I chase after the things I truly want? Or should I keep doing what I’ve been doing, which is allowing me the luxury of contemplating these dreams? These are tough choices. Sometimes, they’re life-defining, sometimes not. They can lead to a fulfilling life with no regrets, or to misery with thoughts of missed opportunities and unfulfilled dreams.</p>
-                <br>
-
-                <p>What do I do now? What do I want from life? How can I achieve all these things? You start your day with these questions and end it the same way.</p>
-                <br>
-
-                <p>This phase of life, I call the quarter-life crisis. Maybe I’m too young to experience all this, or maybe I just want too much. But I think having a variety of dreams and desires is what makes us human. Some dreams come true, while others fade away with time. And that, I suppose, is life. You can’t have the best of all worlds—every dream comes with good and bad, not just in the outcome, but in what you gain or lose along the way.</p>
-                <br>
-
-                <p>Your desires keep you alive, your basic needs keep you grounded, and your sense of self-actualization is the journey, not the end goal.</p>
-                <br>
-
-                <p>Maybe, down the line, you’ll realize that many of the things you once wished for were driven by ego, jealousy, or societal validation, not by the dreams that would bring you true, sustainable happiness. It’s important to find the dreams that actually make you happy—and more importantly, ones that can be sustained.</p>
-                <br>
-
-                <p>Self-actualization is a journey, filled with experiences that can’t be rushed or bypassed. So, how will you decide your life?</p>
-            
+            <!-- Blog content -->
+            <p>Your blog content here...</p>
         </article>
     </main>
 
     <!-- Separator -->
     <div class="separator"></div>
-    <button id="toggleAdmin" class="hidden">Toggle Admin</button>
-
 
     <!-- Comment Section -->
     <section class="container mx-auto px-6 py-12 max-w-4xl">
         <h2 class="text-3xl font-bold mb-6">Leave Your Thoughts</h2>
-        <!-- Comment Input -->
         <div class="bg-white-100 p-4 rounded-lg shadow-md mb-6">
             <div>
                 <label class="block text-gray-700 font-semibold mb-2">Name</label>
@@ -206,101 +174,30 @@
                 <label class="block text-gray-700 font-semibold mb-2">Thoughts</label>
                 <textarea id="commentText" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Share your thoughts..." required></textarea>
             </div>
-            <div class="mt-4 flex justify-end space-x-2">
-                <button id="submitComment" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Submit</button>
-            </div>
+            <button id="submitComment" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Submit</button>
         </div>
-
-        <!-- Comments List -->
         <div id="commentsList" class="space-y-4"></div>
     </section>
 
-<!--     JAVASCRIPT -->
+    <!-- Mobile Menu Script -->
     <script>
-    let isAdmin = false; // Initial admin mode state
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuClose = document.getElementById('menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const overlay = document.getElementById('overlay');
 
-    // Admin toggle key combination (Shift + A)
-    document.addEventListener("keydown", (e) => {
-        if (e.shiftKey && e.key.toLowerCase() === "a") {
-            isAdmin = !isAdmin; // Toggle admin mode
-            alert(isAdmin ? "Admin mode activated!" : "Admin mode deactivated!");
-            refreshComments(); // Update the comment section based on admin status
-        }
-    });
-
-    const submitComment = document.getElementById('submitComment');
-    const commentsList = document.getElementById('commentsList');
-    const commentName = document.getElementById('commentName');
-    const commentText = document.getElementById('commentText');
-
-    const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
-
-    // Load saved comments on page load
-    window.addEventListener("DOMContentLoaded", () => {
-        savedComments.forEach(addCommentToDOM);
-        refreshComments(); // Hide "Delete" buttons for non-admins
-    });
-
-    // Add comment
-    submitComment.addEventListener('click', () => {
-        const name = commentName.value.trim();
-        const text = commentText.value.trim();
-        if (!name || !text) {
-            alert("Both fields are required!");
-            return;
-        }
-
-        const comment = {
-            id: Date.now(),
-            name,
-            text,
-            time: new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }),
-        };
-
-        savedComments.push(comment);
-        localStorage.setItem("comments", JSON.stringify(savedComments));
-        addCommentToDOM(comment);
-
-        commentName.value = '';
-        commentText.value = '';
-    });
-
-    // Add comment to DOM
-    function addCommentToDOM(comment) {
-        const commentItem = document.createElement('div');
-        commentItem.className = 'bg-white p-4 rounded-lg shadow-md flex items-start space-x-4 relative';
-        commentItem.innerHTML = `
-            <div class="comment-avatar">${comment.name.charAt(0).toUpperCase()}</div>
-            <div class="flex-grow">
-                <p class="font-semibold text-gray-800">${comment.name}</p>
-                <p class="text-sm text-gray-500">${comment.time}</p>
-                <p class="mt-2">${comment.text}</p>
-            </div>
-            <button class="absolute bottom-2 right-2 text-red-500 delete-btn hidden" data-id="${comment.id}">Delete</button>
-        `;
-
-        commentsList.appendChild(commentItem);
-    }
-
-    // Delete comment
-    commentsList.addEventListener('click', (event) => {
-        if (event.target.classList.contains('delete-btn')) {
-            const commentId = event.target.getAttribute("data-id");
-            const updatedComments = savedComments.filter(comment => comment.id != commentId);
-            localStorage.setItem("comments", JSON.stringify(updatedComments));
-            event.target.closest('div').remove();
-            alert('Comment deleted!');
-        }
-    });
-
-    // Refresh comments to show/hide delete buttons
-    function refreshComments() {
-        const deleteButtons = document.querySelectorAll(".delete-btn");
-        deleteButtons.forEach((btn) => {
-            btn.style.display = isAdmin ? "block" : "none"; // Show for admin, hide for others
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('translate-x-full');
+            overlay.classList.remove('opacity-0', 'pointer-events-none');
         });
-    }
-</script>
 
+        menuClose.addEventListener('click', closeMenu);
+        overlay.addEventListener('click', closeMenu);
+
+        function closeMenu() {
+            mobileMenu.classList.add('translate-x-full');
+            overlay.classList.add('opacity-0', 'pointer-events-none');
+        }
+    </script>
 </body>
 </html>
