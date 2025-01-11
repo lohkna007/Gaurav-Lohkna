@@ -43,7 +43,7 @@
             border-radius: 50%;
             transition: background-color 0.2s, transform 0.2s;
         }
-        
+
         .social-icon:hover {
             background-color: #e5e7eb;
             transform: scale(1.1);
@@ -91,7 +91,6 @@
     <header class="bg-white shadow-md py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
             <h1 class="text-2xl font-bold text-gray-900">Gaurav Lohkna</h1>
-            <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-6">
                 <a href="../../index.html" class="text-gray-700 hover:text-[#bc6442]">Home</a>
                 <a href="../../article.html" class="text-gray-700 hover:text-[#bc6442]">Article</a>
@@ -99,31 +98,7 @@
                 <a href="../../about.html" class="text-gray-700 hover:text-[#bc6442]">About</a>
                 <a href="../../contact.html" class="text-gray-700 hover:text-[#bc6442]">Contact</a>
             </nav>
-            <!-- Mobile Hamburger Menu -->
-            <div class="md:hidden flex items-center">
-                <button id="menu-toggle" class="text-gray-700 focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
-            </div>
         </div>
-
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-            <div class="p-6">
-                <button id="menu-close" class="text-gray-700 focus:outline-none mb-4">
-                    <i class="fa-solid fa-times text-2xl"></i>
-                </button>
-                <nav class="flex flex-col space-y-4">
-                    <a href="../../index.html" class="block text-gray-700 font-semibold hover:text-[#bc6442]">Home</a>
-                    <a href="../../article.html" class="block text-gray-700 hover:text-[#bc6442]">Article</a>
-                    <a href="../../blog.html" class="block text-gray-700 hover:text-[#bc6442]">Blog</a>
-                    <a href="../../about.html" class="block text-gray-700 hover:text-[#bc6442]">About</a>
-                    <a href="../../contact.html" class="block text-gray-700 hover:text-[#bc6442]">Contact</a>
-                </nav>
-            </div>
-        </div>
-        <!-- Overlay -->
-        <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
     </header>
 
     <!-- Blog Title -->
@@ -162,7 +137,7 @@
     <!-- Blog Content -->
     <main class="container mx-auto px-6 py-12 max-w-4xl">
         <article class="reading-section">
-                <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
+            <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
                 <br>
                 <p>But let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.</p>
                 <br>
@@ -213,6 +188,7 @@
                 <br>
 
                 <p>Self-actualization is a journey, filled with experiences that can’t be rushed or bypassed. So, how will you decide your life?</p>
+
         </article>
     </main>
 
@@ -238,26 +214,17 @@
 
     <!-- JavaScript -->
     <script>
-        // Mobile Menu
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuClose = document.getElementById('menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const overlay = document.getElementById('overlay');
+        // Admin Mode Logic
+        let isAdmin = false;
 
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
-            overlay.classList.remove('opacity-0', 'pointer-events-none');
+        document.addEventListener("keydown", (e) => {
+            if (e.shiftKey && e.key.toLowerCase() === "a") {
+                isAdmin = !isAdmin;
+                alert(isAdmin ? "Admin mode activated!" : "Admin mode deactivated!");
+                refreshComments();
+            }
         });
 
-        menuClose.addEventListener('click', closeMenu);
-        overlay.addEventListener('click', closeMenu);
-
-        function closeMenu() {
-            mobileMenu.classList.add('translate-x-full');
-            overlay.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        // Comments Section
         const submitComment = document.getElementById('submitComment');
         const commentsList = document.getElementById('commentsList');
         const commentName = document.getElementById('commentName');
@@ -268,6 +235,7 @@
         // Load saved comments on page load
         window.addEventListener("DOMContentLoaded", () => {
             savedComments.forEach(addCommentToDOM);
+            refreshComments();
         });
 
         // Add comment
@@ -295,9 +263,10 @@
             commentText.value = '';
         });
 
+        // Add comment to DOM
         function addCommentToDOM(comment) {
             const commentItem = document.createElement('div');
-            commentItem.className = 'bg-white p-4 rounded-lg shadow-md flex items-start space-x-4';
+            commentItem.className = 'bg-white p-4 rounded-lg shadow-md flex items-start space-x-4 relative';
             commentItem.innerHTML = `
                 <div class="comment-avatar">${comment.name.charAt(0).toUpperCase()}</div>
                 <div class="flex-grow">
@@ -305,8 +274,32 @@
                     <p class="text-sm text-gray-500">${comment.time}</p>
                     <p class="mt-2">${comment.text}</p>
                 </div>
+                ${
+                    isAdmin
+                        ? `<button class="absolute bottom-2 right-2 text-red-500 delete-btn" data-id="${comment.id}">Delete</button>`
+                        : ''
+                }
             `;
             commentsList.appendChild(commentItem);
+        }
+
+        // Delete comment
+        commentsList.addEventListener('click', (e) => {
+            if (e.target.classList.contains('delete-btn')) {
+                const commentId = e.target.getAttribute("data-id");
+                const updatedComments = savedComments.filter(comment => comment.id != commentId);
+                localStorage.setItem("comments", JSON.stringify(updatedComments));
+                e.target.closest('div').remove();
+                alert('Comment deleted!');
+            }
+        });
+
+        // Refresh comments to toggle delete buttons
+        function refreshComments() {
+            const deleteButtons = document.querySelectorAll('.delete-btn');
+            deleteButtons.forEach(btn => {
+                btn.style.display = isAdmin ? 'block' : 'none';
+            });
         }
     </script>
 </body>
