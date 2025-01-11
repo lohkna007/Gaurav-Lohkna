@@ -5,10 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Quarter-Life Crisis</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <style>
         body {
-            background-color: #ffffff; /* Clean white background */
+            background-color: #ffffff;
             font-family: 'Poppins', sans-serif;
             line-height: 1.8;
             color: #1a1a1a;
@@ -21,7 +20,7 @@
         }
 
         .reading-section {
-            background-color: #f9f5eb; /* Warm beige background */
+            background-color: #faf9f5; /* Warm beige background */
             border-radius: 8px;
             padding: 20px;
         }
@@ -42,6 +41,18 @@
             transform: scale(1.1);
         }
 
+        .comment-avatar {
+            width: 40px;
+            height: 40px;
+            background-color: #d1d5db;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+
         .delete-btn {
             color: #ef4444;
             cursor: pointer;
@@ -51,6 +62,10 @@
         .delete-btn:hover {
             color: #dc2626;
             transform: scale(1.1);
+        }
+
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -78,7 +93,7 @@
     <!-- Author and Social Sharing Section -->
     <section class="container mx-auto px-6 py-4 max-w-4xl flex justify-between items-center border-b border-gray-200">
         <div class="flex items-center space-x-4">
-            <img src="Main_Hero_3.png" alt="Gverse Cover" class="w-12 h-12 rounded-full">
+            <img src="../../Main_Hero_3.png" alt="Author Image" class="w-12 h-12 rounded-full">
             <div>
                 <p class="text-gray-800 font-semibold">Gaurav Lohkna</p>
                 <p class="text-sm text-gray-500">10 min read · 10 Jan 2025</p>
@@ -106,6 +121,7 @@
     <!-- Blog Content -->
     <main class="container mx-auto px-6 py-12 max-w-4xl">
         <article class="reading-section">
+            <!-- Blog content here -->
             <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
                 <br>
                 <p>But let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.</p>
@@ -161,22 +177,24 @@
         </article>
     </main>
 
+    <!-- Separator -->
+    <div class="separator"></div>
+
     <!-- Comment Section -->
     <section class="container mx-auto px-6 py-12 max-w-4xl">
-        <h2 class="text-3xl font-bold mb-6">Responses</h2>
+        <h2 class="text-3xl font-bold mb-6">Leave Your Thoughts</h2>
         <!-- Comment Input -->
-        <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-6">
+        <div class="bg-white-100 p-4 rounded-lg shadow-md mb-6">
             <div>
-                <label class="block text-gray-700 font-semibold mb-2">Your Name</label>
+                <label class="block text-gray-700 font-semibold mb-2">Name</label>
                 <input id="commentName" type="text" class="w-full p-2 mb-4 border border-gray-300 rounded-lg" placeholder="Enter your name" required>
             </div>
             <div>
-                <label class="block text-gray-700 font-semibold mb-2">Your Thoughts</label>
+                <label class="block text-gray-700 font-semibold mb-2">Thoughts</label>
                 <textarea id="commentText" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Share your thoughts..." required></textarea>
             </div>
             <div class="mt-4 flex justify-end space-x-2">
-                <button class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition">Cancel</button>
-                <button id="submitComment" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Respond</button>
+                <button id="submitComment" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Submit</button>
             </div>
         </div>
 
@@ -191,6 +209,13 @@
         const commentName = document.getElementById('commentName');
         const commentText = document.getElementById('commentText');
 
+        const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
+
+        // Load saved comments on page load
+        window.addEventListener("DOMContentLoaded", () => {
+            savedComments.forEach(addCommentToDOM);
+        });
+
         // Add comment
         submitComment.addEventListener('click', () => {
             const name = commentName.value.trim();
@@ -200,26 +225,44 @@
                 return;
             }
 
-            const commentItem = document.createElement('div');
-            commentItem.className = 'bg-white p-4 rounded-lg shadow-md flex items-start space-x-4 relative';
-            commentItem.innerHTML = `
-                <div class="comment-avatar">${name.charAt(0).toUpperCase()}</div>
-                <div class="flex-grow">
-                    <p class="font-semibold text-gray-800">${name}</p>
-                    <p class="text-sm text-gray-500">${new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}</p>
-                    <p class="mt-2">${text}</p>
-                </div>
-                ${isAdmin ? `<button class="absolute bottom-2 right-2 text-red-500 delete-btn">Delete</button>` : ''}
-            `;
+            const comment = {
+                id: Date.now(),
+                name,
+                text,
+                time: new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }),
+            };
 
-            commentsList.appendChild(commentItem);
+            savedComments.push(comment);
+            localStorage.setItem("comments", JSON.stringify(savedComments));
+            addCommentToDOM(comment);
+
             commentName.value = '';
             commentText.value = '';
         });
 
-        // Delete comment (Admin only)
+        // Add comment to DOM
+        function addCommentToDOM(comment) {
+            const commentItem = document.createElement('div');
+            commentItem.className = 'bg-white p-4 rounded-lg shadow-md flex items-start space-x-4 relative';
+            commentItem.innerHTML = `
+                <div class="comment-avatar">${comment.name.charAt(0).toUpperCase()}</div>
+                <div class="flex-grow">
+                    <p class="font-semibold text-gray-800">${comment.name}</p>
+                    <p class="text-sm text-gray-500">${comment.time}</p>
+                    <p class="mt-2">${comment.text}</p>
+                </div>
+                ${isAdmin ? `<button class="absolute top-2 right-2 text-red-500 delete-btn" data-id="${comment.id}">Delete</button>` : ''}
+            `;
+
+            commentsList.appendChild(commentItem);
+        }
+
+        // Delete comment
         commentsList.addEventListener('click', (event) => {
             if (event.target.classList.contains('delete-btn')) {
+                const commentId = event.target.getAttribute("data-id");
+                const updatedComments = savedComments.filter(comment => comment.id != commentId);
+                localStorage.setItem("comments", JSON.stringify(updatedComments));
                 event.target.closest('div').remove();
                 alert('Comment deleted!');
             }
