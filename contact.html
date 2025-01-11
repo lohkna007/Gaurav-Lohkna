@@ -27,12 +27,38 @@
             transition: all 0.3s ease;
         }
         .cta-button {
-            background-color: #bc6442; /* Ensures visibility by default */
-            color: #ffffff; /* Contrast for the text */
+            background-color: #bc6442; /* Default button color */
+            color: #ffffff; /* White text for contrast */
             transition: all 0.3s ease;
         }
         .cta-button:hover {
-            background-color: #d98157; /* Slightly darker color on hover */
+            background-color: #d98157; /* Darker shade on hover */
+        }
+        .contact-link {
+            display: inline-block;
+            background-color: #0077b5; /* Default LinkedIn blue */
+            color: #ffffff; /* White text for contrast */
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .contact-link:hover {
+            background-color: #005f87; /* Darker shade of LinkedIn blue on hover */
+        }
+        .email-link {
+            display: inline-block;
+            background-color: #4b4b4b; /* Neutral gray background for email */
+            color: #ffffff; /* White text */
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .email-link:hover {
+            background-color: #2e2e2e; /* Darker gray on hover */
         }
     </style>
 </head>
@@ -98,9 +124,7 @@
                 <i class="fas fa-envelope text-4xl text-[#bc6442] mb-4"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Email Me</h3>
                 <p class="text-[#4b4b4b] mb-4">Drop me an email for detailed discussions!</p>
-                <a href="mailto:gauravlohknabusinessonly@gmail.com" class="text-[#bc6442] font-semibold hover:underline">
-                    gauravlohknabusinessonly@gmail.com
-                </a>
+                <a href="mailto:gauravlohknabusinessonly@gmail.com" class="email-link">Send Email</a>
             </div>
 
             <!-- LinkedIn Card -->
@@ -108,9 +132,7 @@
                 <i class="fab fa-linkedin text-4xl text-[#0077b5] mb-4"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">LinkedIn</h3>
                 <p class="text-[#4b4b4b] mb-4">Let’s network professionally.</p>
-                <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/" class="text-[#0077b5] font-semibold hover:underline" target="_blank">
-                    Connect on LinkedIn
-                </a>
+                <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/" class="contact-link" target="_blank">Connect on LinkedIn</a>
             </div>
 
             <!-- Virtual Coffee Card -->
@@ -134,7 +156,6 @@
     <!-- Mobile Menu Script -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
-        const menuClose = document.getElementById('menu-close');
         const mobileMenu = document.getElementById('mobile-menu');
         const overlay = document.getElementById('overlay');
 
