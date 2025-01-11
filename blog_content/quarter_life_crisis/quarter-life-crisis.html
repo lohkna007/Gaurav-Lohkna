@@ -131,13 +131,15 @@
             <a href="mailto:?subject=I%20wanted%20to%20share%20this%20article&body=Check%20out%20this%20link:%20https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
                 <i class="fas fa-envelope text-gray-700"></i>
             </a>
+            </a>
         </div>
     </section>
 
     <!-- Blog Content -->
     <main class="container mx-auto px-6 py-12 max-w-4xl">
         <article class="reading-section">
-            <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
+            <!-- Content continues -->
+                        <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
                 <br>
                 <p>But let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.</p>
                 <br>
@@ -188,7 +190,7 @@
                 <br>
 
                 <p>Self-actualization is a journey, filled with experiences that can’t be rushed or bypassed. So, how will you decide your life?</p>
-
+            
         </article>
     </main>
 
@@ -214,7 +216,6 @@
 
     <!-- JavaScript -->
     <script>
-        // Admin Mode Logic
         let isAdmin = false;
 
         document.addEventListener("keydown", (e) => {
@@ -232,13 +233,11 @@
 
         const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
 
-        // Load saved comments on page load
         window.addEventListener("DOMContentLoaded", () => {
             savedComments.forEach(addCommentToDOM);
             refreshComments();
         });
 
-        // Add comment
         submitComment.addEventListener('click', () => {
             const name = commentName.value.trim();
             const text = commentText.value.trim();
@@ -263,7 +262,6 @@
             commentText.value = '';
         });
 
-        // Add comment to DOM
         function addCommentToDOM(comment) {
             const commentItem = document.createElement('div');
             commentItem.className = 'bg-white p-4 rounded-lg shadow-md flex items-start space-x-4 relative';
@@ -274,16 +272,11 @@
                     <p class="text-sm text-gray-500">${comment.time}</p>
                     <p class="mt-2">${comment.text}</p>
                 </div>
-                ${
-                    isAdmin
-                        ? `<button class="absolute bottom-2 right-2 text-red-500 delete-btn" data-id="${comment.id}">Delete</button>`
-                        : ''
-                }
+                <button class="absolute bottom-2 right-2 text-red-500 delete-btn" data-id="${comment.id}" style="display: none;">Delete</button>
             `;
             commentsList.appendChild(commentItem);
         }
 
-        // Delete comment
         commentsList.addEventListener('click', (e) => {
             if (e.target.classList.contains('delete-btn')) {
                 const commentId = e.target.getAttribute("data-id");
@@ -294,7 +287,6 @@
             }
         });
 
-        // Refresh comments to toggle delete buttons
         function refreshComments() {
             const deleteButtons = document.querySelectorAll('.delete-btn');
             deleteButtons.forEach(btn => {
