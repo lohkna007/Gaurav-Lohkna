@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Quarter-Life Crisis</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
         body {
             background-color: #ffffff;
@@ -12,6 +13,7 @@
             line-height: 1.8;
             color: #1a1a1a;
         }
+        
 
         .separator {
             height: 1px;
@@ -19,8 +21,16 @@
             margin: 24px 0;
         }
 
+        img.author-image {
+            width: 48px;
+            height: 48px;
+            object-fit: cover; /* Ensures the image fits the circle properly */
+            border-radius: 50%;
+        }
+
+
         .reading-section {
-            background-color: #faf9f5; /* Warm beige background */
+            background-color: #fbfbfb; /* Warm beige background */
             border-radius: 8px;
             padding: 20px;
         }
@@ -93,29 +103,30 @@
     <!-- Author and Social Sharing Section -->
     <section class="container mx-auto px-6 py-4 max-w-4xl flex justify-between items-center border-b border-gray-200">
         <div class="flex items-center space-x-4">
-            <img src="../../Main_Hero_3.png" alt="Author Image" class="w-12 h-12 rounded-full">
+            <img src="../../Main_Hero_3.png" alt="Author Image" class="author-image">
             <div>
                 <p class="text-gray-800 font-semibold">Gaurav Lohkna</p>
                 <p class="text-sm text-gray-500">10 min read · 10 Jan 2025</p>
             </div>
         </div>
-        <div class="flex items-center space-x-4">
-            <a href="#" class="social-icon">
+       <div class="flex items-center space-x-4">
+            <a href="#" class="social-icon" aria-label="Share on Facebook">
                 <i class="fab fa-facebook-f text-blue-600"></i>
             </a>
-            <a href="#" class="social-icon">
+            <a href="#" class="social-icon" aria-label="Share on Twitter">
                 <i class="fab fa-twitter text-blue-400"></i>
             </a>
-            <a href="#" class="social-icon">
+            <a href="#" class="social-icon" aria-label="Share on LinkedIn">
                 <i class="fab fa-linkedin-in text-blue-700"></i>
             </a>
-            <a href="#" class="social-icon">
+            <a href="#" class="social-icon" aria-label="Share on WhatsApp">
                 <i class="fab fa-whatsapp text-green-500"></i>
             </a>
-            <a href="mailto:?subject=Check%20out%20this%20article&body=URL" class="social-icon">
+            <a href="mailto:?subject=Check%20out%20this%20article&body=URL" class="social-icon" aria-label="Share via Email">
                 <i class="fas fa-envelope text-gray-500"></i>
             </a>
         </div>
+
     </section>
 
     <!-- Blog Content -->
@@ -179,6 +190,8 @@
 
     <!-- Separator -->
     <div class="separator"></div>
+    <button id="toggleAdmin" class="hidden">Toggle Admin</button>
+
 
     <!-- Comment Section -->
     <section class="container mx-auto px-6 py-12 max-w-4xl">
@@ -202,71 +215,92 @@
         <div id="commentsList" class="space-y-4"></div>
     </section>
 
+<!--     JAVASCRIPT -->
     <script>
-        const isAdmin = true; // Admin flag
-        const submitComment = document.getElementById('submitComment');
-        const commentsList = document.getElementById('commentsList');
-        const commentName = document.getElementById('commentName');
-        const commentText = document.getElementById('commentText');
+    let isAdmin = false; // Initial admin mode state
 
-        const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
+    // Admin toggle key combination (Shift + A)
+    document.addEventListener("keydown", (e) => {
+        if (e.shiftKey && e.key.toLowerCase() === "a") {
+            isAdmin = !isAdmin; // Toggle admin mode
+            alert(isAdmin ? "Admin mode activated!" : "Admin mode deactivated!");
+            refreshComments(); // Update the comment section based on admin status
+        }
+    });
 
-        // Load saved comments on page load
-        window.addEventListener("DOMContentLoaded", () => {
-            savedComments.forEach(addCommentToDOM);
-        });
+    const submitComment = document.getElementById('submitComment');
+    const commentsList = document.getElementById('commentsList');
+    const commentName = document.getElementById('commentName');
+    const commentText = document.getElementById('commentText');
 
-        // Add comment
-        submitComment.addEventListener('click', () => {
-            const name = commentName.value.trim();
-            const text = commentText.value.trim();
-            if (!name || !text) {
-                alert("Both fields are required!");
-                return;
-            }
+    const savedComments = JSON.parse(localStorage.getItem("comments")) || [];
 
-            const comment = {
-                id: Date.now(),
-                name,
-                text,
-                time: new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }),
-            };
+    // Load saved comments on page load
+    window.addEventListener("DOMContentLoaded", () => {
+        savedComments.forEach(addCommentToDOM);
+        refreshComments(); // Hide "Delete" buttons for non-admins
+    });
 
-            savedComments.push(comment);
-            localStorage.setItem("comments", JSON.stringify(savedComments));
-            addCommentToDOM(comment);
-
-            commentName.value = '';
-            commentText.value = '';
-        });
-
-        // Add comment to DOM
-        function addCommentToDOM(comment) {
-            const commentItem = document.createElement('div');
-            commentItem.className = 'bg-white p-4 rounded-lg shadow-md flex items-start space-x-4 relative';
-            commentItem.innerHTML = `
-                <div class="comment-avatar">${comment.name.charAt(0).toUpperCase()}</div>
-                <div class="flex-grow">
-                    <p class="font-semibold text-gray-800">${comment.name}</p>
-                    <p class="text-sm text-gray-500">${comment.time}</p>
-                    <p class="mt-2">${comment.text}</p>
-                </div>
-                ${isAdmin ? `<button class="absolute top-2 right-2 text-red-500 delete-btn" data-id="${comment.id}">Delete</button>` : ''}
-            `;
-
-            commentsList.appendChild(commentItem);
+    // Add comment
+    submitComment.addEventListener('click', () => {
+        const name = commentName.value.trim();
+        const text = commentText.value.trim();
+        if (!name || !text) {
+            alert("Both fields are required!");
+            return;
         }
 
-        // Delete comment
-        commentsList.addEventListener('click', (event) => {
-            if (event.target.classList.contains('delete-btn')) {
-                const commentId = event.target.getAttribute("data-id");
-                const updatedComments = savedComments.filter(comment => comment.id != commentId);
-                localStorage.setItem("comments", JSON.stringify(updatedComments));
-                event.target.closest('div').remove();
-                alert('Comment deleted!');
-            }
+        const comment = {
+            id: Date.now(),
+            name,
+            text,
+            time: new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' }),
+        };
+
+        savedComments.push(comment);
+        localStorage.setItem("comments", JSON.stringify(savedComments));
+        addCommentToDOM(comment);
+
+        commentName.value = '';
+        commentText.value = '';
+    });
+
+    // Add comment to DOM
+    function addCommentToDOM(comment) {
+        const commentItem = document.createElement('div');
+        commentItem.className = 'bg-white p-4 rounded-lg shadow-md flex items-start space-x-4 relative';
+        commentItem.innerHTML = `
+            <div class="comment-avatar">${comment.name.charAt(0).toUpperCase()}</div>
+            <div class="flex-grow">
+                <p class="font-semibold text-gray-800">${comment.name}</p>
+                <p class="text-sm text-gray-500">${comment.time}</p>
+                <p class="mt-2">${comment.text}</p>
+            </div>
+            <button class="absolute bottom-2 right-2 text-red-500 delete-btn hidden" data-id="${comment.id}">Delete</button>
+        `;
+
+        commentsList.appendChild(commentItem);
+    }
+
+    // Delete comment
+    commentsList.addEventListener('click', (event) => {
+        if (event.target.classList.contains('delete-btn')) {
+            const commentId = event.target.getAttribute("data-id");
+            const updatedComments = savedComments.filter(comment => comment.id != commentId);
+            localStorage.setItem("comments", JSON.stringify(updatedComments));
+            event.target.closest('div').remove();
+            alert('Comment deleted!');
+        }
+    });
+
+    // Refresh comments to show/hide delete buttons
+    function refreshComments() {
+        const deleteButtons = document.querySelectorAll(".delete-btn");
+        deleteButtons.forEach((btn) => {
+            btn.style.display = isAdmin ? "block" : "none"; // Show for admin, hide for others
         });
-    </script>
+    }
+</script>
+
 </body>
 </html>
