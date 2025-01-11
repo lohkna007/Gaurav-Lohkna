@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <style>
         body {
-            background-color: #ffffff;
+            background-color: #ffffff; /* Clean white background */
             font-family: 'Poppins', sans-serif;
             line-height: 1.8;
             color: #1a1a1a;
@@ -18,6 +18,12 @@
             height: 1px;
             background-color: #e5e7eb;
             margin: 24px 0;
+        }
+
+        .reading-section {
+            background-color: #f9f5eb; /* Warm beige background */
+            border-radius: 8px;
+            padding: 20px;
         }
 
         .social-icon {
@@ -46,16 +52,6 @@
             color: #dc2626;
             transform: scale(1.1);
         }
-
-        .comment-section {
-            transition: max-height 0.3s ease-out, opacity 0.3s ease-in-out;
-        }
-
-        .comment-section.collapsed {
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
     </style>
 </head>
 <body class="text-gray-900">
@@ -82,7 +78,7 @@
     <!-- Author and Social Sharing Section -->
     <section class="container mx-auto px-6 py-4 max-w-4xl flex justify-between items-center border-b border-gray-200">
         <div class="flex items-center space-x-4">
-            <img src="author-image.jpg" alt="Author" class="w-12 h-12 rounded-full">
+            <img src="Main_Hero_3.png" alt="Gverse Cover" class="w-12 h-12 rounded-full">
             <div>
                 <p class="text-gray-800 font-semibold">Gaurav Lohkna</p>
                 <p class="text-sm text-gray-500">10 min read · 10 Jan 2025</p>
@@ -109,7 +105,7 @@
 
     <!-- Blog Content -->
     <main class="container mx-auto px-6 py-12 max-w-4xl">
-        <article class="bg-white shadow-lg rounded-lg p-6">
+        <article class="reading-section">
             <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
                 <br>
                 <p>But let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.</p>
@@ -170,9 +166,13 @@
         <h2 class="text-3xl font-bold mb-6">Responses</h2>
         <!-- Comment Input -->
         <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-6">
-            <div class="flex items-center space-x-4">
-                <img src="profile-placeholder.jpg" alt="Profile" class="w-12 h-12 rounded-full">
-                <textarea id="comment" placeholder="What are your thoughts?" class="w-full p-2 border border-gray-300 rounded-lg"></textarea>
+            <div>
+                <label class="block text-gray-700 font-semibold mb-2">Your Name</label>
+                <input id="commentName" type="text" class="w-full p-2 mb-4 border border-gray-300 rounded-lg" placeholder="Enter your name" required>
+            </div>
+            <div>
+                <label class="block text-gray-700 font-semibold mb-2">Your Thoughts</label>
+                <textarea id="commentText" class="w-full p-2 border border-gray-300 rounded-lg" placeholder="Share your thoughts..." required></textarea>
             </div>
             <div class="mt-4 flex justify-end space-x-2">
                 <button class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition">Cancel</button>
@@ -181,52 +181,43 @@
         </div>
 
         <!-- Comments List -->
-        <div id="commentsList" class="space-y-4">
-            <!-- Example Comment -->
-            <div class="bg-white p-4 rounded-lg shadow-md flex items-start space-x-4 relative">
-                <div class="comment-avatar">A</div>
-                <div class="flex-grow">
-                    <p class="font-semibold text-gray-800">Alex Doe</p>
-                    <p class="text-sm text-gray-500">10 Jan 2025, 10:00 PM</p>
-                    <p class="mt-2">This is an amazing article. It perfectly captures my experiences!</p>
-                </div>
-                <button class="absolute bottom-2 right-2 text-red-500 delete-btn">Delete</button>
-            </div>
-        </div>
+        <div id="commentsList" class="space-y-4"></div>
     </section>
 
     <script>
-        const commentInput = document.getElementById('comment');
+        const isAdmin = true; // Admin flag
         const submitComment = document.getElementById('submitComment');
         const commentsList = document.getElementById('commentsList');
+        const commentName = document.getElementById('commentName');
+        const commentText = document.getElementById('commentText');
 
         // Add comment
         submitComment.addEventListener('click', () => {
-            const commentText = commentInput.value.trim();
-            if (!commentText) {
-                alert("Comment cannot be empty!");
+            const name = commentName.value.trim();
+            const text = commentText.value.trim();
+            if (!name || !text) {
+                alert("Both fields are required!");
                 return;
             }
 
             const commentItem = document.createElement('div');
             commentItem.className = 'bg-white p-4 rounded-lg shadow-md flex items-start space-x-4 relative';
             commentItem.innerHTML = `
-                <div class="comment-avatar">${'U'}</div>
+                <div class="comment-avatar">${name.charAt(0).toUpperCase()}</div>
                 <div class="flex-grow">
-                    <p class="font-semibold text-gray-800">User Name</p>
+                    <p class="font-semibold text-gray-800">${name}</p>
                     <p class="text-sm text-gray-500">${new Date().toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'short' })}</p>
-                    <p class="mt-2">${commentText}</p>
+                    <p class="mt-2">${text}</p>
                 </div>
-                <button class="absolute bottom-2 right-2 text-red-500 delete-btn">Delete</button>
+                ${isAdmin ? `<button class="absolute bottom-2 right-2 text-red-500 delete-btn">Delete</button>` : ''}
             `;
 
             commentsList.appendChild(commentItem);
-
-            // Clear input
-            commentInput.value = '';
+            commentName.value = '';
+            commentText.value = '';
         });
 
-        // Delete comment
+        // Delete comment (Admin only)
         commentsList.addEventListener('click', (event) => {
             if (event.target.classList.contains('delete-btn')) {
                 event.target.closest('div').remove();
