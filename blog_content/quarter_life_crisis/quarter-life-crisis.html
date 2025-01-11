@@ -172,58 +172,53 @@
     </form>
 
     <!-- Responses Section -->
-    <div class="mt-12">
-        <h3 class="text-2xl font-bold mb-6">Responses (3)</h3>
-        <div id="commentsList" class="space-y-6">
-            <!-- Example Comment -->
-            <div class="bg-gray-50 shadow-sm rounded-lg p-6 border relative">
-                <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0">
-                        <div class="h-10 w-10 rounded-full bg-gray-300"></div>
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex justify-between items-center">
-                            <h4 class="font-bold text-lg text-gray-800">John Doe</h4>
-                            <span class="text-gray-500 text-sm">2 hours ago</span>
-                        </div>
-                        <p class="text-gray-700 mt-2">This is such an insightful article. Thanks for sharing!</p>
-                        <div class="flex items-center space-x-4 mt-4">
-                            <button class="text-gray-500 hover:text-[#bc6442] text-sm">Reply</button>
-                            <button class="text-gray-500 hover:text-[#bc6442] text-sm">Like</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Admin Delete Button -->
-                <button class="absolute top-4 right-4 text-red-500 hover:text-red-700">Delete</button>
+    <!-- Updated Comment Section -->
+<div class="container mx-auto px-6 py-12 max-w-4xl">
+    <!-- Leave Your Thoughts -->
+    <h2 class="text-4xl font-bold mb-8 text-gray-800">Leave Your Thoughts</h2>
+    <form id="commentForm" class="space-y-6 bg-white shadow-lg p-8 rounded-xl border border-gray-200">
+        <div class="flex flex-col gap-4">
+            <div>
+                <label for="name" class="block text-xl font-medium text-gray-800 mb-2">Your Name</label>
+                <input 
+                    type="text" 
+                    id="name" 
+                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-lg" 
+                    placeholder="Enter your name" 
+                    required
+                />
             </div>
-
-            <!-- Another Comment -->
-            <div class="bg-gray-50 shadow-sm rounded-lg p-6 border relative">
-                <div class="flex items-start space-x-4">
-                    <div class="flex-shrink-0">
-                        <div class="h-10 w-10 rounded-full bg-gray-300"></div>
-                    </div>
-                    <div class="flex-grow">
-                        <div class="flex justify-between items-center">
-                            <h4 class="font-bold text-lg text-gray-800">Jane Smith</h4>
-                            <span class="text-gray-500 text-sm">1 day ago</span>
-                        </div>
-                        <p class="text-gray-700 mt-2">Loved this write-up! It perfectly captures what I'm going through.</p>
-                        <div class="flex items-center space-x-4 mt-4">
-                            <button class="text-gray-500 hover:text-[#bc6442] text-sm">Reply</button>
-                            <button class="text-gray-500 hover:text-[#bc6442] text-sm">Like</button>
-                        </div>
-                    </div>
-                </div>
-                    <!-- Admin Delete Button -->
-                    <button class="absolute top-4 right-4 text-red-500 hover:text-red-700">Delete</button>
-                </div>
+            <div>
+                <label for="comment" class="block text-xl font-medium text-gray-800 mb-2">Your Thoughts</label>
+                <textarea 
+                    id="comment" 
+                    class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500 text-lg" 
+                    rows="4" 
+                    placeholder="Share your thoughts..." 
+                    required
+                ></textarea>
             </div>
         </div>
-    </div>
+        <button 
+            type="submit" 
+            class="w-full bg-teal-600 text-white font-semibold py-3 rounded-lg text-lg hover:bg-teal-700 transition-all"
+        >
+            Submit
+        </button>
+    </form>
 
-<!--      JAVASCRIPT    -->
-    <script>
+    <!-- Responses Section -->
+    <div class="mt-12">
+        <h3 class="text-3xl font-bold mb-6 text-gray-800">Responses</h3>
+        <div id="commentsList" class="space-y-8">
+            <!-- Comment Template -->
+            <!-- New Comments will append here -->
+        </div>
+    </div>
+</div>
+
+<!-- Updated JavaScript for Handling Comments -->
+<script>
     const commentForm = document.getElementById('commentForm');
     const commentsList = document.getElementById('commentsList');
     const savedComments = JSON.parse(localStorage.getItem('comments')) || [];
@@ -236,8 +231,10 @@
     // Add a comment
     commentForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        const name = document.getElementById('name').value;
-        const comment = document.getElementById('comment').value;
+        const name = document.getElementById('name').value.trim();
+        const comment = document.getElementById('comment').value.trim();
+
+        if (!name || !comment) return alert('Please fill out all fields!');
 
         const newComment = { id: Date.now(), name, comment, time: new Date().toLocaleString() };
         savedComments.push(newComment);
@@ -250,26 +247,29 @@
     // Add a comment to the DOM
     function addCommentToDOM(comment) {
         const commentItem = document.createElement('div');
-        commentItem.classList.add('bg-gray-50', 'shadow-sm', 'rounded-lg', 'p-6', 'border', 'relative');
+        commentItem.classList.add('bg-white', 'shadow-md', 'rounded-lg', 'p-6', 'relative', 'border', 'border-gray-200');
         commentItem.setAttribute('data-id', comment.id);
         commentItem.innerHTML = `
             <div class="flex items-start space-x-4">
-                <div class="flex-shrink-0">
-                    <div class="h-10 w-10 rounded-full bg-gray-300"></div>
-                </div>
+                <div class="h-12 w-12 bg-gray-300 rounded-full flex-shrink-0"></div>
                 <div class="flex-grow">
                     <div class="flex justify-between items-center">
-                        <h4 class="font-bold text-lg text-gray-800">${comment.name}</h4>
+                        <h4 class="font-semibold text-lg text-gray-900">${comment.name}</h4>
                         <span class="text-gray-500 text-sm">${comment.time}</span>
                     </div>
-                    <p class="text-gray-700 mt-2">${comment.comment}</p>
+                    <p class="text-gray-700 mt-2 text-base">${comment.comment}</p>
                     <div class="flex items-center space-x-4 mt-4">
-                        <button class="text-gray-500 hover:text-[#bc6442] text-sm">Reply</button>
-                        <button class="text-gray-500 hover:text-[#bc6442] text-sm">Like</button>
+                        <button class="text-gray-500 hover:text-teal-500 text-sm">Reply</button>
+                        <button class="text-gray-500 hover:text-teal-500 text-sm">Like</button>
                     </div>
                 </div>
             </div>
-            <button class="absolute top-4 right-4 text-red-500 hover:text-red-700" onclick="deleteComment(${comment.id})">Delete</button>
+            <button 
+                class="absolute top-4 right-4 text-red-500 hover:text-red-700" 
+                onclick="deleteComment(${comment.id})"
+            >
+                Delete
+            </button>
         `;
         commentsList.appendChild(commentItem);
     }
