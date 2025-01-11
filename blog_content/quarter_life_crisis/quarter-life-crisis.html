@@ -12,31 +12,6 @@
             line-height: 1.8;
             background-color: #f9f9f6; /* Subtle off-white background */
         }
-        header h1 {
-            font-family: 'Arial', sans-serif;
-            font-size: 36px;
-            font-weight: bold;
-        }
-        .subtitle {
-            font-family: 'Arial', sans-serif;
-            font-size: 18px;
-            font-weight: 300;
-            color: #4b4b4b;
-        }
-        .social-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            width: 48px;
-            height: 48px;
-            background-color: #f4f4f4;
-            transition: transform 0.2s, background-color 0.2s;
-        }
-        .social-icon:hover {
-            transform: scale(1.1);
-            background-color: #e5e5e5;
-        }
         .progress-bar {
             height: 4px;
             background-color: #bc6442;
@@ -55,15 +30,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
         }
-        h1, p {
-            margin-bottom: 1.5rem;
-        }
-        .social-share {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            margin: 2rem 0;
-        }
     </style>
 </head>
 <body class="text-gray-900">
@@ -74,8 +40,8 @@
     <!-- Header -->
     <header class="bg-white shadow-md py-6">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-gray-900">Gaurav Lohkna</h1>
-            <p class="subtitle">Merging Data, Neural Sciences, and Human Progress</p>
+            <h1 class="text-gray-900 font-bold text-4xl">Gaurav Lohkna</h1>
+            <p class="text-lg text-gray-600">Merging Data, Neural Sciences, and Human Progress</p>
         </div>
         <nav class="container mx-auto px-6 mt-6 text-center space-x-6">
             <a href="../../index.html" class="text-gray-700 hover:text-[#bc6442]">Home</a>
@@ -86,7 +52,7 @@
         </nav>
     </header>
 
-    <!-- Main Article Section -->
+    <!-- Main Content -->
     <main>
         <div class="content-container">
             <!-- Breadcrumb -->
@@ -98,25 +64,6 @@
             <div class="mb-8">
                 <h1 class="text-4xl font-bold leading-tight text-gray-900 mb-4">The Quarter-Life Crisis</h1>
                 <p class="text-gray-600 text-lg">Published on <strong>November 16, 2024</strong></p>
-            </div>
-
-            <!-- Social Sharing -->
-            <div class="social-share">
-                <a href="https://www.facebook.com/sharer/sharer.php?u=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
-                    <i class="fab fa-facebook-f text-blue-600"></i>
-                </a>
-                <a href="https://twitter.com/intent/tweet?url=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html&text=Check%20out%20this%20article:" target="_blank" class="social-icon">
-                    <i class="fab fa-twitter text-blue-400"></i>
-                </a>
-                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
-                    <i class="fab fa-linkedin-in text-blue-700"></i>
-                </a>
-                <a href="https://api.whatsapp.com/send?text=Check%20out%20this%20article:%20https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
-                    <i class="fab fa-whatsapp text-green-500"></i>
-                </a>
-                <a href="mailto:?subject=I%20wanted%20to%20share%20this%20article&body=Check%20out%20this%20link:%20https://gauravlohkna.com/blog_content/quarter_life_crisis/quarter-life-crisis.html" target="_blank" class="social-icon">
-                    <i class="fas fa-envelope text-gray-700"></i>
-                </a>
             </div>
 
             <!-- Article Content -->
@@ -174,6 +121,31 @@
                 <p>Self-actualization is a journey, filled with experiences that can’t be rushed or bypassed. So, how will you decide your life?</p>
             </article>
         </div>
+
+        <!-- Leave a Thought Section -->
+        <div class="content-container mt-8">
+            <h2 class="text-2xl font-bold mb-4">Leave Your Thoughts</h2>
+            <form id="thoughtForm" class="space-y-4">
+                <input type="text" id="name" placeholder="Your Name (Required)" 
+                       class="w-full p-2 border rounded" required />
+                <input type="email" id="email" placeholder="Your Email (Optional)" 
+                       class="w-full p-2 border rounded" />
+                <textarea id="thought" placeholder="Share your thoughts here..." 
+                          class="w-full p-2 border rounded" rows="4" required></textarea>
+                <button type="submit" 
+                        class="bg-[#bc6442] text-white px-4 py-2 rounded hover:bg-[#d98157]">
+                    Submit
+                </button>
+            </form>
+        </div>
+
+        <!-- Display Thoughts -->
+        <div class="content-container mt-6" id="thoughtsContainer">
+            <h2 class="text-2xl font-bold mb-4">What Others Are Saying</h2>
+            <div id="thoughtsList" class="space-y-4">
+                <!-- Thoughts will appear here dynamically -->
+            </div>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -183,13 +155,36 @@
 
     <!-- JavaScript -->
     <script>
-        // Progress Bar Script
-        const progressBar = document.getElementById("progressBar");
-        window.addEventListener("scroll", () => {
-            const scroll = document.documentElement.scrollTop;
-            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-            const scrolled = (scroll / height) * 100;
-            progressBar.style.width = scrolled + "%";
+        const thoughtForm = document.getElementById('thoughtForm');
+        const thoughtsList = document.getElementById('thoughtsList');
+
+        // Add a thought
+        thoughtForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value || 'Anonymous';
+            const thought = document.getElementById('thought').value;
+
+            const thoughtItem = document.createElement('div');
+            thoughtItem.classList.add('p-4', 'border', 'rounded', 'relative', 'bg-gray-100');
+            thoughtItem.innerHTML = `
+                <h3 class="font-bold text-gray-800">${name}</h3>
+                <p class="text-sm text-gray-600">${email}</p>
+                <p class="mt-2 text-gray-700">${thought}</p>
+                <button class="absolute top-2 right-2 text-red-500 hover:text-red-700 delete-btn">
+                    Delete
+                </button>
+            `;
+
+            thoughtItem.querySelector('.delete-btn').addEventListener('click', () => {
+                thoughtsList.removeChild(thoughtItem);
+            });
+
+            thoughtsList.appendChild(thoughtItem);
+
+            // Reset the form
+            thoughtForm.reset();
         });
     </script>
 </body>
