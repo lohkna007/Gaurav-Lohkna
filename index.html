@@ -15,6 +15,22 @@
         body {
             background-color: #ffffff;
         }
+        .cta-button {
+            background-color: #bc6442; /* Vibrant background color */
+            color: #ffffff; /* Contrasting text color */
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #9c5033; /* Darker shade on hover */
+        }
+        .read-more {
+            font-weight: bold; /* Emphasized text */
+            text-decoration: underline; /* Underlined for better visibility */
+            transition: color 0.3s ease;
+        }
+        .read-more:hover {
+            color: #d98157; /* Highlighted color on hover */
+        }
     </style>
 </head>
 <body class="font-sans text-[#2e2e2e] leading-relaxed">
@@ -80,7 +96,7 @@
                     <h3 class="text-xl font-bold">The Quarter-Life Crisis</h3>
                     <p class="text-sm text-gray-500">Published on November 16, 2024</p>
                     <p class="mt-2 text-[#4b4b4b]">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
-                    <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html" class="text-[#bc6442] hover:text-[#d98157] mt-4 inline-block">Read more</a>
+                    <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html" class="read-more mt-4 inline-block">Read more</a>
                 </div>
             </article>
         </div>
@@ -91,7 +107,7 @@
         <div class="container mx-auto text-center px-6">
             <h2 class="text-3xl font-bold text-[#2e2e2e]">Partner Up: Let’s Make It Happen</h2>
             <p class="text-[#4b4b4b] mt-4">Have an idea worth pursuing? Let’s talk and see where it can go.</p>
-            <a href="contact.html" class="mt-6 inline-block bg-[#faf9f5] text-[#bc6442] px-6 py-2 rounded hover:bg-gray-200">Contact Me</a>
+            <a href="contact.html" class="cta-button mt-6 inline-block px-6 py-2 rounded">Contact Me</a>
         </div>
     </section>
 
