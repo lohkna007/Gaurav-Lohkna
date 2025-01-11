@@ -8,7 +8,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
     <style>
         body {
-            background-color: #ffffff; /* Clean white background */
+            background-color: #ffffff;
             font-family: 'Poppins', sans-serif;
             line-height: 1.8;
             color: #1a1a1a;
@@ -18,18 +18,6 @@
             height: 1px;
             background-color: #e5e7eb;
             margin: 24px 0;
-        }
-
-        .comment-avatar {
-            width: 40px;
-            height: 40px;
-            background-color: #d1d5db;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
-            font-weight: bold;
         }
 
         .social-icon {
@@ -72,44 +60,57 @@
 </head>
 <body class="text-gray-900">
 
-    <!-- Header -->
+    <!-- Website Navigation Header -->
     <header class="bg-white shadow-md py-4">
         <div class="container mx-auto px-6 flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <img src="author-image.jpg" alt="Author" class="w-10 h-10 rounded-full">
-                <div>
-                    <p class="text-gray-800 font-semibold">Gaurav Lohkna</p>
-                    <p class="text-sm text-gray-500">10 min read · 10 Jan 2025</p>
-                </div>
-            </div>
-            <div class="flex items-center space-x-4">
-                <a href="#" class="social-icon">
-                    <i class="fab fa-facebook-f text-blue-600"></i>
-                </a>
-                <a href="#" class="social-icon">
-                    <i class="fab fa-twitter text-blue-400"></i>
-                </a>
-                <a href="#" class="social-icon">
-                    <i class="fab fa-linkedin-in text-blue-700"></i>
-                </a>
-                <a href="#" class="social-icon">
-                    <i class="fab fa-whatsapp text-green-500"></i>
-                </a>
-                <a href="mailto:?subject=Check%20out%20this%20article&body=URL" class="social-icon">
-                    <i class="fas fa-envelope text-gray-500"></i>
-                </a>
-            </div>
+            <h1 class="text-2xl font-bold text-gray-900">Gaurav Lohkna</h1>
+            <nav class="hidden md:flex space-x-6">
+                <a href="../../index.html" class="text-gray-700 hover:text-[#bc6442]">Home</a>
+                <a href="../../article.html" class="text-gray-700 hover:text-[#bc6442]">Article</a>
+                <a href="../../blog.html" class="text-gray-700 hover:text-[#bc6442] font-semibold">Blog</a>
+                <a href="../../about.html" class="text-gray-700 hover:text-[#bc6442]">About</a>
+                <a href="../../contact.html" class="text-gray-700 hover:text-[#bc6442]">Contact</a>
+            </nav>
         </div>
     </header>
+
+    <!-- Blog Title -->
+    <section class="container mx-auto px-6 py-8 max-w-4xl">
+        <h1 class="text-4xl font-bold mb-4 leading-tight">The Quarter-Life Crisis</h1>
+    </section>
+
+    <!-- Author and Social Sharing Section -->
+    <section class="container mx-auto px-6 py-4 max-w-4xl flex justify-between items-center border-b border-gray-200">
+        <div class="flex items-center space-x-4">
+            <img src="author-image.jpg" alt="Author" class="w-12 h-12 rounded-full">
+            <div>
+                <p class="text-gray-800 font-semibold">Gaurav Lohkna</p>
+                <p class="text-sm text-gray-500">10 min read · 10 Jan 2025</p>
+            </div>
+        </div>
+        <div class="flex items-center space-x-4">
+            <a href="#" class="social-icon">
+                <i class="fab fa-facebook-f text-blue-600"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-twitter text-blue-400"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-linkedin-in text-blue-700"></i>
+            </a>
+            <a href="#" class="social-icon">
+                <i class="fab fa-whatsapp text-green-500"></i>
+            </a>
+            <a href="mailto:?subject=Check%20out%20this%20article&body=URL" class="social-icon">
+                <i class="fas fa-envelope text-gray-500"></i>
+            </a>
+        </div>
+    </section>
 
     <!-- Blog Content -->
     <main class="container mx-auto px-6 py-12 max-w-4xl">
         <article class="bg-white shadow-lg rounded-lg p-6">
-            <h1 class="text-4xl font-bold mb-4 leading-tight">The Quarter-Life Crisis</h1>
-            <div class="separator"></div>
-            
-            <p class="text-lg mb-4 leading-relaxed">
-                You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
+            <p>You've heard much about the mid-life crisis and how it affects individuals, but there's a newer concept with a different nuance: the quarter-life crisis. I first used this phrase when describing the ongoing challenges in my life to a friend.</p>
                 <br>
                 <p>But let's take a moment to understand the mid-life crisis before moving on to the quarter-life crisis. According to me, a mid-life crisis happens when someone has more or less achieved certain things (think of Maslow's hierarchy of needs), usually involving the basics necessary for day-to-day life—food, clothing, and shelter (or as we say in Hindi, <em>roti, kapda, makaan</em>). Nowadays, the internet feels like a basic necessity too.</p>
                 <br>
@@ -162,27 +163,25 @@
                 <p>Self-actualization is a journey, filled with experiences that can’t be rushed or bypassed. So, how will you decide your life?</p>
             
         </article>
+    </main>
 
-        <!-- Separator -->
-        <div class="separator"></div>
-
-        <!-- Leave Your Thoughts -->
-        <section>
-            <h2 class="text-3xl font-bold mb-6">Responses (105)</h2>
-            <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-4">
-                <div class="flex items-center space-x-4">
-                    <img src="profile-placeholder.jpg" alt="Profile" class="w-10 h-10 rounded-full">
-                    <textarea id="comment" placeholder="What are your thoughts?" class="w-full p-2 border border-gray-300 rounded-lg"></textarea>
-                </div>
-                <div class="mt-4 flex justify-end space-x-2">
-                    <button class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition">Cancel</button>
-                    <button id="submitComment" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Respond</button>
-                </div>
+    <!-- Comment Section -->
+    <section class="container mx-auto px-6 py-12 max-w-4xl">
+        <h2 class="text-3xl font-bold mb-6">Responses</h2>
+        <!-- Comment Input -->
+        <div class="bg-gray-100 p-4 rounded-lg shadow-md mb-6">
+            <div class="flex items-center space-x-4">
+                <img src="profile-placeholder.jpg" alt="Profile" class="w-12 h-12 rounded-full">
+                <textarea id="comment" placeholder="What are your thoughts?" class="w-full p-2 border border-gray-300 rounded-lg"></textarea>
             </div>
-        </section>
+            <div class="mt-4 flex justify-end space-x-2">
+                <button class="px-4 py-2 text-sm font-medium text-gray-700 hover:text-gray-900 transition">Cancel</button>
+                <button id="submitComment" class="px-4 py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 transition">Respond</button>
+            </div>
+        </div>
 
         <!-- Comments List -->
-        <section id="commentsList" class="space-y-4">
+        <div id="commentsList" class="space-y-4">
             <!-- Example Comment -->
             <div class="bg-white p-4 rounded-lg shadow-md flex items-start space-x-4 relative">
                 <div class="comment-avatar">A</div>
@@ -193,14 +192,15 @@
                 </div>
                 <button class="absolute bottom-2 right-2 text-red-500 delete-btn">Delete</button>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <script>
         const commentInput = document.getElementById('comment');
         const submitComment = document.getElementById('submitComment');
         const commentsList = document.getElementById('commentsList');
 
+        // Add comment
         submitComment.addEventListener('click', () => {
             const commentText = commentInput.value.trim();
             if (!commentText) {
@@ -222,10 +222,11 @@
 
             commentsList.appendChild(commentItem);
 
-            // Clear input and add animation
+            // Clear input
             commentInput.value = '';
         });
 
+        // Delete comment
         commentsList.addEventListener('click', (event) => {
             if (event.target.classList.contains('delete-btn')) {
                 event.target.closest('div').remove();
