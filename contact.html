@@ -130,58 +130,60 @@
         <!-- Contact Options -->
         <section class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
             <!-- Email Card -->
-            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center">
+            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center flex flex-col items-center">
                 <i class="fas fa-envelope text-4xl text-[#bc6442] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Email Me</h3>
                 <p class="text-[#4b4b4b] mb-4">Drop me an email for detailed discussions!</p>
-                <a href="mailto:gauravlohknabusinessonly@gmail.com" class="email-link mt-2" aria-label="Send Email">Send Email</a>
+                <a href="mailto:gauravlohknabusinessonly@gmail.com"
+                   class="email-link mt-2 w-full max-w-[220px] py-3 px-6 rounded-lg font-semibold text-lg shadow text-center transition-all duration-200"
+                   aria-label="Send Email">Send Email</a>
             </div>
 
             <!-- LinkedIn Card -->
-            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center">
+            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center flex flex-col items-center">
                 <i class="fab fa-linkedin text-4xl text-[#0077b5] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">LinkedIn</h3>
                 <p class="text-[#4b4b4b] mb-4">Let’s network professionally.</p>
-                <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/" class="contact-link mt-2" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">Connect on LinkedIn</a>
+                <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/"
+                   class="contact-link mt-2 w-full max-w-[220px] py-3 px-6 rounded-lg font-semibold text-lg shadow text-center transition-all duration-200"
+                   target="_blank" rel="noopener" aria-label="Connect on LinkedIn">Connect on LinkedIn</a>
             </div>
 
             <!-- Virtual Coffee Card -->
-            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center">
+            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center flex flex-col items-center">
                 <i class="fas fa-coffee text-4xl text-[#bc6442] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Virtual Coffee ☕</h3>
                 <p class="text-[#4b4b4b] mb-4">Book a virtual coffee chat with me.</p>
-                <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3UOpeOMOz-G_EluIJTUwsCkp9WgvRhSZrA2KeAhFodo14uAeRQhVfOhHRgnfdvs-Rqu57CJoRj?gv=true" 
-                   class="cta-button py-3 px-6 font-semibold text-white rounded-lg mt-2"
-                   target="_blank" rel="noopener" aria-label="Book an Appointment">
-                    Book an Appointment
-                </a>
+                <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3UOpeOMOz-G_EluIJTUwsCkp9WgvRhSZrA2KeAhFodo14uAeRQhVfOhHRgnfdvs-Rqu57CJoRj?gv=true"
+                   class="cta-button mt-2 w-full max-w-[220px] py-3 px-6 rounded-lg font-semibold text-lg shadow text-center transition-all duration-200"
+                   target="_blank" rel="noopener" aria-label="Book an Appointment">Book an Appointment</a>
             </div>
         </section>
 
         <!-- Contact Form Section -->
         <section class="container mx-auto px-6 py-12 max-w-xl">
             <form id="contact-form" class="bg-white shadow-xl rounded-2xl p-8 space-y-6" autocomplete="off" aria-label="Contact Form">
-                <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Or Send a Message</h3>
+                <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e] text-center">Or Send a Message</h3>
                 <div class="relative">
                     <span class="input-icon"><i class="fa fa-user"></i></span>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input w-full pl-10 py-2" aria-required="true" />
+                    <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input w-full pl-10 py-2 text-base" aria-required="true" />
                 </div>
                 <div class="relative">
                     <span class="input-icon"><i class="fa fa-envelope"></i></span>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required class="form-input w-full pl-10 py-2" aria-required="true" />
+                    <input type="email" id="email" name="email" placeholder="Your Email" required class="form-input w-full pl-10 py-2 text-base" aria-required="true" />
                 </div>
                 <div class="relative">
                     <span class="input-icon" style="top:1.5rem;"><i class="fa fa-comment"></i></span>
-                    <textarea id="message" name="message" placeholder="Your Message" required class="form-textarea w-full pl-10 py-2 min-h-[120px]" aria-required="true"></textarea>
+                    <textarea id="message" name="message" placeholder="Your Message" required class="form-textarea w-full pl-10 py-2 min-h-[120px] text-base" aria-required="true"></textarea>
                 </div>
                 <!-- Honeypot field for spam protection (hidden from users) -->
                 <div style="display:none;">
                     <label for="website">Website</label>
                     <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
                 </div>
-                <button type="submit" class="cta-button py-2 px-6 rounded-lg text-lg font-semibold shadow">Send</button>
-                <p id="form-status" class="mt-2 text-sm"></p>
-                <p class="text-xs text-[#4b4b4b] mt-2">We respect your privacy. Your information will not be shared.</p>
+                <button type="submit" class="cta-button w-full py-3 px-6 rounded-lg text-lg font-semibold shadow transition-all duration-200">Send</button>
+                <p id="form-status" class="mt-2 text-sm text-center"></p>
+                <p class="text-xs text-[#4b4b4b] mt-2 text-center">We respect your privacy. Your information will not be shared.</p>
             </form>
         </section>
     </main>
