@@ -13,52 +13,70 @@
 
     <style>
         body {
-            background-color: #ffffff; /* Light card color as background */
+            background: linear-gradient(135deg, #f8fafc 0%, #fbeee6 100%);
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
         main {
-            flex: 1; /* Pushes footer to the bottom */
+            flex: 1;
+        }
+        .hover-card {
+            transition: box-shadow 0.3s, transform 0.3s;
         }
         .hover-card:hover {
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-            transform: translateY(-5px);
-            transition: all 0.3s ease;
+            box-shadow: 0 12px 32px rgba(188, 100, 66, 0.15), 0 2px 8px rgba(0,0,0,0.04);
+            transform: translateY(-8px) scale(1.03);
+            background: linear-gradient(120deg, #fff 80%, #fbeee6 100%);
         }
         .cta-button {
-            background-color: #bc6442; /* Default button color */
-            color: #ffffff; /* White text for contrast */
-            transition: all 0.3s ease;
+            background: linear-gradient(90deg, #bc6442 60%, #d98157 100%);
+            color: #fff;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(188, 100, 66, 0.08);
         }
         .cta-button:hover {
-            background-color: #d98157; /* Darker shade on hover */
+            background: linear-gradient(90deg, #d98157 60%, #bc6442 100%);
+            box-shadow: 0 4px 16px rgba(188, 100, 66, 0.15);
         }
         .contact-link {
-            display: inline-block;
-            background-color: #0077b5; /* Default LinkedIn blue */
-            color: #ffffff; /* White text for contrast */
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            background: linear-gradient(90deg, #0077b5 60%, #005f87 100%);
+            color: #fff;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(0,119,181,0.08);
         }
         .contact-link:hover {
-            background-color: #005f87; /* Darker shade of LinkedIn blue on hover */
+            background: linear-gradient(90deg, #005f87 60%, #0077b5 100%);
+            box-shadow: 0 4px 16px rgba(0,119,181,0.15);
         }
         .email-link {
-            display: inline-block;
-            background-color: #4b4b4b; /* Neutral gray background for email */
-            color: #ffffff; /* White text */
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            background: linear-gradient(90deg, #4b4b4b 60%, #2e2e2e 100%);
+            color: #fff;
+            transition: background 0.3s, box-shadow 0.3s;
+            box-shadow: 0 2px 8px rgba(75,75,75,0.08);
         }
         .email-link:hover {
-            background-color: #2e2e2e; /* Darker gray on hover */
+            background: linear-gradient(90deg, #2e2e2e 60%, #4b4b4b 100%);
+            box-shadow: 0 4px 16px rgba(75,75,75,0.15);
+        }
+        .form-input, .form-textarea {
+            border: 1.5px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding-left: 2.5rem;
+            transition: border 0.2s, box-shadow 0.2s;
+        }
+        .form-input:focus, .form-textarea:focus {
+            border-color: #bc6442;
+            box-shadow: 0 0 0 2px #fbeee6;
+            outline: none;
+        }
+        .input-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #bc6442;
+            font-size: 1.1rem;
         }
     </style>
 </head>
@@ -68,8 +86,6 @@
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold">Gaurav Lohkna</h1>
-
-            <!-- Desktop Navigation -->
             <nav class="hidden md:flex space-x-6">
                 <a href="index.html" class="text-[#2e2e2e] font-semibold hover:text-[#bc6442]">Home</a>
                 <a href="article.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
@@ -77,16 +93,12 @@
                 <a href="about.html" class="text-[#2e2e2e] hover:text-[#bc6442]">About</a>
                 <a href="contact.html" class="text-[#bc6442] font-semibold">Contact</a>
             </nav>
-
-            <!-- Mobile Hamburger Menu Button -->
             <div class="md:hidden flex items-center">
                 <button id="menu-toggle" class="text-[#2e2e2e] focus:outline-none">
                     <i class="fa-solid fa-bars text-2xl"></i>
                 </button>
             </div>
         </div>
-
-        <!-- Mobile Navigation with Slide-in Animation -->
         <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
             <div class="p-6">
                 <button id="menu-close" class="text-[#2e2e2e] focus:outline-none mb-4">
@@ -101,47 +113,45 @@
                 </nav>
             </div>
         </div>
-
-        <!-- Overlay Background -->
         <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
     </header>
 
     <main>
         <!-- Hero Section -->
-        <section class="bg-[#faf9f5] py-12 shadow-md">
+        <section class="bg-[#faf9f5] py-16 shadow-md rounded-b-3xl mb-8">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold mb-4 text-[#2e2e2e]">Let’s Connect</h2>
-                <p class="text-lg text-[#4b4b4b] max-w-2xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-[#2e2e2e] tracking-tight">Let’s Connect</h2>
+                <p class="text-lg md:text-xl text-[#4b4b4b] max-w-2xl mx-auto">
                     Whether it’s about sharing ideas, collaborations, or casual conversations over a virtual coffee—this is where we connect!
                 </p>
             </div>
         </section>
 
         <!-- Contact Options -->
-        <section class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
             <!-- Email Card -->
-            <div class="hover-card bg-[#faf9f5] shadow-lg rounded-lg p-6 text-center">
+            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center">
                 <i class="fas fa-envelope text-4xl text-[#bc6442] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Email Me</h3>
                 <p class="text-[#4b4b4b] mb-4">Drop me an email for detailed discussions!</p>
-                <a href="mailto:gauravlohknabusinessonly@gmail.com" class="email-link" aria-label="Send Email">Send Email</a>
+                <a href="mailto:gauravlohknabusinessonly@gmail.com" class="email-link mt-2" aria-label="Send Email">Send Email</a>
             </div>
 
             <!-- LinkedIn Card -->
-            <div class="hover-card bg-[#faf9f5] shadow-lg rounded-lg p-6 text-center">
+            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center">
                 <i class="fab fa-linkedin text-4xl text-[#0077b5] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">LinkedIn</h3>
                 <p class="text-[#4b4b4b] mb-4">Let’s network professionally.</p>
-                <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/" class="contact-link" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">Connect on LinkedIn</a>
+                <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/" class="contact-link mt-2" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">Connect on LinkedIn</a>
             </div>
 
             <!-- Virtual Coffee Card -->
-            <div class="hover-card bg-[#faf9f5] shadow-lg rounded-lg p-6 text-center">
+            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center">
                 <i class="fas fa-coffee text-4xl text-[#bc6442] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Virtual Coffee ☕</h3>
                 <p class="text-[#4b4b4b] mb-4">Book a virtual coffee chat with me.</p>
                 <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3UOpeOMOz-G_EluIJTUwsCkp9WgvRhSZrA2KeAhFodo14uAeRQhVfOhHRgnfdvs-Rqu57CJoRj?gv=true" 
-                   class="cta-button py-3 px-6 font-semibold text-white rounded-lg"
+                   class="cta-button py-3 px-6 font-semibold text-white rounded-lg mt-2"
                    target="_blank" rel="noopener" aria-label="Book an Appointment">
                     Book an Appointment
                 </a>
@@ -149,25 +159,27 @@
         </section>
 
         <!-- Contact Form Section -->
-        <section class="container mx-auto px-6 py-8 max-w-xl">
-            <form id="contact-form" class="bg-white shadow-lg rounded-lg p-6 space-y-4" autocomplete="off" aria-label="Contact Form">
+        <section class="container mx-auto px-6 py-12 max-w-xl">
+            <form id="contact-form" class="bg-white shadow-xl rounded-2xl p-8 space-y-6" autocomplete="off" aria-label="Contact Form">
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Or Send a Message</h3>
-                <label for="name" class="block text-[#2e2e2e] font-semibold">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full border rounded p-2" aria-required="true" />
-
-                <label for="email" class="block text-[#2e2e2e] font-semibold">Email</label>
-                <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full border rounded p-2" aria-required="true" />
-
-                <label for="message" class="block text-[#2e2e2e] font-semibold">Message</label>
-                <textarea id="message" name="message" placeholder="Your Message" required class="w-full border rounded p-2" aria-required="true"></textarea>
-
+                <div class="relative">
+                    <span class="input-icon"><i class="fa fa-user"></i></span>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input w-full pl-10 py-2" aria-required="true" />
+                </div>
+                <div class="relative">
+                    <span class="input-icon"><i class="fa fa-envelope"></i></span>
+                    <input type="email" id="email" name="email" placeholder="Your Email" required class="form-input w-full pl-10 py-2" aria-required="true" />
+                </div>
+                <div class="relative">
+                    <span class="input-icon" style="top:1.5rem;"><i class="fa fa-comment"></i></span>
+                    <textarea id="message" name="message" placeholder="Your Message" required class="form-textarea w-full pl-10 py-2 min-h-[120px]" aria-required="true"></textarea>
+                </div>
                 <!-- Honeypot field for spam protection (hidden from users) -->
                 <div style="display:none;">
                     <label for="website">Website</label>
                     <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
                 </div>
-
-                <button type="submit" class="cta-button py-2 px-4 rounded">Send</button>
+                <button type="submit" class="cta-button py-2 px-6 rounded-lg text-lg font-semibold shadow">Send</button>
                 <p id="form-status" class="mt-2 text-sm"></p>
                 <p class="text-xs text-[#4b4b4b] mt-2">We respect your privacy. Your information will not be shared.</p>
             </form>
@@ -179,7 +191,7 @@
         <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
-    <!-- Mobile Menu Script -->
+    <!-- Mobile Menu Script & Form Script -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
@@ -201,13 +213,11 @@
         document.getElementById('contact-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const status = document.getElementById('form-status');
-            // Honeypot check
             if (document.getElementById('website').value !== "") {
                 status.textContent = "Spam detected. Submission blocked.";
                 status.className = "mt-2 text-red-600 text-sm";
                 return;
             }
-            // Basic validation
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const message = document.getElementById('message').value.trim();
@@ -216,7 +226,6 @@
                 status.className = "mt-2 text-red-600 text-sm";
                 return;
             }
-            // Simulate success
             status.textContent = "Thank you for your message! I’ll get back to you soon.";
             status.className = "mt-2 text-green-600 text-sm";
             this.reset();
