@@ -121,30 +121,56 @@
         <section class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Email Card -->
             <div class="hover-card bg-[#faf9f5] shadow-lg rounded-lg p-6 text-center">
-                <i class="fas fa-envelope text-4xl text-[#bc6442] mb-4"></i>
+                <i class="fas fa-envelope text-4xl text-[#bc6442] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Email Me</h3>
                 <p class="text-[#4b4b4b] mb-4">Drop me an email for detailed discussions!</p>
-                <a href="mailto:gauravlohknabusinessonly@gmail.com" class="email-link">Send Email</a>
+                <a href="mailto:gauravlohknabusinessonly@gmail.com" class="email-link" aria-label="Send Email">Send Email</a>
             </div>
 
             <!-- LinkedIn Card -->
             <div class="hover-card bg-[#faf9f5] shadow-lg rounded-lg p-6 text-center">
-                <i class="fab fa-linkedin text-4xl text-[#0077b5] mb-4"></i>
+                <i class="fab fa-linkedin text-4xl text-[#0077b5] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">LinkedIn</h3>
                 <p class="text-[#4b4b4b] mb-4">Let’s network professionally.</p>
-                <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/" class="contact-link" target="_blank">Connect on LinkedIn</a>
+                <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/" class="contact-link" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">Connect on LinkedIn</a>
             </div>
 
             <!-- Virtual Coffee Card -->
             <div class="hover-card bg-[#faf9f5] shadow-lg rounded-lg p-6 text-center">
-                <i class="fas fa-coffee text-4xl text-[#bc6442] mb-4"></i>
+                <i class="fas fa-coffee text-4xl text-[#bc6442] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Virtual Coffee ☕</h3>
                 <p class="text-[#4b4b4b] mb-4">Book a virtual coffee chat with me.</p>
                 <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3UOpeOMOz-G_EluIJTUwsCkp9WgvRhSZrA2KeAhFodo14uAeRQhVfOhHRgnfdvs-Rqu57CJoRj?gv=true" 
-                   class="cta-button py-3 px-6 font-semibold text-white rounded-lg">
+                   class="cta-button py-3 px-6 font-semibold text-white rounded-lg"
+                   target="_blank" rel="noopener" aria-label="Book an Appointment">
                     Book an Appointment
                 </a>
             </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="container mx-auto px-6 py-8 max-w-xl">
+            <form id="contact-form" class="bg-white shadow-lg rounded-lg p-6 space-y-4" autocomplete="off" aria-label="Contact Form">
+                <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Or Send a Message</h3>
+                <label for="name" class="block text-[#2e2e2e] font-semibold">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required class="w-full border rounded p-2" aria-required="true" />
+
+                <label for="email" class="block text-[#2e2e2e] font-semibold">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" required class="w-full border rounded p-2" aria-required="true" />
+
+                <label for="message" class="block text-[#2e2e2e] font-semibold">Message</label>
+                <textarea id="message" name="message" placeholder="Your Message" required class="w-full border rounded p-2" aria-required="true"></textarea>
+
+                <!-- Honeypot field for spam protection (hidden from users) -->
+                <div style="display:none;">
+                    <label for="website">Website</label>
+                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
+                </div>
+
+                <button type="submit" class="cta-button py-2 px-4 rounded">Send</button>
+                <p id="form-status" class="mt-2 text-sm"></p>
+                <p class="text-xs text-[#4b4b4b] mt-2">We respect your privacy. Your information will not be shared.</p>
+            </form>
         </section>
     </main>
 
@@ -170,6 +196,31 @@
             mobileMenu.classList.add('translate-x-full');
             overlay.classList.add('opacity-0', 'pointer-events-none');
         }
+
+        // Contact Form Submission (client-side only demo)
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const status = document.getElementById('form-status');
+            // Honeypot check
+            if (document.getElementById('website').value !== "") {
+                status.textContent = "Spam detected. Submission blocked.";
+                status.className = "mt-2 text-red-600 text-sm";
+                return;
+            }
+            // Basic validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+            if (!name || !email || !message) {
+                status.textContent = "Please fill in all fields.";
+                status.className = "mt-2 text-red-600 text-sm";
+                return;
+            }
+            // Simulate success
+            status.textContent = "Thank you for your message! I’ll get back to you soon.";
+            status.className = "mt-2 text-green-600 text-sm";
+            this.reset();
+        });
     </script>
 </body>
 </html>
