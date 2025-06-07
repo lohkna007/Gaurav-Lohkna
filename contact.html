@@ -21,19 +21,36 @@
         main {
             flex: 1;
         }
-        .hover-card {
+        .glass-card {
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.10);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 1.25rem;
+            border: 1px solid rgba(255, 255, 255, 0.18);
             transition: box-shadow 0.3s, transform 0.3s;
         }
-        .hover-card:hover {
-            box-shadow: 0 12px 32px rgba(188, 100, 66, 0.15), 0 2px 8px rgba(0,0,0,0.04);
-            transform: translateY(-8px) scale(1.03);
-            background: linear-gradient(120deg, #fff 80%, #fbeee6 100%);
+        .glass-card:hover {
+            box-shadow: 0 12px 32px rgba(188, 100, 66, 0.18), 0 2px 8px rgba(0,0,0,0.06);
+            transform: translateY(-6px) scale(1.025);
+        }
+        .cta-button, .contact-link, .email-link {
+            width: 100%;
+            max-width: 220px;
+            display: inline-block;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 600;
+            font-size: 1.125rem;
+            box-shadow: 0 2px 8px rgba(188, 100, 66, 0.08);
+            text-align: center;
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: background 0.3s, box-shadow 0.3s, color 0.3s;
         }
         .cta-button {
             background: linear-gradient(90deg, #bc6442 60%, #d98157 100%);
             color: #fff;
-            transition: background 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 8px rgba(188, 100, 66, 0.08);
         }
         .cta-button:hover {
             background: linear-gradient(90deg, #d98157 60%, #bc6442 100%);
@@ -42,8 +59,6 @@
         .contact-link {
             background: linear-gradient(90deg, #0077b5 60%, #005f87 100%);
             color: #fff;
-            transition: background 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 8px rgba(0,119,181,0.08);
         }
         .contact-link:hover {
             background: linear-gradient(90deg, #005f87 60%, #0077b5 100%);
@@ -52,31 +67,10 @@
         .email-link {
             background: linear-gradient(90deg, #4b4b4b 60%, #2e2e2e 100%);
             color: #fff;
-            transition: background 0.3s, box-shadow 0.3s;
-            box-shadow: 0 2px 8px rgba(75,75,75,0.08);
         }
         .email-link:hover {
             background: linear-gradient(90deg, #2e2e2e 60%, #4b4b4b 100%);
             box-shadow: 0 4px 16px rgba(75,75,75,0.15);
-        }
-        .form-input, .form-textarea {
-            border: 1.5px solid #e5e7eb;
-            border-radius: 0.5rem;
-            padding-left: 2.5rem;
-            transition: border 0.2s, box-shadow 0.2s;
-        }
-        .form-input:focus, .form-textarea:focus {
-            border-color: #bc6442;
-            box-shadow: 0 0 0 2px #fbeee6;
-            outline: none;
-        }
-        .input-icon {
-            position: absolute;
-            left: 0.75rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #bc6442;
-            font-size: 1.1rem;
         }
     </style>
 </head>
@@ -130,61 +124,34 @@
         <!-- Contact Options -->
         <section class="container mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-10">
             <!-- Email Card -->
-            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center flex flex-col items-center">
+            <div class="glass-card shadow-xl p-8 text-center flex flex-col items-center">
                 <i class="fas fa-envelope text-4xl text-[#bc6442] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Email Me</h3>
                 <p class="text-[#4b4b4b] mb-4">Drop me an email for detailed discussions!</p>
                 <a href="mailto:gauravlohknabusinessonly@gmail.com"
-                   class="email-link mt-2 w-full max-w-[220px] py-3 px-6 rounded-lg font-semibold text-lg shadow text-center transition-all duration-200"
+                   class="email-link"
                    aria-label="Send Email">Send Email</a>
             </div>
 
             <!-- LinkedIn Card -->
-            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center flex flex-col items-center">
+            <div class="glass-card shadow-xl p-8 text-center flex flex-col items-center">
                 <i class="fab fa-linkedin text-4xl text-[#0077b5] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">LinkedIn</h3>
                 <p class="text-[#4b4b4b] mb-4">Let’s network professionally.</p>
                 <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/"
-                   class="contact-link mt-2 w-full max-w-[220px] py-3 px-6 rounded-lg font-semibold text-lg shadow text-center transition-all duration-200"
+                   class="contact-link"
                    target="_blank" rel="noopener" aria-label="Connect on LinkedIn">Connect on LinkedIn</a>
             </div>
 
             <!-- Virtual Coffee Card -->
-            <div class="hover-card bg-white shadow-xl rounded-2xl p-8 text-center flex flex-col items-center">
+            <div class="glass-card shadow-xl p-8 text-center flex flex-col items-center">
                 <i class="fas fa-coffee text-4xl text-[#bc6442] mb-4" aria-hidden="true"></i>
                 <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Virtual Coffee ☕</h3>
                 <p class="text-[#4b4b4b] mb-4">Book a virtual coffee chat with me.</p>
                 <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3UOpeOMOz-G_EluIJTUwsCkp9WgvRhSZrA2KeAhFodo14uAeRQhVfOhHRgnfdvs-Rqu57CJoRj?gv=true"
-                   class="cta-button mt-2 w-full max-w-[220px] py-3 px-6 rounded-lg font-semibold text-lg shadow text-center transition-all duration-200"
+                   class="cta-button"
                    target="_blank" rel="noopener" aria-label="Book an Appointment">Book an Appointment</a>
             </div>
-        </section>
-
-        <!-- Contact Form Section -->
-        <section class="container mx-auto px-6 py-12 max-w-xl">
-            <form id="contact-form" class="bg-white shadow-xl rounded-2xl p-8 space-y-6" autocomplete="off" aria-label="Contact Form">
-                <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e] text-center">Or Send a Message</h3>
-                <div class="relative">
-                    <span class="input-icon"><i class="fa fa-user"></i></span>
-                    <input type="text" id="name" name="name" placeholder="Your Name" required class="form-input w-full pl-10 py-2 text-base" aria-required="true" />
-                </div>
-                <div class="relative">
-                    <span class="input-icon"><i class="fa fa-envelope"></i></span>
-                    <input type="email" id="email" name="email" placeholder="Your Email" required class="form-input w-full pl-10 py-2 text-base" aria-required="true" />
-                </div>
-                <div class="relative">
-                    <span class="input-icon" style="top:1.5rem;"><i class="fa fa-comment"></i></span>
-                    <textarea id="message" name="message" placeholder="Your Message" required class="form-textarea w-full pl-10 py-2 min-h-[120px] text-base" aria-required="true"></textarea>
-                </div>
-                <!-- Honeypot field for spam protection (hidden from users) -->
-                <div style="display:none;">
-                    <label for="website">Website</label>
-                    <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
-                </div>
-                <button type="submit" class="cta-button w-full py-3 px-6 rounded-lg text-lg font-semibold shadow transition-all duration-200">Send</button>
-                <p id="form-status" class="mt-2 text-sm text-center"></p>
-                <p class="text-xs text-[#4b4b4b] mt-2 text-center">We respect your privacy. Your information will not be shared.</p>
-            </form>
         </section>
     </main>
 
@@ -193,45 +160,25 @@
         <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
-    <!-- Mobile Menu Script & Form Script -->
+    <!-- Mobile Menu Script -->
     <script>
         const menuToggle = document.getElementById('menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         const overlay = document.getElementById('overlay');
+        const menuClose = document.getElementById('menu-close');
 
         menuToggle.addEventListener('click', () => {
             mobileMenu.classList.remove('translate-x-full');
             overlay.classList.remove('opacity-0', 'pointer-events-none');
         });
 
+        menuClose.addEventListener('click', closeMenu);
         overlay.addEventListener('click', closeMenu);
 
         function closeMenu() {
             mobileMenu.classList.add('translate-x-full');
             overlay.classList.add('opacity-0', 'pointer-events-none');
         }
-
-        // Contact Form Submission (client-side only demo)
-        document.getElementById('contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const status = document.getElementById('form-status');
-            if (document.getElementById('website').value !== "") {
-                status.textContent = "Spam detected. Submission blocked.";
-                status.className = "mt-2 text-red-600 text-sm";
-                return;
-            }
-            const name = document.getElementById('name').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const message = document.getElementById('message').value.trim();
-            if (!name || !email || !message) {
-                status.textContent = "Please fill in all fields.";
-                status.className = "mt-2 text-red-600 text-sm";
-                return;
-            }
-            status.textContent = "Thank you for your message! I’ll get back to you soon.";
-            status.className = "mt-2 text-green-600 text-sm";
-            this.reset();
-        });
     </script>
 </body>
 </html>
