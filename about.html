@@ -1,244 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me | Gaurav Lohkna</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me | Gaurav Lohkna</title>
 
-    <!-- Tailwind CSS Precompiled for Production -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <!-- Tailwind CSS Precompiled for Production -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" crossorigin="anonymous" />
 
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
 
-    <style>
-        body {
-            background: linear-gradient(135deg, #f8fafc 0%, #fbeee6 100%);
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        main {
-            flex: 1;
-        }
+  <!-- AOS Animate On Scroll Library -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
-        /* Styling for the animated story sections - MUCH more pronounced animation */
-        .story-section {
-            @apply bg-white p-10 rounded-lg shadow-2xl mb-16 opacity-0 transform translate-y-20 scale-95 transition-all duration-1000 ease-out; /* Stronger animation, larger padding, more shadow */
-            max-width: 750px; /* Keeping it narrower for a more vertical flow */
-            margin-left: auto;
-            margin-right: auto;
-            border: 1px solid rgba(0,0,0,0.05); /* Subtle border for definition */
-        }
-        .story-section.is-visible {
-            @apply opacity-100 translate-y-0 scale-100;
-        }
-
-        /* Adjust heading size within story sections for better visual hierarchy */
-        .story-section h3 {
-            @apply text-4xl font-bold text-[#2e2e2e] mb-6 text-center; /* Larger headings for impact */
-        }
-        .story-section p, .story-section ul {
-            @apply text-xl text-[#4b4b4b] leading-relaxed mb-4; /* Larger body text for readability */
-        }
-        .story-section li {
-            @apply mb-2;
-        }
-        .accent-text {
-            color: #bc6442; /* Using the hover color from the navigation as an accent */
-            font-weight: 600;
-        }
-
-        /* Make separator more visually striking */
-        .story-separator {
-            @apply w-24 h-1.5 bg-[#bc6442] mx-auto my-16 opacity-0 transform translate-y-12 transition-all duration-1000 ease-out; /* Wider, thicker, longer transition */
-        }
-        .story-separator.is-visible {
-            @apply opacity-100 translate-y-0;
-        }
-    </style>
+  <style>
+    body {
+      background: linear-gradient(135deg, #f8fafc 0%, #fbeee6 100%);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    main {
+      flex: 1;
+    }
+  </style>
 </head>
 <body class="font-sans text-[#2e2e2e] leading-relaxed">
 
-    <!-- Header -->
-    <header class="bg-white shadow-md relative">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">About Me</h1>
+<!-- Header -->
+<header class="bg-white shadow-md relative">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">About Me</h1>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Home</a>
+      <a href="article.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
+      <a href="blog.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
+      <a href="about.html" class="text-[#2e2e2e] font-semibold hover:text-[#bc6442]">About</a>
+      <a href="contact.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Contact</a>
+    </nav>
+    <div class="md:hidden flex items-center">
+      <button id="menu-toggle" class="text-[#2e2e2e] focus:outline-none">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <div class="p-6">
+      <button id="menu-close" class="text-[#2e2e2e] focus:outline-none mb-4">
+        <i class="fa-solid fa-times text-2xl"></i>
+      </button>
+      <nav class="flex flex-col space-y-4">
+        <a href="index.html" class="block text-[#2e2e2e] hover:text-[#bc6442] font-semibold">Home</a>
+        <a href="article.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
+        <a href="blog.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
+        <a href="about.html" class="block text-[#2e2e2e] font-semibold hover:text-[#bc6442]">About</a>
+        <a href="contact.html" class="block text-[#bc6442] hover:text-[#d98157] font-semibold">Contact</a>
+      </nav>
+    </div>
+  </div>
+  <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
+</header>
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Home</a>
-                <a href="article.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
-                <a href="blog.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
-                <a href="about.html" class="text-[#2e2e2e] font-semibold hover:text-[#bc6442]">About</a>
-                <a href="contact.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Contact</a>
-            </nav>
+<!-- Hero Section -->
+<main>
+  <section class="bg-white py-12">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-[#2e2e2e]">Hi, I'm Gaurav</h2>
+      <p class="mt-4 text-lg text-[#4b4b4b]">
+        Ivy League labs taught me to ask questions, AI taught me to find answers—and I’m just getting started.
+      </p>
+      <img src="timeline_journey_2png.png" alt="Journey Timeline" class="mt-8 mx-auto rounded-lg shadow-lg">
+    </div>
+  </section>
 
-            <!-- Mobile Hamburger Menu -->
-            <div class="md:hidden flex items-center">
-                <button id="menu-toggle" class="text-[#2e2e2e] focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
-            </div>
+  <!-- Journey Scroll Blocks -->
+  <section class="bg-white py-16 px-6">
+    <div class="max-w-5xl mx-auto space-y-20">
+
+      <div class="md:grid md:grid-cols-2 md:gap-12 items-center" data-aos="fade-right">
+        <div>
+          <h3 class="text-2xl font-bold text-[#2e2e2e]">Curious Beginnings</h3>
+          <p class="mt-4 text-[#4b4b4b] text-lg">
+            🧪 In 2018, I found myself inside the stone walls of Yale, not knowing that this curious detour into neuroscience research would ignite a much deeper question—how does intelligence really work? And can machines learn too?
+          </p>
         </div>
-
-        <!-- Mobile Navigation -->
-        <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-            <div class="p-6">
-                <button id="menu-close" class="text-[#2e2e2e] focus:outline-none mb-4">
-                    <i class="fa-solid fa-times text-2xl"></i>
-                </button>
-                <nav class="flex flex-col space-y-4">
-                    <a href="index.html" class="block text-[#2e2e2e] hover:text-[#bc6442] font-semibold">Home</a>
-                    <a href="article.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
-                    <a href="blog.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
-                    <a href="about.html" class="block text-[#2e2e2e] font-semibold hover:text-[#bc6442]">About</a>
-                    <a href="contact.html" class="block text-[#bc6442] hover:text-[#d98157] font-semibold">Contact</a>
-                </nav>
-            </div>
+        <div class="mt-8 md:mt-0 text-center">
+          <img src="https://upload.wikimedia.org/wikipedia/en/thumb/0/0c/Yale_University_Shield_1.svg/1200px-Yale_University_Shield_1.svg.png" alt="Yale Logo" class="w-32 mx-auto">
         </div>
+      </div>
 
-        <!-- Overlay -->
-        <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
-    </header>
+      <div class="md:grid md:grid-cols-2 md:gap-12 items-center" data-aos="fade-left">
+        <div class="order-2 md:order-1 mt-8 md:mt-0 text-center">
+          <img src="https://upload.wikimedia.org/wikipedia/en/d/dc/University_of_Delhi.png" alt="DU Logo" class="w-28 mx-auto">
+        </div>
+        <div class="order-1 md:order-2">
+          <h3 class="text-2xl font-bold text-[#2e2e2e]">The Foundations</h3>
+          <p class="mt-4 text-[#4b4b4b] text-lg">
+            🖥️ Back in Delhi, I pursued a degree in Computer Science. Not just for the code, but for the patterns. I explored not just what machines compute—but why humans create them in the first place.
+          </p>
+        </div>
+      </div>
 
-    <!-- Hero Section (Original Content - UNTOUCHED as requested) -->
-    <main>
-        <section class="bg-white py-12">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl font-bold text-[#2e2e2e]">Hi, I'm Gaurav</h2>
-                <p class="mt-4 text-lg text-[#4b4b4b]">
-                    Ivy League labs taught me to ask questions, AI taught me to find answers—and I’m just getting started.
-                </p>
-                <img src="timeline_journey_2png.png" alt="Journey Timeline" class="mt-8 mx-auto rounded-lg shadow-lg">
-            </div>
-        </section>
+      <div class="md:grid md:grid-cols-2 md:gap-12 items-center" data-aos="fade-up">
+        <div>
+          <h3 class="text-2xl font-bold text-[#2e2e2e]">The Acceleration</h3>
+          <p class="mt-4 text-[#4b4b4b] text-lg">
+            🚀 Getting into the Berkeley x Plaksha AI/ML program was like standing at the launchpad. I dove into applied ML, built a news recommender, and led teams that explored how to align AI with human intuition.
+          </p>
+        </div>
+        <div class="mt-8 md:mt-0 text-center">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/UC_Berkeley_seal.svg/2048px-UC_Berkeley_seal.svg.png" alt="Berkeley Logo" class="w-28 mx-auto">
+        </div>
+      </div>
 
-        <!-- New sections for detailed journey with enhanced animations -->
-        <section class="py-12 bg-gray-50">
-            <div class="container mx-auto px-6 max-w-5xl">
-                <!-- Main title for the story section, now also animated -->
-                <h3 class="text-4xl font-bold text-[#2e2e2e] mb-16 text-center story-section" style="padding: 2.5rem 0;">Beyond the Timeline: My Story in AI</h3>
+      <div class="md:grid md:grid-cols-2 md:gap-12 items-center" data-aos="fade-up">
+        <div class="order-2 md:order-1 mt-8 md:mt-0 text-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/2838/2838912.png" alt="Healthcare" class="w-28 mx-auto">
+        </div>
+        <div class="order-1 md:order-2">
+          <h3 class="text-2xl font-bold text-[#2e2e2e]">Healthcare and Responsibility</h3>
+          <p class="mt-4 text-[#4b4b4b] text-lg">
+            🏥 At Minfy, I built LLM-driven tools that helped hospitals cut discharge reporting time from 30 minutes to 2. That’s when AI became less about hype—and more about helping real people.
+          </p>
+        </div>
+      </div>
 
-                <!-- Section 1: The Foundation -->
-                <div class="story-section">
-                    <h3>The Spark: A Journey Begins</h3>
-                    <p>
-                        My exploration into the world of technology kicked off at the <span class="accent-text">University of Delhi</span>, diving deep into Computer Science. It wasn't just about learning algorithms and code; it was about nurturing a profound curiosity for how systems operate, how they're crafted, and their incredible potential to reshape our lives. That initial spark ignited a passion I'm still eagerly pursuing today.
-                    </p>
-                </div>
+      <div class="md:grid md:grid-cols-2 md:gap-12 items-center" data-aos="fade-right">
+        <div>
+          <h3 class="text-2xl font-bold text-[#2e2e2e]">The Copilot Era</h3>
+          <p class="mt-4 text-[#4b4b4b] text-lg">
+            🤖 Today at HRS Group, I'm building a hotel procurement copilot—think ChatGPT, but for travel savings. LangChain agents, serverless architecture, embedding search—all designed to make enterprise decisions smarter and faster.
+          </p>
+        </div>
+        <div class="mt-8 md:mt-0 text-center">
+          <img src="https://cdn-icons-png.flaticon.com/512/4712/4712044.png" alt="Chatbot" class="w-24 mx-auto">
+        </div>
+      </div>
 
-                <div class="story-separator"></div>
+      <div class="text-center" data-aos="zoom-in">
+        <h3 class="text-2xl font-bold text-[#2e2e2e]">Let’s Build Something Meaningful</h3>
+        <p class="mt-4 text-[#4b4b4b] text-lg">
+          💬 I don’t chase hype—I build with empathy. If you’re working on something that matters, reach out.
+        </p>
+        <a href="contact.html" class="mt-6 inline-block bg-[#bc6442] text-white px-6 py-3 rounded-lg shadow hover:bg-[#a35235] transition">Say Hi</a>
+      </div>
 
-                <!-- Section 2: Deepening the Craft -->
-                <div class="story-section">
-                    <h3>Crafting Expertise: Asking the Right Questions, Finding AI's Answers</h3>
-                    <p>
-                        The true transformation happened during my Masters in Artificial Intelligence and Machine Learning at <span class="accent-text">Plaksha University, in collaboration with UC Berkeley</span>. This wasn't merely an academic pursuit; it was an intensive workshop in thinking differently. I learned to dissect complex problems, to ask the truly incisive questions, and then, crucially, to architect intelligent systems capable of delivering impactful answers. Earning the <span class="accent-text">Outstanding Capstone Award</span> was a humbling affirmation that I was indeed on the right path, pushing the boundaries of what AI could achieve.
-                    </p>
-                </div>
+    </div>
+  </section>
+</main>
 
-                <div class="story-separator"></div>
+<!-- Footer -->
+<footer class="bg-[#f6f5f3] text-[#4b4b4b] py-4">
+  <p class="text-center">© 2024 Gaurav Lohkna. All rights reserved.</p>
+</footer>
 
-                <!-- Section 3: Making Real-World Impact -->
-                <div class="story-section">
-                    <h3>From Code to Concrete: Driving Early Impact</h3>
-                    <p>
-                        My initial professional roles were all about getting my hands dirty and witnessing AI's tangible impact. As a Data Scientist at <span class="accent-text">Minfy</span> and during my first chapter at <span class="accent-text">HRS Group</span>, I focused on building scalable, practical solutions that made a real difference:
-                    </p>
-                    <ul>
-                        <li>I engineered <span class="accent-text">real-time dashboards</span> that brought unparalleled clarity to complex data, remarkably slashing manual reporting tasks by <span class="accent-text">95%</span>. Seeing that direct impact was incredibly motivating!</li>
-                        <li>In the vital healthcare sector, I developed <span class="accent-text">AI-driven platforms</span> for chronic disease management. It's truly rewarding to know my work helped <span class="accent-text">reduce discharge reporting time from 30 minutes to under 2 minutes</span>, enhancing overall healthcare efficiency by <span class="accent-text">40%</span>.</li>
-                    </ul>
-                    <p>
-                        These experiences cemented my belief in building solutions that aren't just technically sound, but genuinely solve real-world pain points.
-                    </p>
-                </div>
+<!-- Mobile Menu Script + AOS -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('overlay');
 
-                <div class="story-separator"></div>
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+  });
 
-                <!-- Section 4: Pioneering the Future with Generative AI -->
-                <div class="story-section">
-                    <h3>Innovating Today: The Frontier of Generative AI and Cloud-Native Solutions</h3>
-                    <p>
-                        Today, as a Data & Machine Learning Engineer back at <span class="accent-text">HRS Group</span>, I find myself at the forefront of designing and deploying intelligent systems that are truly redefining industry standards. My current focus revolves around cutting-edge Generative AI and robust cloud-native architectures:
-                    </p>
-                    <ul>
-                        <li>I spearheaded the <span class="accent-text">Hotel Procurement Copilot</span>, leveraging AWS Bedrock, LangChain, and Retrieval Augmented Generation (RAG). This intelligent assistant has already achieved an <span class="accent-text">80% reduction in procurement analysis time</span> and a <span class="accent-text">60% decrease in reliance on costly external consultants</span>. It's all about empowering smarter, faster business decisions.</li>
-                        <li>I also engineered the <span class="accent-text">Hotel Rebooking System</span>, an AI-powered solution that continuously monitors hotel rates post-booking. It proactively identifies and secures lower prices, delivering an impressive <span class="accent-text">average saving of €38 per reservation</span> for travelers. This showcases how AI can deliver consistent, tangible value.</li>
-                    </ul>
-                    <p>
-                        These projects, built with a deep emphasis on LLMOps and scalable AWS architectures, are where my passion for innovation truly comes alive, pushing the boundaries of what's possible.
-                    </p>
-                </div>
+  function closeMenu() {
+    mobileMenu.classList.add('translate-x-full');
+    overlay.classList.add('opacity-0', 'pointer-events-none');
+  }
 
-                <div class="story-separator"></div>
+  menuClose.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
 
-                <!-- Section 5: My Core Philosophy -->
-                <div class="story-section">
-                    <h3>My Core Belief: Building with Purpose and Passion</h3>
-                    <p>
-                        At the heart of every project I undertake is a simple, guiding principle: AI should simplify, empower, and profoundly enhance. My journey, from grasping foundational computer science concepts to pioneering advanced Generative AI solutions, has always been about translating intricate ideas into practical, impactful systems. I genuinely thrive on optimizing complex operations, crafting intuitive user experiences, and unearthing valuable, actionable insights from vast datasets. I'm incredibly grateful for every challenge that has shaped me, refining my skills and deepening my understanding. The world of AI is endlessly fascinating, and I'm always looking for the next opportunity to build something truly meaningful, contributing to a smarter, more efficient future.
-                    </p>
-                </div>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-4">
-        <p class="text-center">© 2024 Gaurav Lohkna. All rights reserved.</p>
-    </footer>
-
-    <!-- Mobile Menu Script -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuClose = document.getElementById('menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const overlay = document.getElementById('overlay');
-
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
-            overlay.classList.remove('opacity-0', 'pointer-events-none');
-        });
-
-        menuClose.addEventListener('click', closeMenu);
-        overlay.addEventListener('click', closeMenu);
-
-        function closeMenu() {
-            mobileMenu.classList.add('translate-x-full');
-            overlay.classList.add('opacity-0', 'pointer-events-none');
-        }
-
-        // Intersection Observer for scroll animations (updated for more impact)
-        document.addEventListener('DOMContentLoaded', () => {
-            const sections = document.querySelectorAll('.story-section, .story-separator');
-
-            const observerOptions = {
-                root: null, // viewport
-                rootMargin: '0px',
-                threshold: 0.1 // Trigger when 10% of the element is visible
-            };
-
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        // To make animations more dynamic on re-scroll, you can choose to remove observer.unobserve
-                        // For a "story" that reveals, keeping them visible after first scroll is often preferred.
-                        // observer.unobserve(entry.target);
-                    } else {
-                        // Optional: remove 'is-visible' if you want elements to re-animate when scrolling back up/down
-                        // entry.target.classList.remove('is-visible');
-                    }
-                });
-            }, observerOptions);
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
 </body>
 </html>
