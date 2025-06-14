@@ -21,27 +21,43 @@
         main {
             flex: 1;
         }
+
+        /* Styling for the animated story sections */
         .story-section {
-            @apply bg-white p-8 rounded-lg shadow-md mb-8;
+            @apply bg-white p-8 rounded-lg shadow-md mb-12 opacity-0 transform translate-y-8 transition-all duration-700 ease-out;
             max-width: 800px; /* Constrain width for better readability */
             margin-left: auto;
             margin-right: auto;
+            /* Delay for staggered animation if desired, otherwise remove */
+            /* transition-delay: 0.1s; */
         }
+        .story-section.is-visible {
+            @apply opacity-100 translate-y-0;
+        }
+
         .story-section h3 {
-            @apply text-2xl font-semibold text-[#2e2e2e] mb-4;
+            @apply text-3xl font-bold text-[#2e2e2e] mb-4 text-center;
         }
         .story-section p {
-            @apply text-[#4b4b4b] leading-relaxed mb-4;
+            @apply text-lg text-[#4b4b4b] leading-relaxed mb-4;
         }
         .story-section ul {
-            @apply list-disc list-inside text-[#4b4b4b] mb-4;
+            @apply list-disc list-inside text-lg text-[#4b4b4b] mb-4;
         }
         .story-section li {
-            @apply mb-1;
+            @apply mb-2;
         }
         .accent-text {
             color: #bc6442; /* Using the hover color from the navigation as an accent */
             font-weight: 600;
+        }
+
+        /* Optional: Separator Line for visual flow */
+        .story-separator {
+            @apply w-16 h-1 bg-[#bc6442] mx-auto my-12 opacity-0 transform translate-y-8 transition-all duration-700 ease-out;
+        }
+        .story-separator.is-visible {
+            @apply opacity-100 translate-y-0;
         }
     </style>
 </head>
@@ -101,62 +117,70 @@
             </div>
         </section>
 
-        <!-- New sections for detailed journey -->
+        <!-- New sections for detailed journey with animations -->
         <section class="py-12 bg-gray-50">
             <div class="container mx-auto px-6 max-w-5xl">
-                <h3 class="text-3xl font-bold text-[#2e2e2e] mb-12 text-center">Beyond the Timeline: My Story in AI</h3>
+                <h3 class="text-4xl font-bold text-[#2e2e2e] mb-16 text-center story-section">Beyond the Timeline: My Story in AI</h3>
 
                 <!-- Section 1: The Foundation -->
                 <div class="story-section">
-                    <h3 class="text-center">The Curiosity that Sparked a Journey</h3>
+                    <h3>The Spark: A Journey Begins</h3>
                     <p>
-                        My adventure in technology began at the <span class="accent-text">University of Delhi</span>, where I dove deep into Computer Science. It was more than just learning code; it was about understanding how systems work, how they could be built, and the immense power they hold to shape our world. That foundational curiosity set me on a path I'm still passionately exploring today.
+                        My exploration into the world of technology kicked off at the <span class="accent-text">University of Delhi</span>, diving deep into Computer Science. It wasn't just about learning algorithms and code; it was about nurturing a profound curiosity for how systems operate, how they're crafted, and their incredible potential to reshape our lives. That initial spark ignited a passion I'm still eagerly pursuing today.
                     </p>
                 </div>
+
+                <div class="story-separator"></div>
 
                 <!-- Section 2: Deepening the Craft -->
                 <div class="story-section">
-                    <h3 class="text-center">Asking the Right Questions, Finding AI's Answers</h3>
+                    <h3>Crafting Expertise: Asking the Right Questions, Finding AI's Answers</h3>
                     <p>
-                        The real turning point was my Masters in Artificial Intelligence and Machine Learning at <span class="accent-text">Plaksha University, in collaboration with UC Berkeley</span>. This wasn't just about gaining knowledge; it was about cultivating a mindset. I learned to dissect complex problems, to ask the incisive questions, and then, to architect intelligent systems that could truly provide the answers. It was a rigorous journey, culminating in an <span class="accent-text">Outstanding Capstone Award</span> – a moment that truly affirmed I was on the right track.
+                        The true transformation happened during my Masters in Artificial Intelligence and Machine Learning at <span class="accent-text">Plaksha University, in collaboration with UC Berkeley</span>. This wasn't merely an academic pursuit; it was an intensive workshop in thinking differently. I learned to dissect complex problems, to ask the truly incisive questions, and then, crucially, to architect intelligent systems capable of delivering impactful answers. Earning the <span class="accent-text">Outstanding Capstone Award</span> was a humbling affirmation that I was indeed on the right path, pushing the boundaries of what AI could achieve.
                     </p>
                 </div>
 
-                <!-- Section 3: Hands-On Impact - Early Career -->
+                <div class="story-separator"></div>
+
+                <!-- Section 3: Making Real-World Impact -->
                 <div class="story-section">
-                    <h3 class="text-center">Turning Insights into Impact: My First Steps in the Field</h3>
+                    <h3>From Code to Concrete: Driving Early Impact</h3>
                     <p>
-                        My early professional roles were all about getting my hands dirty and seeing AI's direct impact. At <span class="accent-text">Minfy</span> and during my initial stint at <span class="accent-text">HRS Group</span> as a Data Scientist, I focused on building practical, scalable solutions.
+                        My initial professional roles were all about getting my hands dirty and witnessing AI's tangible impact. As a Data Scientist at <span class="accent-text">Minfy</span> and during my first chapter at <span class="accent-text">HRS Group</span>, I focused on building scalable, practical solutions that made a real difference:
                     </p>
                     <ul>
-                        <li>I crafted <span class="accent-text">real-time dashboards</span> that brought clarity to complex data, significantly cutting down manual reporting tasks. It was incredibly rewarding to see that <span class="accent-text">95% reduction</span> in effort!</li>
-                        <li>In healthcare, I developed <span class="accent-text">AI-driven platforms</span> that streamlined chronic disease management. It felt good to know my work was helping to <span class="accent-text">decrease discharge reporting time from 30 minutes to under 2 minutes</span>, and improve healthcare efficiency by <span class="accent-text">40%</span>.</li>
+                        <li>I engineered <span class="accent-text">real-time dashboards</span> that brought unparalleled clarity to complex data, remarkably slashing manual reporting tasks by <span class="accent-text">95%</span>. Seeing that direct impact was incredibly motivating!</li>
+                        <li>In the vital healthcare sector, I developed <span class="accent-text">AI-driven platforms</span> for chronic disease management. It's truly rewarding to know my work helped <span class="accent-text">reduce discharge reporting time from 30 minutes to under 2 minutes</span>, enhancing overall healthcare efficiency by <span class="accent-text">40%</span>.</li>
                     </ul>
                     <p>
-                        These experiences taught me the importance of not just building, but building with a purpose – directly solving real-world challenges.
+                        These experiences cemented my belief in building solutions that aren't just technically sound, but genuinely solve real-world pain points.
                     </p>
                 </div>
 
-                <!-- Section 4: Current Focus - Generative AI & Cloud -->
+                <div class="story-separator"></div>
+
+                <!-- Section 4: Pioneering the Future with Generative AI -->
                 <div class="story-section">
-                    <h3 class="text-center">Shaping Tomorrow: The Frontier of Generative AI</h3>
+                    <h3>Innovating Today: The Frontier of Generative AI and Cloud-Native Solutions</h3>
                     <p>
-                        Now, as a Data & Machine Learning Engineer back at <span class="accent-text">HRS Group</span>, I'm deep into the exciting world of Generative AI and cloud-native solutions. My focus is on creating systems that aren't just smart, but truly transformative.
+                        Today, as a Data & Machine Learning Engineer back at <span class="accent-text">HRS Group</span>, I find myself at the forefront of designing and deploying intelligent systems that are truly redefining industry standards. My current focus revolves around cutting-edge Generative AI and robust cloud-native architectures:
                     </p>
                     <ul>
-                        <li>With the <span class="accent-text">Hotel Procurement Copilot</span>, I leveraged AWS Bedrock, LangChain, and RAG to build an intelligent assistant. The goal? To drastically cut down the time travel managers spend on procurement research. We saw an <span class="accent-text">80% reduction in analysis time</span> and a <span class="accent-text">60% decrease in reliance on external consultants</span> – it’s about empowering smarter decisions.</li>
-                        <li>Then there's the <span class="accent-text">Hotel Rebooking System</span>, an AI-powered solution that constantly monitors hotel rates. It proactively rebooks lower-priced reservations, securing an <span class="accent-text">average saving of €38 per reservation</span> for travelers. It's a testament to how AI can quietly deliver significant value.</li>
+                        <li>I spearheaded the <span class="accent-text">Hotel Procurement Copilot</span>, leveraging AWS Bedrock, LangChain, and Retrieval Augmented Generation (RAG). This intelligent assistant has already achieved an <span class="accent-text">80% reduction in procurement analysis time</span> and a <span class="accent-text">60% decrease in reliance on costly external consultants</span>. It's all about empowering smarter, faster business decisions.</li>
+                        <li>I also engineered the <span class="accent-text">Hotel Rebooking System</span>, an AI-powered solution that continuously monitors hotel rates post-booking. It proactively identifies and secures lower prices, delivering an impressive <span class="accent-text">average saving of €38 per reservation</span> for travelers. This showcases how AI can deliver consistent, tangible value.</li>
                     </ul>
                     <p>
-                        These projects, built with a strong emphasis on LLMOps and scalable AWS architectures, are where my passion for innovation truly comes alive.
+                        These projects, built with a deep emphasis on LLMOps and scalable AWS architectures, are where my passion for innovation truly comes alive, pushing the boundaries of what's possible.
                     </p>
                 </div>
 
-                <!-- Section 5: My Philosophy / What Drives Me -->
+                <div class="story-separator"></div>
+
+                <!-- Section 5: My Core Philosophy -->
                 <div class="story-section">
-                    <h3 class="text-center">My Core Belief: Building with Purpose</h3>
+                    <h3>My Core Belief: Building with Purpose and Passion</h3>
                     <p>
-                        At the heart of everything I do is a simple belief: AI should simplify, empower, and enhance. My journey, from understanding core computer science to pioneering Generative AI solutions, has always been about translating complex ideas into tangible, impactful systems. I find immense satisfaction in optimizing operations, creating intuitive user experiences, and unearthing valuable insights from data. I'm grateful for every challenge that has shaped me, and I’m always looking for the next opportunity to build something truly meaningful.
+                        At the heart of every project I undertake is a simple, guiding principle: AI should simplify, empower, and profoundly enhance. My journey, from grasping foundational computer science concepts to pioneering advanced Generative AI solutions, has always been about translating intricate ideas into practical, impactful systems. I genuinely thrive on optimizing complex operations, crafting intuitive user experiences, and unearthing valuable, actionable insights from vast datasets. I'm incredibly grateful for every challenge that has shaped me, refining my skills and deepening my understanding. The world of AI is endlessly fascinating, and I'm always looking for the next opportunity to build something truly meaningful, contributing to a smarter, more efficient future.
                     </p>
                 </div>
 
@@ -188,6 +212,34 @@
             mobileMenu.classList.add('translate-x-full');
             overlay.classList.add('opacity-0', 'pointer-events-none');
         }
+
+        // Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('.story-section, .story-separator');
+
+            const observerOptions = {
+                root: null, // viewport
+                rootMargin: '0px',
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        // Optional: Stop observing once it's visible if you only want it to animate once
+                        // observer.unobserve(entry.target);
+                    } else {
+                        // Optional: Remove 'is-visible' if you want it to re-animate on scroll back
+                        // entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
     </script>
 </body>
 </html>
