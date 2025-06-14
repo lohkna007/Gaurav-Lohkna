@@ -62,19 +62,6 @@
           color: #bc6442;
           font-weight: 600; /* Ensures consistent bolding for active */
         }
-
-        /* Styles for the hero content card on index.html */
-        .content-card-container {
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .content-card-container:hover {
-            transform: translateY(-4px) scale(1.005); /* Subtle hover */
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
     </style>
 </head>
 <body class="leading-relaxed">
@@ -122,13 +109,11 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="py-12 mb-12"> <!-- Removed bg-white and shadow-md from section -->
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="content-card-container p-10 rounded-2xl text-center" data-aos="fade-up"> <!-- New div with glassmorphism style -->
-                <h2 class="text-4xl font-bold mb-4" data-aos="fade-down">Merging Data, Neural Sciences, and Human Progress</h2> <!-- Changed text size -->
-                <p class="text-lg md:text-xl text-[#4b4b4b] max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">Big data, deep thoughts, and meaningful life stories—one space for it all.</p>
-                <img src="Main_Hero_3.png" alt="Gverse Cover" class="mt-8 mx-auto rounded-lg max-w-full h-auto" data-aos="zoom-in" data-aos-delay="400"> <!-- Removed shadow-lg -->
-            </div>
+    <section class="bg-white py-12 shadow-md rounded-b-3xl mb-12">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" data-aos="fade-down">Merging Data, Neural Sciences, and Human Progress</h2>
+            <p class="text-lg md:text-xl text-[#4b4b4b] max-w-3xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">Big data, deep thoughts, and meaningful life stories—one space for it all.</p>
+            <img src="Main_Hero_3.png" alt="Gverse Cover" class="mt-8 mx-auto rounded-lg" data-aos="zoom-in" data-aos-delay="400">
         </div>
     </section>
 
