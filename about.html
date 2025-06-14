@@ -21,6 +21,28 @@
         main {
             flex: 1;
         }
+        .story-section {
+            @apply bg-white p-8 rounded-lg shadow-md mb-8;
+            max-width: 800px; /* Constrain width for better readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .story-section h3 {
+            @apply text-2xl font-semibold text-[#2e2e2e] mb-4;
+        }
+        .story-section p {
+            @apply text-[#4b4b4b] leading-relaxed mb-4;
+        }
+        .story-section ul {
+            @apply list-disc list-inside text-[#4b4b4b] mb-4;
+        }
+        .story-section li {
+            @apply mb-1;
+        }
+        .accent-text {
+            color: #bc6442; /* Using the hover color from the navigation as an accent */
+            font-weight: 600;
+        }
     </style>
 </head>
 <body class="font-sans text-[#2e2e2e] leading-relaxed">
@@ -67,7 +89,7 @@
         <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Hero Section (Original Content) -->
     <main>
         <section class="bg-white py-12">
             <div class="container mx-auto px-6 text-center">
@@ -78,11 +100,73 @@
                 <img src="timeline_journey_2png.png" alt="Journey Timeline" class="mt-8 mx-auto rounded-lg shadow-lg">
             </div>
         </section>
+
+        <!-- New sections for detailed journey -->
+        <section class="py-12 bg-gray-50">
+            <div class="container mx-auto px-6 max-w-5xl">
+                <h3 class="text-3xl font-bold text-[#2e2e2e] mb-12 text-center">Beyond the Timeline: My Story in AI</h3>
+
+                <!-- Section 1: The Foundation -->
+                <div class="story-section">
+                    <h3 class="text-center">The Curiosity that Sparked a Journey</h3>
+                    <p>
+                        My adventure in technology began at the <span class="accent-text">University of Delhi</span>, where I dove deep into Computer Science. It was more than just learning code; it was about understanding how systems work, how they could be built, and the immense power they hold to shape our world. That foundational curiosity set me on a path I'm still passionately exploring today.
+                    </p>
+                </div>
+
+                <!-- Section 2: Deepening the Craft -->
+                <div class="story-section">
+                    <h3 class="text-center">Asking the Right Questions, Finding AI's Answers</h3>
+                    <p>
+                        The real turning point was my Masters in Artificial Intelligence and Machine Learning at <span class="accent-text">Plaksha University, in collaboration with UC Berkeley</span>. This wasn't just about gaining knowledge; it was about cultivating a mindset. I learned to dissect complex problems, to ask the incisive questions, and then, to architect intelligent systems that could truly provide the answers. It was a rigorous journey, culminating in an <span class="accent-text">Outstanding Capstone Award</span> – a moment that truly affirmed I was on the right track.
+                    </p>
+                </div>
+
+                <!-- Section 3: Hands-On Impact - Early Career -->
+                <div class="story-section">
+                    <h3 class="text-center">Turning Insights into Impact: My First Steps in the Field</h3>
+                    <p>
+                        My early professional roles were all about getting my hands dirty and seeing AI's direct impact. At <span class="accent-text">Minfy</span> and during my initial stint at <span class="accent-text">HRS Group</span> as a Data Scientist, I focused on building practical, scalable solutions.
+                    </p>
+                    <ul>
+                        <li>I crafted <span class="accent-text">real-time dashboards</span> that brought clarity to complex data, significantly cutting down manual reporting tasks. It was incredibly rewarding to see that <span class="accent-text">95% reduction</span> in effort!</li>
+                        <li>In healthcare, I developed <span class="accent-text">AI-driven platforms</span> that streamlined chronic disease management. It felt good to know my work was helping to <span class="accent-text">decrease discharge reporting time from 30 minutes to under 2 minutes</span>, and improve healthcare efficiency by <span class="accent-text">40%</span>.</li>
+                    </ul>
+                    <p>
+                        These experiences taught me the importance of not just building, but building with a purpose – directly solving real-world challenges.
+                    </p>
+                </div>
+
+                <!-- Section 4: Current Focus - Generative AI & Cloud -->
+                <div class="story-section">
+                    <h3 class="text-center">Shaping Tomorrow: The Frontier of Generative AI</h3>
+                    <p>
+                        Now, as a Data & Machine Learning Engineer back at <span class="accent-text">HRS Group</span>, I'm deep into the exciting world of Generative AI and cloud-native solutions. My focus is on creating systems that aren't just smart, but truly transformative.
+                    </p>
+                    <ul>
+                        <li>With the <span class="accent-text">Hotel Procurement Copilot</span>, I leveraged AWS Bedrock, LangChain, and RAG to build an intelligent assistant. The goal? To drastically cut down the time travel managers spend on procurement research. We saw an <span class="accent-text">80% reduction in analysis time</span> and a <span class="accent-text">60% decrease in reliance on external consultants</span> – it’s about empowering smarter decisions.</li>
+                        <li>Then there's the <span class="accent-text">Hotel Rebooking System</span>, an AI-powered solution that constantly monitors hotel rates. It proactively rebooks lower-priced reservations, securing an <span class="accent-text">average saving of €38 per reservation</span> for travelers. It's a testament to how AI can quietly deliver significant value.</li>
+                    </ul>
+                    <p>
+                        These projects, built with a strong emphasis on LLMOps and scalable AWS architectures, are where my passion for innovation truly comes alive.
+                    </p>
+                </div>
+
+                <!-- Section 5: My Philosophy / What Drives Me -->
+                <div class="story-section">
+                    <h3 class="text-center">My Core Belief: Building with Purpose</h3>
+                    <p>
+                        At the heart of everything I do is a simple belief: AI should simplify, empower, and enhance. My journey, from understanding core computer science to pioneering Generative AI solutions, has always been about translating complex ideas into tangible, impactful systems. I find immense satisfaction in optimizing operations, creating intuitive user experiences, and unearthing valuable insights from data. I'm grateful for every challenge that has shaped me, and I’m always looking for the next opportunity to build something truly meaningful.
+                    </p>
+                </div>
+
+            </div>
+        </section>
     </main>
 
     <!-- Footer -->
     <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-4">
-        <p class="text-center">&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
+        <p class="text-center">© 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
     <!-- Mobile Menu Script -->
