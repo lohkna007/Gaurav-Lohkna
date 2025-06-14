@@ -22,27 +22,24 @@
             flex: 1;
         }
 
-        /* Styling for the animated story sections */
+        /* Styling for the animated story sections - MUCH more pronounced animation */
         .story-section {
-            @apply bg-white p-8 rounded-lg shadow-md mb-12 opacity-0 transform translate-y-8 transition-all duration-700 ease-out;
-            max-width: 800px; /* Constrain width for better readability */
+            @apply bg-white p-10 rounded-lg shadow-2xl mb-16 opacity-0 transform translate-y-20 scale-95 transition-all duration-1000 ease-out; /* Stronger animation, larger padding, more shadow */
+            max-width: 750px; /* Keeping it narrower for a more vertical flow */
             margin-left: auto;
             margin-right: auto;
-            /* Delay for staggered animation if desired, otherwise remove */
-            /* transition-delay: 0.1s; */
+            border: 1px solid rgba(0,0,0,0.05); /* Subtle border for definition */
         }
         .story-section.is-visible {
-            @apply opacity-100 translate-y-0;
+            @apply opacity-100 translate-y-0 scale-100;
         }
 
+        /* Adjust heading size within story sections for better visual hierarchy */
         .story-section h3 {
-            @apply text-3xl font-bold text-[#2e2e2e] mb-4 text-center;
+            @apply text-4xl font-bold text-[#2e2e2e] mb-6 text-center; /* Larger headings for impact */
         }
-        .story-section p {
-            @apply text-lg text-[#4b4b4b] leading-relaxed mb-4;
-        }
-        .story-section ul {
-            @apply list-disc list-inside text-lg text-[#4b4b4b] mb-4;
+        .story-section p, .story-section ul {
+            @apply text-xl text-[#4b4b4b] leading-relaxed mb-4; /* Larger body text for readability */
         }
         .story-section li {
             @apply mb-2;
@@ -52,9 +49,9 @@
             font-weight: 600;
         }
 
-        /* Optional: Separator Line for visual flow */
+        /* Make separator more visually striking */
         .story-separator {
-            @apply w-16 h-1 bg-[#bc6442] mx-auto my-12 opacity-0 transform translate-y-8 transition-all duration-700 ease-out;
+            @apply w-24 h-1.5 bg-[#bc6442] mx-auto my-16 opacity-0 transform translate-y-12 transition-all duration-1000 ease-out; /* Wider, thicker, longer transition */
         }
         .story-separator.is-visible {
             @apply opacity-100 translate-y-0;
@@ -105,7 +102,7 @@
         <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
     </header>
 
-    <!-- Hero Section (Original Content) -->
+    <!-- Hero Section (Original Content - UNTOUCHED as requested) -->
     <main>
         <section class="bg-white py-12">
             <div class="container mx-auto px-6 text-center">
@@ -117,10 +114,11 @@
             </div>
         </section>
 
-        <!-- New sections for detailed journey with animations -->
+        <!-- New sections for detailed journey with enhanced animations -->
         <section class="py-12 bg-gray-50">
             <div class="container mx-auto px-6 max-w-5xl">
-                <h3 class="text-4xl font-bold text-[#2e2e2e] mb-16 text-center story-section">Beyond the Timeline: My Story in AI</h3>
+                <!-- Main title for the story section, now also animated -->
+                <h3 class="text-4xl font-bold text-[#2e2e2e] mb-16 text-center story-section" style="padding: 2.5rem 0;">Beyond the Timeline: My Story in AI</h3>
 
                 <!-- Section 1: The Foundation -->
                 <div class="story-section">
@@ -213,7 +211,7 @@
             overlay.classList.add('opacity-0', 'pointer-events-none');
         }
 
-        // Intersection Observer for scroll animations
+        // Intersection Observer for scroll animations (updated for more impact)
         document.addEventListener('DOMContentLoaded', () => {
             const sections = document.querySelectorAll('.story-section, .story-separator');
 
@@ -227,10 +225,11 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        // Optional: Stop observing once it's visible if you only want it to animate once
+                        // To make animations more dynamic on re-scroll, you can choose to remove observer.unobserve
+                        // For a "story" that reveals, keeping them visible after first scroll is often preferred.
                         // observer.unobserve(entry.target);
                     } else {
-                        // Optional: Remove 'is-visible' if you want it to re-animate on scroll back
+                        // Optional: remove 'is-visible' if you want elements to re-animate when scrolling back up/down
                         // entry.target.classList.remove('is-visible');
                     }
                 });
