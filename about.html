@@ -50,16 +50,60 @@
 </head>
 <body class="font-sans text-[#2e2e2e] leading-relaxed">
 
-<!-- Your header and nav remain unchanged -->
+<!-- Header -->
+<header class="bg-white shadow-md relative">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold">About Me</h1>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Home</a>
+      <a href="article.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
+      <a href="blog.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
+      <a href="about.html" class="text-[#2e2e2e] font-semibold hover:text-[#bc6442]">About</a>
+      <a href="contact.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Contact</a>
+    </nav>
+    <div class="md:hidden flex items-center">
+      <button id="menu-toggle" class="text-[#2e2e2e] focus:outline-none">
+        <i class="fa-solid fa-bars text-2xl"></i>
+      </button>
+    </div>
+  </div>
 
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
+    <div class="p-6">
+      <button id="menu-close" class="text-[#2e2e2e] focus:outline-none mb-4">
+        <i class="fa-solid fa-times text-2xl"></i>
+      </button>
+      <nav class="flex flex-col space-y-4">
+        <a href="index.html" class="block text-[#2e2e2e] hover:text-[#bc6442] font-semibold">Home</a>
+        <a href="article.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
+        <a href="blog.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
+        <a href="about.html" class="block text-[#2e2e2e] font-semibold hover:text-[#bc6442]">About</a>
+        <a href="contact.html" class="block text-[#bc6442] hover:text-[#d98157] font-semibold">Contact</a>
+      </nav>
+    </div>
+  </div>
+  <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
+</header>
+
+<!-- Main -->
 <main>
-  <!-- Hero Section remains unchanged -->
+  <!-- Hero Section -->
+  <section class="bg-white py-12">
+    <div class="container mx-auto px-6 text-center">
+      <h2 class="text-4xl font-bold text-[#2e2e2e]">Hi, I'm Gaurav</h2>
+      <p class="mt-4 text-lg text-[#4b4b4b]">
+        Ivy League labs taught me to ask questions, AI taught me to find answers—and I’m just getting started.
+      </p>
+      <img src="timeline_journey_2png.png" alt="Journey Timeline" class="mt-8 mx-auto rounded-lg shadow-lg">
+    </div>
+  </section>
 
   <!-- Journey Scroll Blocks -->
   <section class="bg-white py-16 px-6">
     <div class="max-w-5xl mx-auto space-y-20">
 
-      <!-- Block 1: Yale -->
+      <!-- Yale -->
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center story-block-container p-8 rounded-lg shadow-md" data-aos="fade-right">
         <div>
           <h3 class="text-2xl font-bold text-[#2e2e2e]">Curious Beginnings</h3>
@@ -72,7 +116,7 @@
         </div>
       </div>
 
-      <!-- Block 2: DU -->
+      <!-- DU -->
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center story-block-container p-8 rounded-lg shadow-md" data-aos="fade-left">
         <div class="order-2 md:order-1 mt-8 md:mt-0 story-block-image-wrapper">
           <img src="about_images/University_of_Delhi.png" alt="University of Delhi Logo" class="story-logo">
@@ -85,21 +129,21 @@
         </div>
       </div>
 
-      <!-- Block 3: Plaksha + Berkeley -->
+      <!-- Berkeley × Plaksha -->
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center story-block-container p-8 rounded-lg shadow-md" data-aos="fade-up">
         <div>
           <h3 class="text-2xl font-bold text-[#2e2e2e]">The Acceleration</h3>
           <p class="mt-4 text-[#4b4b4b] text-lg">
-            The acceleration began when I joined the Berkeley x Plaksha AI/ML program. This intensive experience was my launchpad into applied machine learning, where I built innovative systems like a news recommender and led teams focused on harmonizing AI capabilities with human intuition.
+            The acceleration began when I joined the Berkeley × Plaksha AI/ML program. This intensive experience was my launchpad into applied machine learning, where I built innovative systems like a news recommender and led teams focused on harmonizing AI capabilities with human intuition.
           </p>
         </div>
         <div class="mt-8 md:mt-0 story-block-image-wrapper dual-logo-wrapper">
-          <img src="about_images/plaksha.png" alt="Plaksha University Logo" class="story-logo">
+          <img src="about_images/plaksha.png" alt="Plaksha Logo" class="story-logo">
           <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/UC_Berkeley_seal.svg" alt="UC Berkeley Logo" class="story-logo">
         </div>
       </div>
 
-      <!-- Block 4: Minfy -->
+      <!-- Minfy -->
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center story-block-container p-8 rounded-lg shadow-md" data-aos="fade-up">
         <div class="order-2 md:order-1 mt-8 md:mt-0 story-block-image-wrapper">
           <img src="about_images/minfy.jpeg" alt="Minfy Logo" class="story-logo">
@@ -107,17 +151,17 @@
         <div class="order-1 md:order-2">
           <h3 class="text-2xl font-bold text-[#2e2e2e]">Healthcare and Responsibility</h3>
           <p class="mt-4 text-[#4b4b4b] text-lg">
-            At Minfy, I had the profound opportunity to apply AI in healthcare. I developed LLM-driven tools that significantly streamlined hospital operations, reducing patient discharge reporting time from 30 minutes to just 2 minutes. This experience reinforced that AI's true power lies in creating tangible benefits for real people.
+            At Minfy, I had the opportunity to apply AI in healthcare. I developed LLM-driven tools that significantly streamlined hospital operations, reducing patient discharge reporting from 30 minutes to just 2. That’s when AI felt truly human.
           </p>
         </div>
       </div>
 
-      <!-- Block 5: HRS -->
+      <!-- HRS -->
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center story-block-container p-8 rounded-lg shadow-md" data-aos="fade-right">
         <div>
           <h3 class="text-2xl font-bold text-[#2e2e2e]">The Copilot Era</h3>
           <p class="mt-4 text-[#4b4b4b] text-lg">
-            My current focus at HRS Group is on pioneering the 'copilot era' for enterprise. I'm building an intelligent hotel procurement copilot—envision a specialized AI assistant for maximizing travel savings. This involves leveraging LangChain agents, designing robust serverless architectures, and implementing advanced embedding search to empower smarter, faster decision-making for businesses.
+            Today at HRS Group, I'm building a hotel procurement copilot—LLM-powered, serverless, and designed to empower faster, smarter travel decisions. It’s AI with a heartbeat of efficiency.
           </p>
         </div>
         <div class="mt-8 md:mt-0 story-block-image-wrapper">
@@ -138,6 +182,35 @@
   </section>
 </main>
 
-<!-- Footer and Scripts remain unchanged -->
+<!-- Footer -->
+<footer class="bg-[#f6f5f3] text-[#4b4b4b] py-4">
+  <p class="text-center">© 2024 Gaurav Lohkna. All rights reserved.</p>
+</footer>
+
+<!-- Scripts -->
+<script>
+  const menuToggle = document.getElementById('menu-toggle');
+  const menuClose = document.getElementById('menu-close');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const overlay = document.getElementById('overlay');
+
+  menuToggle.addEventListener('click', () => {
+    mobileMenu.classList.remove('translate-x-full');
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+  });
+
+  function closeMenu() {
+    mobileMenu.classList.add('translate-x-full');
+    overlay.classList.add('opacity-0', 'pointer-events-none');
+  }
+
+  menuClose.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+</script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({ duration: 800, once: true });
+</script>
+
 </body>
 </html>
