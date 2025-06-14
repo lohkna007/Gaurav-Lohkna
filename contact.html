@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me | Gaurav Lohkna</title>
 
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+
     <!-- Tailwind CSS Precompiled for Production -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" crossorigin="anonymous" />
 
@@ -17,6 +22,13 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            font-family: 'Lora', serif; /* Body text */
+            color: #2e2e2e;
+            line-height: 1.7; /* Enhanced line height for readability */
+        }
+        h1, h2, h3, h4, h5, h6 {
+          font-family: 'Playfair Display', serif; /* Headings */
+          color: #2e2e2e;
         }
         main {
             flex: 1;
@@ -72,20 +84,25 @@
             background: linear-gradient(90deg, #2e2e2e 60%, #4b4b4b 100%);
             box-shadow: 0 4px 16px rgba(75,75,75,0.15);
         }
+        /* Adjusted current page highlight for consistency */
+        .nav-link.active {
+          color: #bc6442;
+          font-weight: 600;
+        }
     </style>
 </head>
-<body class="font-sans text-[#2e2e2e] leading-relaxed">
+<body class="leading-relaxed">
 
     <!-- Header -->
     <header class="bg-white shadow-md">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold">Gaurav Lohkna</h1>
             <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="text-[#2e2e2e] font-semibold hover:text-[#bc6442]">Home</a>
-                <a href="article.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
-                <a href="blog.html" class="text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
-                <a href="about.html" class="text-[#2e2e2e] hover:text-[#bc6442]">About</a>
-                <a href="contact.html" class="text-[#bc6442] font-semibold">Contact</a>
+                <a href="index.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">Home</a>
+                <a href="article.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">Article</a>
+                <a href="blog.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">Blog</a>
+                <a href="about.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">About</a>
+                <a href="contact.html" class="nav-link active text-[#bc6442] transition-colors duration-300">Contact</a>
             </nav>
             <div class="md:hidden flex items-center">
                 <button id="menu-toggle" class="text-[#2e2e2e] focus:outline-none">
@@ -103,7 +120,7 @@
                     <a href="article.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
                     <a href="blog.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
                     <a href="about.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">About</a>
-                    <a href="contact.html" class="block text-[#bc6442] font-semibold">Contact</a>
+                    <a href="contact.html" class="block text-[#bc6442] font-semibold hover:text-[#d98157]">Contact</a>
                 </nav>
             </div>
         </div>
@@ -112,10 +129,10 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="bg-[#faf9f5] py-16 shadow-md rounded-b-3xl mb-8">
+        <section class="bg-[#faf9f5] py-16 shadow-md rounded-b-3xl mb-12"> <!-- Increased margin-bottom -->
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 text-[#2e2e2e] tracking-tight">Let’s Connect</h2>
-                <p class="text-lg md:text-xl text-[#4b4b4b] max-w-2xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">Let’s Connect</h2>
+                <p class="text-lg md:text-xl text-[#4b4b4b] max-w-2xl mx-auto leading-relaxed">
                     Whether it’s about sharing ideas, collaborations, or casual conversations over a virtual coffee—this is where we connect!
                 </p>
             </div>
@@ -126,8 +143,8 @@
             <!-- Email Card -->
             <div class="glass-card shadow-xl p-8 text-center flex flex-col items-center">
                 <i class="fas fa-envelope text-4xl text-[#bc6442] mb-4" aria-hidden="true"></i>
-                <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Email Me</h3>
-                <p class="text-[#4b4b4b] mb-4">Drop me an email for detailed discussions!</p>
+                <h3 class="text-2xl font-bold mb-2">Email Me</h3>
+                <p class="text-[#4b4b4b] mb-4 leading-relaxed">Drop me an email for detailed discussions!</p>
                 <a href="mailto:gauravlohknabusinessonly@gmail.com"
                    class="email-link w-full max-w-[220px] py-3 px-6 rounded-lg font-semibold text-lg shadow text-center transition-all duration-200"
                    aria-label="Send Email">Send Email</a>
@@ -136,8 +153,8 @@
             <!-- LinkedIn Card -->
             <div class="glass-card shadow-xl p-8 text-center flex flex-col items-center">
                 <i class="fab fa-linkedin text-4xl text-[#0077b5] mb-4" aria-hidden="true"></i>
-                <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">LinkedIn</h3>
-                <p class="text-[#4b4b4b] mb-4">Let’s network professionally.</p>
+                <h3 class="text-2xl font-bold mb-2">LinkedIn</h3>
+                <p class="text-[#4b4b4b] mb-4 leading-relaxed">Let’s network professionally.</p>
                 <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/"
                    class="contact-link w-full max-w-[220px] py-3 px-6 rounded-lg font-semibold text-lg shadow text-center transition-all duration-200"
                    target="_blank" rel="noopener" aria-label="Connect on LinkedIn">Connect on LinkedIn</a>
@@ -146,8 +163,8 @@
             <!-- Virtual Coffee Card -->
             <div class="glass-card shadow-xl p-8 text-center flex flex-col items-center">
                 <i class="fas fa-coffee text-4xl text-[#bc6442] mb-4" aria-hidden="true"></i>
-                <h3 class="text-2xl font-bold mb-2 text-[#2e2e2e]">Virtual Coffee ☕</h3>
-                <p class="text-[#4b4b4b] mb-4">Book a virtual coffee chat with me.</p>
+                <h3 class="text-2xl font-bold mb-2">Virtual Coffee ☕</h3>
+                <p class="text-[#4b4b4b] mb-4 leading-relaxed">Book a virtual coffee chat with me.</p>
                 <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3UOpeOMOz-G_EluIJTUwsCkp9WgvRhSZrA2KeAhFodo14uAeRQhVfOhHRgnfdvs-Rqu57CJoRj?gv=true"
                    class="cta-button w-full max-w-[220px] py-3 px-6 rounded-lg font-semibold text-lg shadow text-center transition-all duration-200"
                    target="_blank" rel="noopener" aria-label="Book an Appointment">Book an Appointment</a>
@@ -156,8 +173,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#faf9f5] text-[#4b4b4b] py-6 text-center mt-auto">
-        <p>&copy; 2024 Gaurav Lohkna. All rights reserved.</p>
+    <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-6 text-center mt-auto">
+        <p>© 2024 Gaurav Lohkna. All rights reserved.</p>
     </footer>
 
     <!-- Mobile Menu Script -->
