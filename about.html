@@ -30,6 +30,13 @@
       transform: translateY(-5px);
       box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     }
+    /* Specific styling for the image containers within the grid to ensure consistent centering */
+    .story-block-image-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* Ensure it takes full height of grid cell for vertical centering */
+    }
   </style>
 </head>
 <body class="font-sans text-[#2e2e2e] leading-relaxed">
@@ -87,7 +94,7 @@
   <section class="bg-white py-16 px-6">
     <div class="max-w-5xl mx-auto space-y-20">
 
-      <!-- Block 1 -->
+      <!-- Block 1: Curious Beginnings (Yale) -->
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center story-block-container p-8 rounded-lg shadow-md" data-aos="fade-right">
         <div>
           <h3 class="text-2xl font-bold text-[#2e2e2e]">Curious Beginnings</h3>
@@ -95,15 +102,15 @@
             In 2018, I embarked on a curious detour into neuroscience research at Yale. Little did I know, this exploration into the human brain would spark a much deeper question: how does intelligence truly work? And more importantly, could machines also learn and reason?
           </p>
         </div>
-        <div class="mt-8 md:mt-0 text-center">
-          <img src="about_images/yale-university-logo-hd-png-download-e1661884679893.webp" alt="Yale Logo" class="w-32 mx-auto">
+        <div class="mt-8 md:mt-0 story-block-image-wrapper">
+          <img src="about_images/yale-university-logo-hd-png-download-e1661884679893.webp" alt="Yale Logo" class="w-32">
         </div>
       </div>
 
-      <!-- Block 2 -->
+      <!-- Block 2: The Foundations (University of Delhi) -->
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center story-block-container p-8 rounded-lg shadow-md" data-aos="fade-left">
-        <div class="order-2 md:order-1 mt-8 md:mt-0 text-center">
-          <img src="about_images/University_of_Delhi.png" alt="University of Delhi Logo" class="w-28 mx-auto">
+        <div class="order-2 md:order-1 mt-8 md:mt-0 story-block-image-wrapper">
+          <img src="about_images/University_of_Delhi.png" alt="University of Delhi Logo" class="w-32">
         </div>
         <div class="order-1 md:order-2">
           <h3 class="text-2xl font-bold text-[#2e2e2e]">The Foundations</h3>
@@ -113,7 +120,7 @@
         </div>
       </div>
 
-      <!-- Block 3 -->
+      <!-- Block 3: The Acceleration (Plaksha & Berkeley) -->
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center story-block-container p-8 rounded-lg shadow-md" data-aos="fade-up">
         <div>
           <h3 class="text-2xl font-bold text-[#2e2e2e]">The Acceleration</h3>
@@ -121,15 +128,16 @@
             The acceleration began when I joined the Berkeley x Plaksha AI/ML program. This intensive experience was my launchpad into applied machine learning, where I built innovative systems like a news recommender and led teams focused on harmonizing AI capabilities with human intuition.
           </p>
         </div>
-        <div class="mt-8 md:mt-0 text-center">
-          <img src="about_images/plaksha.png" alt="Plaksha University Logo" class="w-28 mx-auto">
+        <div class="mt-8 md:mt-0 story-block-image-wrapper flex space-x-6">
+          <img src="about_images/plaksha.png" alt="Plaksha University Logo" class="w-28">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/UC_Berkeley_seal.svg" alt="UC Berkeley Logo" class="w-28">
         </div>
       </div>
 
-      <!-- Block 4 -->
+      <!-- Block 4: Healthcare and Responsibility (Minfy) -->
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center story-block-container p-8 rounded-lg shadow-md" data-aos="fade-up">
-        <div class="order-2 md:order-1 mt-8 md:mt-0 text-center">
-          <img src="about_images/minfy.jpeg" alt="Minfy Logo" class="w-24 mx-auto">
+        <div class="order-2 md:order-1 mt-8 md:mt-0 story-block-image-wrapper">
+          <img src="about_images/minfy.jpeg" alt="Minfy Logo" class="w-32">
         </div>
         <div class="order-1 md:order-2">
           <h3 class="text-2xl font-bold text-[#2e2e2e]">Healthcare and Responsibility</h3>
@@ -139,7 +147,7 @@
         </div>
       </div>
 
-      <!-- Block 5 -->
+      <!-- Block 5: The Copilot Era (HRS Group) -->
       <div class="md:grid md:grid-cols-2 md:gap-12 items-center story-block-container p-8 rounded-lg shadow-md" data-aos="fade-right">
         <div>
           <h3 class="text-2xl font-bold text-[#2e2e2e]">The Copilot Era</h3>
@@ -147,8 +155,8 @@
             My current focus at HRS Group is on pioneering the 'copilot era' for enterprise. I'm building an intelligent hotel procurement copilot—envision a specialized AI assistant for maximizing travel savings. This involves leveraging LangChain agents, designing robust serverless architectures, and implementing advanced embedding search to empower smarter, faster decision-making for businesses.
           </p>
         </div>
-        <div class="mt-8 md:mt-0 text-center">
-          <img src="about_images/HRS.png" alt="HRS Group Logo" class="w-24 mx-auto">
+        <div class="mt-8 md:mt-0 story-block-image-wrapper">
+          <img src="about_images/HRS.png" alt="HRS Group Logo" class="w-32">
         </div>
       </div>
 
