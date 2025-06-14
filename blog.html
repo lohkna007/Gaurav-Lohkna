@@ -5,29 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog | Gaurav Lohkna</title>
 
-    <!-- Google Fonts -->
+    <!-- Google Fonts for a modern, luxe, minimalist feel -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS Precompiled for Production -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" crossorigin="anonymous" />
 
     <!-- Font Awesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
+    <!-- AOS Animate On Scroll -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
 
     <style>
         body {
-            background: linear-gradient(135deg, #f8fafc 0%, #fbeee6 100%);
+            background: radial-gradient(at top left, #fbeee6 0%, #f8fafc 100%); /* Radial gradient for spread effect */
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            font-family: 'Lora', serif; /* Body text */
+            font-family: 'Lato', sans-serif; /* Body text - Lato Light (weight 300) */
+            font-weight: 300; /* Set body text to light weight */
             color: #2e2e2e;
             line-height: 1.7; /* Enhanced line height for readability */
         }
         h1, h2, h3, h4, h5, h6 {
-          font-family: 'Playfair Display', serif; /* Headings */
+          font-family: 'Montserrat', sans-serif; /* Headings - Montserrat Bold (weight 700) */
+          font-weight: 700; /* Bold for headings */
           color: #2e2e2e;
         }
         main {
@@ -45,7 +49,7 @@
         /* Adjusted current page highlight for consistency */
         .nav-link.active {
           color: #bc6442;
-          font-weight: 600;
+          font-weight: 600; /* Ensures consistent bolding for active */
         }
     </style>
 </head>
@@ -95,11 +99,11 @@
 
     <main>
         <!-- Blog Section -->
-        <section class="py-12 bg-transparent"> <!-- Changed to transparent for body background to show -->
+        <section class="py-12 bg-transparent">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold mb-10 text-center">Latest Blogs</h2>
-                <article class="bg-[#faf9f5] shadow-lg rounded-xl p-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 transition-transform duration-300 hover:scale-[1.01] hover:shadow-xl">
-                    <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-full md:w-48 h-48 md:h-auto object-cover rounded-md flex-shrink-0"> <!-- Adjust image sizing -->
+                <h2 class="text-4xl font-bold mb-10 text-center" data-aos="fade-down">Latest Blogs</h2>
+                <article class="bg-[#faf9f5] shadow-lg rounded-xl p-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 transition-transform duration-300 hover:scale-[1.01] hover:shadow-xl" data-aos="fade-up">
+                    <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-full md:w-48 h-48 md:h-auto object-cover rounded-md flex-shrink-0">
                     <div>
                         <h3 class="text-2xl font-bold">The Quarter-Life Crisis</h3>
                         <p class="text-sm text-gray-500 mb-3">Published on November 16, 2024</p>
@@ -144,6 +148,26 @@
             mobileMenu.classList.add('translate-x-full');
             overlay.classList.add('opacity-0', 'pointer-events-none');
         }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(function() {
+          if (typeof AOS !== 'undefined') {
+            AOS.init({ 
+              duration: 800, 
+              once: true,
+              offset: 100,
+              easing: 'ease-out-cubic'
+            });
+          } else {
+            document.querySelectorAll('[data-aos]').forEach(function(element) {
+              element.removeAttribute('data-aos');
+              element.removeAttribute('data-aos-delay');
+            });
+          }
+        }, 100);
+      });
     </script>
 </body>
 </html>
