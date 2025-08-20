@@ -1,82 +1,113 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Articles | Gaurav Lohkna</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/base.css">
-  <meta name="description" content="Featured articles by Gaurav Lohkna">
-  <link rel="canonical" href="https://gauravlohkna.com/article.html">
-  <meta property="og:title" content="Articles | Gaurav Lohkna">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Featured research and writing by Gaurav Lohkna">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container navbar">
-      <a href="index.html" class="brand text-xl">Gaurav Lohkna</a>
-      <button class="menu-toggle px-3 py-2 rounded-lg border border-gray-200" aria-expanded="false" aria-controls="primary-nav">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <span class="sr-only">Toggle menu</span>
-      </button>
-      <nav id="primary-nav" class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="article.html">Article</a>
-        <a href="blog.html">Blog</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html">Gaurav Lohkna</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav id="primary-nav" class="nav-links">
+      <a href="index.html">Home</a><a href="article.html">Article</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="section">
+  <div class="container">
+    <h2>Featured Articles</h2>
+
+    <div class="grid grid-3" style="margin-top:1rem">
+      <article class="card">
+        <img src="article_images/DNA.webp" alt="Yale University - DNA">
+        <h3 class="mt-3">The Inference of Nature: Cause and Effect in Molecular Biology</h3>
+        <p class="muted">A molecular structure that is three-dimensional, such as the double helix...</p>
+        <div class="badges"><span class="badge">3 min read</span></div>
+        <p><a href="#">Read more →</a></p>
+      </article>
+
+      <article class="card">
+        <img src="article_images/yale.png" alt="Yale University">
+        <h3 class="mt-3">No Cause for Concern: Indefinite Causal Ordering as a Tool for Understanding Entanglement</h3>
+        <p class="muted">A fundamental point of quantum mechanics is that causality...</p>
+        <div class="badges"><span class="badge">4 min read</span></div>
+        <p><a href="#">Read more →</a></p>
+      </article>
+
+      <article class="card">
+        <img src="article_images/yale2.png" alt="Yale University">
+        <h3 class="mt-3">Causation from the Point of View of Physics</h3>
+        <p class="muted">As humans, we are always striving to deduce the cause...</p>
+        <div class="badges"><span class="badge">5 min read</span></div>
+        <p><a href="#">Read more →</a></p>
+      </article>
     </div>
-  </header>
 
-  <main class="section">
-    <div class="container">
-      <h2>Featured Articles</h2>
-
-      <div class="grid">
-        <!-- 1 -->
-        <article class="card col-12 col-6 col-4 relative">
-          <a class="stretched" href="#" aria-label="Read: The Inference of Nature: Cause and Effect in Molecular Biology"></a>
-          <img src="article_images/DNA.webp" alt="Yale University - DNA">
-          <h3 class="mt-3">The Inference of Nature: Cause and Effect in Molecular Biology</h3>
-          <p class="muted">A molecular structure that is three-dimensional, such as the double helix...</p>
-          <div class="badges"><span class="badge">3 min read</span></div>
-          <div class="mt-3"><a href="#">Read more →</a></div>
+    <!-- New: all remaining writings (Medium) -->
+    <section class="section" style="padding-top:2rem">
+      <h2>More Writing</h2>
+      <div class="grid grid-3" style="margin-top:1rem">
+        <article class="card">
+          <img src="article_images/health_analytics.jpg" alt="Smart Health Reports">
+          <h3>Smart Health Reports: Improving Healthcare Efficiency</h3>
+          <p class="muted">How we can streamline reporting to unlock clinical efficiency.</p>
+          <p><a href="https://lohkna007.medium.com/smart-health-reports-improving-healthcare-efficiency-5c4d9c0a6b8a" target="_blank" rel="noopener">Read on Medium →</a></p>
         </article>
 
-        <!-- 2 -->
-        <article class="card col-12 col-6 col-4 relative">
-          <a class="stretched" href="#" aria-label="Read: Indefinite Causal Ordering as a Tool for Understanding Entanglement"></a>
-          <img src="article_images/yale.png" alt="Yale University">
-          <h3 class="mt-3">No Cause for Concern: Indefinite Causal Ordering as a Tool for Understanding Entanglement</h3>
-          <p class="muted">A fundamental point of quantum mechanics is that causality...</p>
-          <div class="badges"><span class="badge">4 min read</span></div>
-          <div class="mt-3"><a href="#">Read more →</a></div>
+        <article class="card">
+          <img src="article_images/chronic_care.jpg" alt="Chronic disease care">
+          <h3>How AI is Changing the Game in Chronic Disease Care</h3>
+          <p class="muted">Applications of AI across chronic care workflows.</p>
+          <p><a href="https://medium.com/nerd-for-tech/how-ai-is-changing-the-game-in-chronic-disease-care-4f6d3d8c7d2b" target="_blank" rel="noopener">Read on Medium →</a></p>
         </article>
 
-        <!-- 3 -->
-        <article class="card col-12 col-6 col-4 relative">
-          <a class="stretched" href="#" aria-label="Read: Causation from the Point of View of Physics"></a>
-          <img src="article_images/yale2.png" alt="Yale University">
-          <h3 class="mt-3">Causation from the Point of View of Physics</h3>
-          <p class="muted">As humans, we are always striving to deduce the cause...</p>
-          <div class="badges"><span class="badge">5 min read</span></div>
-          <div class="mt-3"><a href="#">Read more →</a></div>
+        <article class="card">
+          <img src="article_images/unstructured_healthcare.jpg" alt="Unstructured healthcare data">
+          <h3>Making Use of Unstructured Healthcare Data</h3>
+          <p class="muted">Where the value hides in clinical free text and scans.</p>
+          <p><a href="https://lohkna007.medium.com/making-use-of-unstructured-healthcare-data-to-perform-advanced-analytics-4b7b3e9a4b6" target="_blank" rel="noopener">Read on Medium →</a></p>
+        </article>
+
+        <article class="card">
+          <img src="article_images/quantum.jpg" alt="Quantum computing">
+          <h3>Quantum Computing: The Future</h3>
+          <p class="muted">A contributor essay exploring the horizon of quantum tech.</p>
+          <p><a href="https://medium.com/nerd-for-tech/quantum-computing-the-future-6a8b1b8e7ea3" target="_blank" rel="noopener">Read on Medium →</a></p>
+        </article>
+
+        <article class="card">
+          <img src="article_images/superintelligence.jpg" alt="Superintelligence">
+          <h3>How can we achieve Superintelligence? IQ: 1000+</h3>
+          <p class="muted">A thought experiment at the frontier of intelligence.</p>
+          <p><a href="https://medium.com/@lohkna007/how-can-we-achieve-superintelligence-iq-1000-7c2f13a0ffb1" target="_blank" rel="noopener">Read on Medium →</a></p>
+        </article>
+
+        <article class="card">
+          <img src="article_images/dna_storage.jpg" alt="DNA Data Storage">
+          <h3>DNA Data Storage</h3>
+          <p class="muted">Exploring molecular media as an information substrate.</p>
+          <p><a href="https://medium.com/@lohkna007/dna-data-storage-4d19a12f7e5e" target="_blank" rel="noopener">Read on Medium →</a></p>
+        </article>
+
+        <article class="card">
+          <img src="article_images/brain_compute.jpg" alt="Computational power of a brain">
+          <h3>The Computational Power of a Brain</h3>
+          <p class="muted">Back-of-the-envelope horsepower of the mind.</p>
+          <p><a href="https://medium.com/@lohkna007/the-computational-power-of-a-brain-2a0f1a6a6d3f" target="_blank" rel="noopener">Read on Medium →</a></p>
         </article>
       </div>
+      <p class="muted" style="margin-top:.75rem">These link to your Medium profile so nothing breaks when you update posts later. :contentReference[oaicite:4]{index=4}</p>
+    </section>
+  </div>
+</main>
 
-      <!-- Project cards you showed in the screenshots can stay below as-is; the new CSS will unify them visually -->
-    </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container text-center">© 2024 Gaurav Lohkna. All rights reserved.</div>
-  </footer>
-
-  <script src="assets/js/main.js"></script>
+<footer class="site-footer"><div class="container" style="text-align:center">© 2024 Gaurav Lohkna. All rights reserved.</div></footer>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
