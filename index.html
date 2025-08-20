@@ -1,110 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Gaurav Lohkna</title>
-
-  <!-- Fonts (same family you already use) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-
-  <!-- Tailwind (for layout utilities you already used) -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-
-  <!-- Base design system -->
   <link rel="stylesheet" href="assets/css/base.css">
   <meta name="description" content="Merging Data, Neural Sciences, and Human Progress — by Gaurav Lohkna">
-  <link rel="canonical" href="https://gauravlohkna.com/">
-  <meta property="og:title" content="Gaurav Lohkna">
-  <meta property="og:description" content="Merging Data, Neural Sciences, and Human Progress.">
-  <meta property="og:image" content="MAIN.png">
-  <meta property="og:type" content="website">
 </head>
-
 <body>
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container navbar">
-      <a href="index.html" class="brand text-xl">Gaurav Lohkna</a>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html">Gaurav Lohkna</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav id="primary-nav" class="nav-links">
+      <a href="index.html">Home</a><a href="article.html">Article</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
 
-      <button class="menu-toggle px-3 py-2 rounded-lg border border-gray-200" aria-expanded="false" aria-controls="primary-nav">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <span class="sr-only">Toggle menu</span>
-      </button>
-
-      <nav id="primary-nav" class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="article.html">Article</a>
-        <a href="blog.html">Blog</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<main>
+  <section class="hero container">
+    <h1>Merging Data, Neural Sciences, and Human Progress</h1>
+    <p class="muted" style="margin:.25rem auto 0; max-width:64ch">Big data, deep thoughts, and meaningful life stories—one space for it all.</p>
+    <div style="margin-top:1.5rem"><img src="MAIN.png" alt="Portrait of Gaurav Lohkna" fetchpriority="high"></div>
+    <div class="section" style="padding-top:1.25rem">
+      <a href="article.html" class="badge">Featured Articles</a>
+      <a href="contact.html" class="badge">Contact</a>
     </div>
-  </header>
+  </section>
 
-  <main id="content">
-    <!-- Hero -->
-    <section class="hero container relative">
-      <h1>Merging Data, Neural Sciences, and Human Progress</h1>
-      <p class="hero-sub">Big data, deep thoughts, and meaningful life stories—one space for it all.</p>
-
-      <div class="hero-figure relative">
-        <div class="halo" aria-hidden="true"></div>
-        <!-- keep your existing hero image filename -->
-        <img src="MAIN.png" alt="Portrait of Gaurav Lohkna" class="hero-img" fetchpriority="high">
-      </div>
-
-      <div class="mt-8 flex items-center justify-center gap-3">
-        <a href="article.html" class="px-4 py-2 rounded-xl border border-[color:var(--line)]">Featured Articles</a>
-        <a href="contact.html" class="px-4 py-2 rounded-xl text-white" style="background: var(--brand-600)">Contact Me</a>
-      </div>
-    </section>
-
-    <!-- Latest Blog -->
-    <section class="section">
-      <div class="container">
-        <h2>Latest Blogs</h2>
-
-        <div class="card relative overflow-hidden">
-          <a class="stretched" href="blog_content/quarter_life_crisis/quarter-life-crisis.html" aria-label="Read: The Quarter-Life Crisis"></a>
-          <div class="grid">
-            <div class="col-12 col-6">
-              <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="The Quarter-Life Crisis cover">
-            </div>
-            <div class="col-12 col-6">
-              <h3 class="mt-2">The Quarter-Life Crisis</h3>
-              <p class="muted">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
-              <div class="badges">
-                <span class="badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M7 10l5-5 5 5M12 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Blog</span>
-                <span class="badge">~5 min read</span>
-              </div>
-              <div class="mt-4">
-                <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html">Read more →</a>
-              </div>
-            </div>
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align:center">Latest Blogs</h2>
+      <article class="card" style="margin-top:1rem">
+        <div class="grid grid-2">
+          <div><img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="The Quarter-Life Crisis"></div>
+          <div>
+            <h3>The Quarter-Life Crisis</h3>
+            <p class="muted">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
+            <div class="badges"><span class="badge">~5 min read</span></div>
+            <p><a href="blog_content/quarter_life_crisis/quarter-life-crisis.html">Read more →</a></p>
           </div>
         </div>
-
-        <!-- CTA card -->
-        <div class="card mt-6 text-center">
-          <h3 class="mb-2">Partner Up: Let’s Make It Happen</h3>
-          <p class="muted">Have an idea worth pursuing? Let’s talk and see where it can go.</p>
-          <div class="mt-4">
-            <a href="contact.html" class="px-5 py-2 rounded-xl text-white" style="background: var(--brand-600)">Contact Me</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container text-center">
-      © 2024 Gaurav Lohkna. All rights reserved.
+      </article>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script src="assets/js/main.js"></script>
+<footer class="site-footer"><div class="container" style="text-align:center">© 2024 Gaurav Lohkna. All rights reserved.</div></footer>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
