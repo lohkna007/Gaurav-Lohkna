@@ -1,173 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog | Gaurav Lohkna</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blog | Gaurav Lohkna</title>
 
-    <!-- Google Fonts for a modern, luxe, minimalist feel -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-
-    <!-- Tailwind CSS Precompiled for Production -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" crossorigin="anonymous" />
-
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
-    <!-- AOS Animate On Scroll -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-
-    <style>
-        body {
-            background: radial-gradient(at top left, #fbeee6 0%, #f8fafc 100%); /* Radial gradient for spread effect */
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-family: 'Lato', sans-serif; /* Body text - Lato Light (weight 300) */
-            font-weight: 300; /* Set body text to light weight */
-            color: #2e2e2e;
-            line-height: 1.7; /* Enhanced line height for readability */
-        }
-        h1, h2, h3, h4, h5, h6 {
-          font-family: 'Montserrat', sans-serif; /* Headings - Montserrat Bold (weight 700) */
-          font-weight: 700; /* Bold for headings */
-          color: #2e2e2e;
-        }
-        main {
-            flex: 1;
-        }
-        .read-more {
-            font-weight: 600; /* Made slightly bolder */
-            text-decoration: underline;
-            color: #bc6442; /* Consistent accent color */
-            transition: color 0.3s ease;
-        }
-        .read-more:hover {
-            color: #d98157; /* Lighter accent on hover */
-        }
-        /* Adjusted current page highlight for consistency */
-        .nav-link.active {
-          color: #bc6442;
-          font-weight: 600; /* Ensures consistent bolding for active */
-        }
-    </style>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <meta name="description" content="Latest blogs by Gaurav Lohkna">
+  <link rel="canonical" href="https://gauravlohkna.com/blog.html">
 </head>
-<body class="leading-relaxed">
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand text-xl">Gaurav Lohkna</a>
+      <button class="menu-toggle px-3 py-2 rounded-lg border border-gray-200" aria-expanded="false" aria-controls="primary-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="sr-only">Toggle menu</span>
+      </button>
+      <nav id="primary-nav" class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="article.html">Article</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Header -->
-    <header class="bg-white shadow-md relative">
-        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold">Blogs</h1>
+  <main class="section">
+    <div class="container">
+      <h2>Latest Blogs</h2>
 
-            <!-- Desktop Navigation -->
-            <nav class="hidden md:flex space-x-6">
-                <a href="index.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">Home</a>
-                <a href="article.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">Article</a>
-                <a href="blog.html" class="nav-link active text-[#bc6442] transition-colors duration-300">Blog</a>
-                <a href="about.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">About</a>
-                <a href="contact.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">Contact</a>
-            </nav>
-
-            <!-- Mobile Hamburger Menu Button -->
-            <div class="md:hidden flex items-center">
-                <button id="menu-toggle" class="text-[#2e2e2e] focus:outline-none">
-                    <i class="fa-solid fa-bars text-2xl"></i>
-                </button>
-            </div>
+      <article class="card relative">
+        <a class="stretched" href="blog_content/quarter_life_crisis/quarter-life-crisis.html" aria-label="Read: The Quarter-Life Crisis"></a>
+        <div class="grid">
+          <div class="col-12 col-6">
+            <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="The Quarter-Life Crisis">
+          </div>
+          <div class="col-12 col-6">
+            <h3>The Quarter-Life Crisis</h3>
+            <p class="muted">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
+            <div class="badges"><span class="badge">~5 min read</span></div>
+            <div class="mt-3"><a href="blog_content/quarter_life_crisis/quarter-life-crisis.html">Read more →</a></div>
+          </div>
         </div>
+      </article>
+    </div>
+  </main>
 
-        <!-- Mobile Navigation with Slide-in Animation -->
-        <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-            <div class="p-6">
-                <button id="menu-close" class="text-[#2e2e2e] focus:outline-none mb-4">
-                    <i class="fa-solid fa-times text-2xl"></i>
-                </button>
-                <nav class="flex flex-col space-y-4">
-                    <a href="index.html" class="block text-[#2e2e2e] hover:text-[#bc6442] font-semibold">Home</a>
-                    <a href="article.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
-                    <a href="blog.html" class="block text-[#bc6442] font-semibold hover:text-[#d98157]">Blog</a>
-                    <a href="about.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">About</a>
-                    <a href="contact.html" class="block text-[#2e2e2e] hover:text-[#bc6442] font-semibold">Contact</a>
-                </nav>
-            </div>
-        </div>
+  <footer class="site-footer">
+    <div class="container text-center">© 2024 Gaurav Lohkna. All rights reserved.</div>
+  </footer>
 
-        <!-- Overlay Background -->
-        <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
-    </header>
-
-    <main>
-        <!-- Blog Section -->
-        <section class="py-12 bg-transparent">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl font-bold mb-10 text-center" data-aos="fade-down">Latest Blogs</h2>
-                <article class="bg-[#faf9f5] shadow-lg rounded-xl p-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 transition-transform duration-300 hover:scale-[1.01] hover:shadow-xl" data-aos="fade-up">
-                    <img src="blog_content/quarter_life_crisis/quarter-life-crisis-thumbnail.jpg" alt="Quarter-Life Crisis" class="w-full md:w-48 h-48 md:h-auto object-cover rounded-md flex-shrink-0">
-                    <div>
-                        <h3 class="text-2xl font-bold">The Quarter-Life Crisis</h3>
-                        <p class="text-sm text-gray-500 mb-3">Published on November 16, 2024</p>
-                        <p class="mt-2 text-[#4b4b4b] leading-relaxed">Exploring the challenges of the quarter-life crisis—balancing dreams, responsibilities, and self-actualization.</p>
-                        <a href="blog_content/quarter_life_crisis/quarter-life-crisis.html" class="read-more mt-4 inline-block">Read more</a>
-                    </div>
-                </article>
-<!--                 <article class="bg-[#faf9f5] shadow-lg rounded-xl p-6 flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 transition-transform duration-300 hover:scale-[1.01] hover:shadow-xl">
-                    <img src="blog_content/life_balance/life-balance-thumbnail.jpg" alt="Life Balance" class="w-full md:w-48 h-48 md:h-auto object-cover rounded-md flex-shrink-0">
-                    <div>
-                        <h3 class="text-2xl font-bold">Finding Life Balance</h3>
-                        <p class="text-sm text-gray-500 mb-3">Published on October 10, 2023</p>
-                        <p class="mt-2 text-[#4b4b4b] leading-relaxed">Learn how to find balance in life, align goals, and maintain well-being in a fast-paced world.</p>
-                        <a href="blog_content/life_balance/life-balance.html" class="read-more mt-4 inline-block">Read more</a>
-                    </div>
-                </article> -->
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-[#f6f5f3] text-[#4b4b4b] py-6">
-        <p class="text-center">© 2024 Gaurav Lohkna. All rights reserved.</p>
-    </footer>
-
-    <!-- Mobile Menu Script -->
-    <script>
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuClose = document.getElementById('menu-close');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const overlay = document.getElementById('overlay');
-
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.remove('translate-x-full');
-            overlay.classList.remove('opacity-0', 'pointer-events-none');
-        });
-
-        menuClose.addEventListener('click', closeMenu);
-        overlay.addEventListener('click', closeMenu);
-
-        function closeMenu() {
-            mobileMenu.classList.add('translate-x-full');
-            overlay.classList.add('opacity-0', 'pointer-events-none');
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        setTimeout(function() {
-          if (typeof AOS !== 'undefined') {
-            AOS.init({ 
-              duration: 800, 
-              once: true,
-              offset: 100,
-              easing: 'ease-out-cubic'
-            });
-          } else {
-            document.querySelectorAll('[data-aos]').forEach(function(element) {
-              element.removeAttribute('data-aos');
-              element.removeAttribute('data-aos-delay');
-            });
-          }
-        }, 100);
-      });
-    </script>
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
