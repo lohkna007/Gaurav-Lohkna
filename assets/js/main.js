@@ -1,93 +1,37 @@
-/* ==========================================================
-   Gaurav Lohkna — Minimal JS
-   - Mobile nav
-   - Active link highlighting
-   - Reading progress + ToC on blog posts
-   - Lazy image enhancements & meta
-   ========================================================== */
-
-(function () {
-  const $ = (sel, ctx = document) => ctx.querySelector(sel);
-  const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
+(function(){
+  const $ = s=>document.querySelector(s), $$ = s=>Array.from(document.querySelectorAll(s));
 
   /* Mobile menu */
-  const toggleBtn = $('.menu-toggle');
-  const navLinks = $('.nav-links');
-  if (toggleBtn && navLinks) {
-    toggleBtn.addEventListener('click', () => {
-      navLinks.classList.toggle('is-open');
-      toggleBtn.setAttribute('aria-expanded', navLinks.classList.contains('is-open') ? 'true' : 'false');
-    });
-    // Close when clicking a link (mobile)
-    $$('.nav-links a').forEach(a => a.addEventListener('click', () => {
-      navLinks.classList.remove('is-open');
-      toggleBtn.setAttribute('aria-expanded', 'false');
-    }));
+  const btn=$('.menu-toggle'), nav=$('.nav-links');
+  if(btn && nav){
+    btn.addEventListener('click',()=>{ nav.classList.toggle('is-open'); btn.setAttribute('aria-expanded', nav.classList.contains('is-open')); });
+    $$('.nav-links a').forEach(a=>a.addEventListener('click',()=>{ nav.classList.remove('is-open'); btn.setAttribute('aria-expanded','false'); }));
   }
 
-  /* Active nav link */
-  const path = location.pathname.replace(/\/index\.html$/, '/');
-  $$('.nav-links a').forEach(a => {
-    const href = new URL(a.getAttribute('href'), location.origin).pathname.replace(/\/index\.html$/, '/');
-    if (href === path) a.setAttribute('aria-current', 'page');
+  /* Active link */
+  const path = location.pathname.replace(/\/index\.html$/,'/'); 
+  $$('.nav-links a').forEach(a=>{
+    const href = new URL(a.getAttribute('href'), location.origin).pathname.replace(/\/index\.html$/,'/');
+    if(href===path) a.setAttribute('aria-current','page');
   });
 
-  /* Lazy: give all non-hero images lazy loading + decoding hints */
-  $$('img:not([loading])').forEach(img => {
-    img.loading = 'lazy';
-    img.decoding = 'async';
-  });
-
-  /* Inject generic SEO/OG if missing (non-destructive) */
-  const ensureMeta = (name, attrs) => {
-    if (!document.head.querySelector(`[name="${name}"],[property="${name}"]`)) {
-      const m = document.createElement('meta');
-      for (const [k, v] of Object.entries(attrs)) m.setAttribute(k, v);
-      document.head.appendChild(m);
-    }
-  };
-  ensureMeta('og:site_name', { property: 'og:site_name', content: 'Gaurav Lohkna' });
-  ensureMeta('twitter:card', { name: 'twitter:card', content: 'summary_large_image' });
-
-  /* Blog detail: progress bar + Table of Contents */
-  const isBlogDetail = /\/blog_content\//.test(location.pathname);
-  if (isBlogDetail) {
-    // Progress bar
-    const bar = document.createElement('div');
-    bar.className = 'reading-progress';
-    document.body.appendChild(bar);
-    const update = () => {
-      const s = document.documentElement.scrollTop || document.body.scrollTop;
-      const h = (document.documentElement.scrollHeight - document.documentElement.clientHeight);
-      const pct = Math.max(0, Math.min(1, s / h)) * 100;
-      bar.style.width = pct + '%';
+  /* Progress + ToC on blog detail */
+  if(/\/blog_content\//.test(location.pathname)){
+    const bar=document.createElement('div'); bar.className='reading-progress'; document.body.appendChild(bar);
+    const onScroll=()=>{
+      const s=document.documentElement.scrollTop||document.body.scrollTop;
+      const h=document.documentElement.scrollHeight-document.documentElement.clientHeight;
+      bar.style.width=(Math.min(1,Math.max(0,s/h))*100)+'%';
     };
-    window.addEventListener('scroll', update, { passive: true });
-    window.addEventListener('resize', update);
-    update();
+    addEventListener('scroll', onScroll, {passive:true}); addEventListener('resize', onScroll); onScroll();
 
-    // ToC (build from h2/h3)
-    const main = $('main') || $('article') || $('.blog-content') || document.body;
-    const headings = $$('h2[id], h3[id]', main).length
-      ? $$('h2[id], h3[id]', main)
-      : $$('h2, h3', main).map(h => { h.id ||= h.textContent.trim().toLowerCase().replace(/\s+/g,'-').replace(/[^\w\-]/g,''); return h; });
-
-    if (headings.length > 1) {
-      const toc = document.createElement('nav');
-      toc.className = 'toc';
-      toc.setAttribute('aria-label','Table of contents');
-      toc.innerHTML = `<h3>On this page</h3><ol>${headings.map(h=>{
-        const depth = h.tagName === 'H2' ? 0 : 1;
-        return `<li style="padding-left:${depth*.75}rem"><a href="#${h.id}">${h.textContent}</a></li>`;
-      }).join('')}</ol>`;
-      // Insert near the top if a layout has a sidebar slot:
-      const wrapper = $('.article-layout') || main;
-      if (wrapper === main) {
-        // Prepend in-flow on mobile
-        main.insertBefore(toc, main.firstChild);
-      } else {
-        wrapper.appendChild(toc);
-      }
+    // Simple ToC
+    const main=document.querySelector('main')||document.body;
+    const hs=$$('h2, h3', main).filter(h=>h.textContent.trim().length>0);
+    hs.forEach(h=>{ if(!h.id) h.id=h.textContent.toLowerCase().replace(/\s+/g,'-').replace(/[^\w\-]/g,''); });
+    if(hs.length>1){
+      const toc=document.createElement('nav'); toc.className='toc'; toc.innerHTML=`<h3>On this page</h3><ol>${hs.map(h=>`<li style="padding-left:${h.tagName==='H3'?'.75rem':'0'}"><a href="#${h.id}">${h.textContent}</a></li>`).join('')}</ol>`;
+      main.insertBefore(toc, main.firstChild);
     }
   }
 })();
