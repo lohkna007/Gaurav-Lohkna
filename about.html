@@ -1,343 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About Me | Gaurav Lohkna</title>
 
-  <!-- Google Fonts for a modern, luxe, minimalist feel -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-
-  <!-- Tailwind CSS -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet" crossorigin="anonymous" />
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" />
-  <!-- AOS Animate On Scroll -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
-
-  <style>
-    body {
-      background: radial-gradient(at top left, #fbeee6 0%, #f8fafc 100%); /* Radial gradient for spread effect */
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      font-family: 'Lato', sans-serif; /* Body text - Lato Light (weight 300) */
-      font-weight: 300; /* Set body text to light weight */
-      color: #2e2e2e;
-      line-height: 1.7; /* Enhanced line height for readability */
-    }
-    h1, h2, h3, h4, h5, h6 {
-      font-family: 'Montserrat', sans-serif; /* Headings - Montserrat Bold (weight 700) */
-      font-weight: 700; /* Bold for headings */
-      color: #2e2e2e;
-    }
-    main {
-      flex: 1;
-    }
-    .story-block-container {
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      backdrop-filter: blur(10px);
-      background: rgba(255, 255, 255, 0.8);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Softer initial shadow */
-    }
-    .story-block-container:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-      background: rgba(255, 255, 255, 0.95);
-    }
-    .story-block-image-wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      min-height: 200px;
-      padding: 2rem;
-    }
-    .story-logo {
-      max-height: 140px;
-      max-width: 280px;
-      object-fit: contain;
-      transition: all 0.3s ease;
-      filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
-    }
-    .story-logo:hover {
-      transform: scale(1.1);
-      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.2));
-    }
-    .dual-logo-wrapper {
-      display: flex;
-      gap: 3rem;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    .dual-logo-wrapper .story-logo {
-      max-height: 120px;
-      max-width: 200px;
-    }
-    
-    /* Enhanced text animations */
-    .story-block-container h3 {
-      background: linear-gradient(135deg, #2e2e2e 0%, #bc6442 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-    
-    /* Pulse animation for logos */
-    @keyframes pulse-glow {
-      0%, 100% { 
-        filter: drop-shadow(0 4px 12px rgba(188, 100, 66, 0.1)); 
-      }
-      50% { 
-        filter: drop-shadow(0 8px 20px rgba(188, 100, 66, 0.3)); 
-      }
-    }
-    
-    .story-block-container:hover .story-logo {
-      animation: pulse-glow 2s ease-in-out infinite;
-    }
-    
-    /* Hero section enhancements (already good, ensuring consistency) */
-    .hero-gradient {
-      background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(251, 238, 230, 0.9) 100%);
-      backdrop-filter: blur(20px);
-    }
-    
-    /* Mobile responsiveness for logos */
-    @media (max-width: 768px) {
-      .story-logo {
-        max-height: 100px;
-        max-width: 200px;
-      }
-      .dual-logo-wrapper {
-        gap: 1.5rem;
-      }
-      .dual-logo-wrapper .story-logo {
-        max-height: 80px;
-        max-width: 140px;
-      }
-      .story-block-image-wrapper {
-        min-height: 150px;
-        padding: 1rem;
-      }
-    }
-    
-    /* Timeline journey image enhancement */
-    .journey-image {
-      transition: all 0.4s ease;
-      border-radius: 1rem;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
-    .journey-image:hover {
-      transform: scale(1.02); /* Reduced scale slightly for smoother feel */
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
-    }
-    
-    /* Global link/button consistency */
-    .text-[#bc6442] { color: #bc6442; }
-    .hover\:text-[#bc6442]:hover { color: #bc6442; }
-    .bg-[#bc6442] { background-color: #bc6442; }
-    .hover\:bg-[#a35235]:hover { background-color: #a35235; } /* Darker shade for hover */
-
-    /* Adjusted current page highlight for consistency */
-    .nav-link.active {
-      color: #bc6442;
-      font-weight: 600; /* Ensures consistent bolding for active */
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <meta name="description" content="About Gaurav Lohkna">
+  <link rel="canonical" href="https://gauravlohkna.com/about.html">
 </head>
-<body class="leading-relaxed">
-
-<!-- Header -->
-<header class="bg-white shadow-md relative">
-  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-    <h1 class="text-2xl font-bold">About Me</h1>
-    <nav class="hidden md:flex space-x-6">
-      <a href="index.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">Home</a>
-      <a href="article.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">Article</a>
-      <a href="blog.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">Blog</a>
-      <a href="about.html" class="nav-link active text-[#bc6442] transition-colors duration-300">About</a>
-      <a href="contact.html" class="nav-link text-[#2e2e2e] hover:text-[#bc6442] transition-colors duration-300">Contact</a>
-    </nav>
-    <div class="md:hidden flex items-center">
-      <button id="menu-toggle" class="text-[#2e2e2e] focus:outline-none">
-        <i class="fa-solid fa-bars text-2xl"></i>
+<body>
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand text-xl">Gaurav Lohkna</a>
+      <button class="menu-toggle px-3 py-2 rounded-lg border border-gray-200" aria-expanded="false" aria-controls="primary-nav">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="sr-only">Toggle menu</span>
       </button>
-    </div>
-  </div>
-
-  <!-- Mobile Navigation -->
-  <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50">
-    <div class="p-6">
-      <button id="menu-close" class="text-[#2e2e2e] focus:outline-none mb-4">
-        <i class="fa-solid fa-times text-2xl"></i>
-      </button>
-      <nav class="flex flex-col space-y-4">
-        <a href="index.html" class="block text-[#2e2e2e] hover:text-[#bc6442] font-semibold">Home</a>
-        <a href="article.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Article</a>
-        <a href="blog.html" class="block text-[#2e2e2e] hover:text-[#bc6442]">Blog</a>
-        <a href="about.html" class="block text-[#bc6442] font-semibold hover:text-[#d98157]">About</a>
-        <a href="contact.html" class="block text-[#2e2e2e] hover:text-[#bc6442] font-semibold">Contact</a>
+      <nav id="primary-nav" class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="article.html">Article</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
       </nav>
     </div>
-  </div>
-  <div id="overlay" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-300 ease-in-out z-40"></div>
-</header>
+  </header>
 
-<!-- Main -->
-<main>
-  <!-- Hero Section -->
-  <section class="py-20 px-6">
-    <div class="max-w-6xl mx-auto">
-      <div class="story-block-container p-10 rounded-2xl text-center" data-aos="fade-up">
-        <h2 class="text-5xl font-bold mb-6" data-aos="fade-down" data-aos-delay="200">Hi, I'm Gaurav</h2>
-        <p class="text-xl text-[#4b4b4b] max-w-3xl mx-auto leading-relaxed mb-12" data-aos="fade-up" data-aos-delay="400">
-          Ivy League labs taught me to ask questions, AI taught me to find answers—and I'm just getting started.
-        </p>
-        <div data-aos="zoom-in" data-aos-delay="600">
-          <img src="timeline_journey_2png.png" alt="Journey Timeline" class="mx-auto journey-image max-w-4xl w-full">
+  <main class="section">
+    <div class="container">
+      <h2 class="text-center mb-6">Hi, I'm Gaurav</h2>
+      <p class="hero-sub text-center">Ivy League labs taught me to ask questions, AI taught me to find answers—and I'm just getting started.</p>
+
+      <!-- Responsive stepper timeline (uses your existing images) -->
+      <div class="grid mt-8">
+        <div class="card col-12 col-6">
+          <img src="about_images/yale-university-logo-hd-png-download-e1661884679893.webp" alt="Yale University logo">
+          <h3 class="mt-2">2018</h3>
+          <p class="muted">Researcher at Yale University</p>
+        </div>
+        <div class="card col-12 col-6">
+          <img src="about_images/University_of_Delhi.png" alt="University of Delhi">
+          <h3 class="mt-2">2021</h3>
+          <p class="muted">Bachelors in Computer Science</p>
+        </div>
+        <div class="card col-12 col-6">
+          <img src="about_images/UCB_2.jpg" alt="UC Berkeley × Plaksha">
+          <h3 class="mt-2">2022</h3>
+          <p class="muted">Masters in ML and AI</p>
+        </div>
+        <div class="card col-12 col-6">
+          <img src="about_images/minfy.jpeg" alt="Minfy">
+          <h3 class="mt-2">2022</h3>
+          <p class="muted">Data Scientist at MinfyTech</p>
+        </div>
+        <div class="card col-12 col-6">
+          <img src="about_images/HRS.png" alt="HRS">
+          <h3 class="mt-2">2024</h3>
+          <p class="muted">Data & Machine Learning Engineer</p>
         </div>
       </div>
+
+      <!-- Space for your “Curious Beginnings” and other sections; existing content will render nicely with the new base.css -->
     </div>
-  </section>
+  </main>
 
-  <!-- Journey Scroll Blocks -->
-  <section class="py-20 px-6">
-    <div class="max-w-6xl mx-auto space-y-24">
+  <footer class="site-footer">
+    <div class="container text-center">© 2024 Gaurav Lohkna. All rights reserved.</div>
+  </footer>
 
-      <!-- Yale -->
-      <div class="md:grid md:grid-cols-2 md:gap-16 items-center story-block-container p-10 rounded-2xl" data-aos="fade-right">
-        <div>
-          <h3 class="text-3xl font-bold mb-6">Curious Beginnings</h3>
-          <p class="text-[#4b4b4b] text-lg leading-relaxed">
-            In 2018, I embarked on a curious detour into neuroscience research at Yale. Little did I know, this exploration into the human brain would spark a much deeper question: how does intelligence truly work? And more importantly, could machines also learn and reason?
-          </p>
-        </div>
-        <div class="mt-12 md:mt-0 story-block-image-wrapper">
-          <img src="about_images/yale-university-logo-hd-png-download-e1661884679893.webp" alt="Yale Logo" class="story-logo">
-        </div>
-      </div>
-
-      <!-- DU -->
-      <div class="md:grid md:grid-cols-2 md:gap-16 items-center story-block-container p-10 rounded-2xl" data-aos="fade-left">
-        <div class="order-2 md:order-1 mt-12 md:mt-0 story-block-image-wrapper">
-          <img src="about_images/University_of_Delhi.png" alt="University of Delhi Logo" class="story-logo">
-        </div>
-        <div class="order-1 md:order-2">
-          <h3 class="text-3xl font-bold mb-6">The Foundations</h3>
-          <p class="text-[#4b4b4b] text-lg leading-relaxed">
-            My foundational journey continued with a Computer Science degree in Delhi. Here, my focus extended beyond mere coding; I was driven to understand the underlying patterns of systems and the profound reasons why we engineer machines in the first first place.
-          </p>
-        </div>
-      </div>
-
-      <!-- Berkeley × Plaksha -->
-      <div class="md:grid md:grid-cols-2 md:gap-16 items-center story-block-container p-10 rounded-2xl" data-aos="fade-up">
-        <div>
-          <h3 class="text-3xl font-bold mb-6">The Acceleration</h3>
-          <p class="text-[#4b4b4b] text-lg leading-relaxed">
-            The acceleration began when I joined the Berkeley × Plaksha AI/ML program. This intensive experience was my launchpad into applied machine learning, where I built innovative systems like a news recommender and led teams focused on harmonizing AI capabilities with human intuition.
-          </p>
-        </div>
-        <div class="mt-12 md:mt-0 story-block-image-wrapper dual-logo-wrapper">
-          <img src="about_images/plaksha.png" alt="Plaksha Logo" class="story-logo">
-          <img src="about_images/UCB_2.jpg" alt="UC Berkeley Logo" class="story-logo">
-        </div>
-      </div>
-
-      <!-- Minfy -->
-      <div class="md:grid md:grid-cols-2 md:gap-16 items-center story-block-container p-10 rounded-2xl" data-aos="fade-up">
-        <div class="order-2 md:order-1 mt-12 md:mt-0 story-block-image-wrapper">
-          <img src="about_images/minfy.jpeg" alt="Minfy Logo" class="story-logo">
-        </div>
-        <div class="order-1 md:order-2">
-          <h3 class="text-3xl font-bold mb-6">Healthcare and Responsibility</h3>
-          <p class="text-[#4b4b4b] text-lg leading-relaxed">
-            At Minfy, I had the opportunity to apply AI in healthcare. I developed LLM-driven tools that significantly streamlined hospital operations, reducing patient discharge reporting from 30 minutes to just 2. That's when AI felt truly human.
-          </p>
-        </div>
-      </div>
-
-      <!-- HRS -->
-      <div class="md:grid md:grid-cols-2 md:gap-16 items-center story-block-container p-10 rounded-2xl" data-aos="fade-right">
-        <div>
-          <h3 class="text-3xl font-bold mb-6">The Copilot Era</h3>
-          <p class="text-[#4b4b4b] text-lg leading-relaxed">
-            Today at HRS Group, I'm building a hotel procurement copilot—LLM-powered, serverless, and designed to empower faster, smarter travel decisions. It's AI with a heartbeat of efficiency.
-          </p>
-        </div>
-        <div class="mt-12 md:mt-0 story-block-image-wrapper">
-          <img src="about_images/HRS.png" alt="HRS Group Logo" class="story-logo">
-        </div>
-      </div>
-
-      <!-- CTA -->
-      <div class="text-center story-block-container p-12 rounded-2xl" data-aos="zoom-in">
-        <h3 class="text-3xl font-bold mb-6">Let's Build Something Meaningful</h3>
-        <p class="text-[#4b4b4b] text-lg leading-relaxed max-w-2xl mx-auto mb-8">
-          I believe in building with purpose, not just chasing trends. If you're passionate about creating solutions that truly matter, I'd love to connect and explore how we can build something impactful together.
-        </p>
-        <a href="contact.html" class="inline-block bg-[#bc6442] text-white px-8 py-4 rounded-xl shadow-lg hover:bg-[#a35235] hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg font-semibold">Say Hi</a>
-      </div>
-
-    </div>
-  </section>
-</main>
-
-<!-- Footer -->
-<footer class="bg-[#f6f5f3] text-[#4b4b4b] py-6">
-  <p class="text-center">© 2024 Gaurav Lohkna. All rights reserved.</p>
-</footer>
-
-<!-- Scripts -->
-<script>
-  const menuToggle = document.getElementById('menu-toggle');
-  const menuClose = document.getElementById('menu-close');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const overlay = document.getElementById('overlay');
-
-  menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.remove('translate-x-full');
-    overlay.classList.remove('opacity-0', 'pointer-events-none');
-  });
-
-  function closeMenu() {
-    mobileMenu.classList.add('translate-x-full');
-    overlay.classList.add('opacity-0', 'pointer-events-none');
-  }
-
-  menuClose.addEventListener('click', closeMenu);
-  overlay.addEventListener('click', closeMenu);
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script>
-  // Wait for AOS library to load completely
-  document.addEventListener('DOMContentLoaded', function() {
-    // Add a small delay to ensure AOS is fully loaded
-    setTimeout(function() {
-      if (typeof AOS !== 'undefined') {
-        AOS.init({ 
-          duration: 800, 
-          once: true,
-          offset: 100,
-          easing: 'ease-out-cubic'
-        });
-        console.log('AOS initialized successfully');
-      } else {
-        console.warn('AOS library failed to load - animations will be disabled');
-        // Remove AOS attributes so content still displays normally
-        document.querySelectorAll('[data-aos]').forEach(function(element) {
-          element.removeAttribute('data-aos');
-          element.removeAttribute('data-aos-delay');
-        });
-      }
-    }, 100);
-  });
-</script>
-
+  <script src="assets/js/main.js"></script>
 </body>
 </html>
