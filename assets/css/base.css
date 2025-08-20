@@ -45,11 +45,11 @@ a:hover{opacity:.9}
 
 /* Hero */
 .hero{text-align:center; padding-block:clamp(2.5rem,6vw,5rem)}
-.hero img{width:min(560px,85vw); height:auto; border-radius:22px; border:1px solid var(--line)}
+.hero img{width:min(560px,85vw); height:auto; border-radius:22px; border:none solid var(--line)}
 
 /* Cards */
 .card{
-  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius);
+  background:var(--surface); border:1px solid var(--line); border-radius:var(--radius); 
   padding:1.25rem; transition:transform .15s ease;
 }
 .card:hover{transform:translateY(-1px)}
