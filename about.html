@@ -1,78 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
   <title>About Me | Gaurav Lohkna</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/base.css">
-  <meta name="description" content="About Gaurav Lohkna">
-  <link rel="canonical" href="https://gauravlohkna.com/about.html">
+  <meta name="description" content="About Gaurav Lohkna — Data & ML Engineer, research & writing.">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container navbar">
-      <a href="index.html" class="brand text-xl">Gaurav Lohkna</a>
-      <button class="menu-toggle px-3 py-2 rounded-lg border border-gray-200" aria-expanded="false" aria-controls="primary-nav">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <span class="sr-only">Toggle menu</span>
-      </button>
-      <nav id="primary-nav" class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="article.html">Article</a>
-        <a href="blog.html">Blog</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html">Gaurav Lohkna</a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+    <nav id="primary-nav" class="nav-links">
+      <a href="index.html">Home</a><a href="article.html">Article</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Intro -->
+  <section class="section">
+    <div class="container" style="max-width:920px; text-align:center">
+      <h2>Hi, I'm Gaurav</h2>
+      <p class="muted">Ivy League labs taught me to ask questions; AI taught me to find answers. I build data & ML systems and write about science, technology, and the human side of progress.</p>
     </div>
-  </header>
+  </section>
 
-  <main class="section">
+  <!-- Timeline -->
+  <section class="section" style="padding-top:1rem">
     <div class="container">
-      <h2 class="text-center mb-6">Hi, I'm Gaurav</h2>
-      <p class="hero-sub text-center">Ivy League labs taught me to ask questions, AI taught me to find answers—and I'm just getting started.</p>
-
-      <!-- Responsive stepper timeline (uses your existing images) -->
-      <div class="grid mt-8">
-        <div class="card col-12 col-6">
+      <h3 style="text-align:center; margin-bottom:1.25rem">Journey Timeline</h3>
+      <div class="grid" style="--cols:5; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem">
+        <div class="card" style="text-align:center">
           <img src="about_images/yale-university-logo-hd-png-download-e1661884679893.webp" alt="Yale University logo">
-          <h3 class="mt-2">2018</h3>
-          <p class="muted">Researcher at Yale University</p>
+          <div style="margin-top:.5rem; font-weight:700">2018</div>
+          <div class="muted">Researcher at Yale University</div>
         </div>
-        <div class="card col-12 col-6">
+        <div class="card" style="text-align:center">
           <img src="about_images/University_of_Delhi.png" alt="University of Delhi">
-          <h3 class="mt-2">2021</h3>
-          <p class="muted">Bachelors in Computer Science</p>
+          <div style="margin-top:.5rem; font-weight:700">2021</div>
+          <div class="muted">Bachelors in Computer Science</div>
         </div>
-        <div class="card col-12 col-6">
+        <div class="card" style="text-align:center">
           <img src="about_images/UCB_2.jpg" alt="UC Berkeley × Plaksha">
-          <h3 class="mt-2">2022</h3>
-          <p class="muted">Masters in ML and AI</p>
+          <div style="margin-top:.5rem; font-weight:700">2022</div>
+          <div class="muted">Masters in ML and AI</div>
         </div>
-        <div class="card col-12 col-6">
+        <div class="card" style="text-align:center">
           <img src="about_images/minfy.jpeg" alt="Minfy">
-          <h3 class="mt-2">2022</h3>
-          <p class="muted">Data Scientist at MinfyTech</p>
+          <div style="margin-top:.5rem; font-weight:700">2022</div>
+          <div class="muted">Data Scientist at MinfyTech</div>
         </div>
-        <div class="card col-12 col-6">
+        <div class="card" style="text-align:center">
           <img src="about_images/HRS.png" alt="HRS">
-          <h3 class="mt-2">2024</h3>
-          <p class="muted">Data & Machine Learning Engineer</p>
+          <div style="margin-top:.5rem; font-weight:700">2024</div>
+          <div class="muted">Data & Machine Learning Engineer</div>
         </div>
       </div>
-
-      <!-- Space for your “Curious Beginnings” and other sections; existing content will render nicely with the new base.css -->
     </div>
-  </main>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container text-center">© 2024 Gaurav Lohkna. All rights reserved.</div>
-  </footer>
+  <!-- Bio blocks -->
+  <section class="section">
+    <div class="container grid grid-2">
+      <div class="card">
+        <h3>Curious Beginnings</h3>
+        <p>I embarked on a detour into neuroscience and computation early on, chasing questions about intelligence—natural and artificial. Those questions still drive my work today.</p>
+      </div>
+      <div class="card">
+        <h3>Today</h3>
+        <p>I design data/ML systems, write about causality and cognition, and prototype tools that help people make better decisions—under uncertainty and at scale.</p>
+      </div>
+    </div>
+  </section>
+</main>
 
-  <script src="assets/js/main.js"></script>
+<footer class="site-footer"><div class="container" style="text-align:center">© 2024 Gaurav Lohkna. All rights reserved.</div></footer>
+<script src="assets/js/main.js"></script>
 </body>
 </html>
