@@ -7,6 +7,46 @@
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/base.css">
   <meta name="description" content="Featured research and writing by Gaurav Lohkna">
+  <style>
+    .card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 1rem;
+      border-radius: 8px;
+      background: var(--card-bg, #fff);
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+    }
+    .card h3 {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin: 1rem 0 0.5rem;
+    }
+    .card .muted {
+      font-size: 0.95rem;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+    .badges {
+      margin: 0.5rem 0;
+    }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      font-size: 0.85rem;
+      background: var(--badge-bg, #f0f0f0);
+      border-radius: 4px;
+    }
+    .grid-3 {
+      gap: 2rem;
+    }
+  </style>
 </head>
 <body>
 <header class="site-header">
@@ -26,26 +66,26 @@
     <div class="grid grid-3" style="margin-top:1rem">
       <article class="card">
         <img src="article_images/DNA.webp" alt="DNA Helix" loading="lazy" decoding="async">
-        <h3 class="mt-3">The Inference of Nature: Cause and Effect in Molecular Biology</h3>
+        <h3>The Inference of Nature: Cause and Effect in Molecular Biology</h3>
         <p class="muted">A molecular structure that is three-dimensional, such as the double helix...</p>
         <div class="badges"><span class="badge">3 min read</span></div>
-        <p><a href="#">Read more →</a></p>
+        <p><a href="#" style="text-decoration: none; color: var(--link-color, #007AFF);">Read more →</a></p>
       </article>
 
       <article class="card">
         <img src="article_images/quantum.webp" alt="Quantum mechanics illustration" loading="lazy" decoding="async">
-        <h3 class="mt-3">No Cause for Concern: Indefinite Causal Ordering as a Tool for Understanding Entanglement</h3>
+        <h3>No Cause for Concern: Indefinite Causal Ordering as a Tool for Understanding Entanglement</h3>
         <p class="muted">A fundamental point of quantum mechanics is that causality...</p>
         <div class="badges"><span class="badge">4 min read</span></div>
-        <p><a href="#">Read more →</a></p>
+        <p><a href="#" style="text-decoration: none; color: var(--link-color, #007AFF);">Read more →</a></p>
       </article>
 
       <article class="card">
         <img src="article_images/framework.webp" alt="Physics framework illustration" loading="lazy" decoding="async">
-        <h3 class="mt-3">Causation from the Point of View of Physics</h3>
+        <h3>Causation from the Point of View of Physics</h3>
         <p class="muted">As humans, we are always striving to deduce the cause...</p>
         <div class="badges"><span class="badge">5 min read</span></div>
-        <p><a href="#">Read more →</a></p>
+        <p><a href="#" style="text-decoration: none; color: var(--link-color, #007AFF);">Read more →</a></p>
       </article>
     </div>
 
