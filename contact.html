@@ -8,19 +8,120 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/base.css">
   <meta name="description" content="Connect with Gaurav Lohkna — email, LinkedIn, or virtual coffee.">
   <link rel="canonical" href="https://gauravlohkna.com/contact.html">
+  <style>
+    .contact-card {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 2rem;
+      border-radius: 12px;
+      background: var(--card-bg, #fff);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--brand-50, #f0f7ff);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.5rem;
+    }
+
+    .contact-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--heading-color, #1a1a1a);
+    }
+
+    .contact-card .description {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: var(--text-muted, #666);
+      margin-bottom: 1.5rem;
+      flex-grow: 1;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      background: var(--brand-600, #2563eb);
+      color: white;
+      font-weight: 500;
+      text-align: center;
+      transition: background-color 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: var(--brand-700, #1d4ed8);
+    }
+
+    .linkedin-button {
+      background: #0a66c2;
+    }
+
+    .linkedin-button:hover {
+      background: #004182;
+    }
+
+    .page-intro {
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .page-intro p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: var(--text-muted, #666);
+    }
+
+    @media (max-width: 768px) {
+      .contact-card {
+        padding: 1.5rem;
+      }
+      
+      .icon-circle {
+        width: 48px;
+        height: 48px;
+      }
+
+      .contact-card h3 {
+        font-size: 1.25rem;
+      }
+
+      .contact-card .description {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div class="container navbar">
-      <a href="index.html" class="brand text-xl">Gaurav Lohkna</a>
-      <button class="menu-toggle px-3 py-2 rounded-lg border border-gray-200" aria-expanded="false" aria-controls="primary-nav">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <span class="sr-only">Toggle menu</span>
-      </button>
+      <a class="brand" href="index.html">Gaurav Lohkna</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
       <nav id="primary-nav" class="nav-links">
         <a href="index.html">Home</a>
         <a href="article.html">Article</a>
@@ -33,42 +134,55 @@
 
   <main class="section">
     <div class="container">
-      <h2 class="text-center mb-2">Let’s Connect</h2>
-      <p class="hero-sub text-center">Whether it’s about sharing ideas, collaborations, or casual conversations over a virtual coffee—this is where we connect!</p>
+      <div class="page-intro">
+        <h2>Let's Connect</h2>
+        <p>Have an idea to discuss? Looking to collaborate? Or just want to have an interesting conversation? I'd love to hear from you!</p>
+      </div>
 
-      <div class="grid mt-6">
-        <!-- Email -->
-        <a class="card col-12 col-6 col-4 relative block text-center" href="mailto:gaurav@gauravlohkna.com" aria-label="Send email">
+      <div class="contact-grid">
+        <!-- Email Card -->
+        <a href="mailto:gauravbusinessonly@gmail.com" class="contact-card">
+          <div class="icon-circle">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="var(--brand-600, #2563eb)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3>Email Me</h3>
-          <p class="muted">Drop me an email for detailed discussions!</p>
-          <div class="mt-3">
-            <span class="px-4 py-2 inline-block rounded-xl text-white" style="background: var(--brand-600)">Send Email</span>
-          </div>
+          <p class="description">Drop me an email for detailed discussions, collaborations, or any questions you might have.</p>
+          <span class="cta-button">Send Email</span>
         </a>
 
-        <!-- LinkedIn -->
-        <a class="card col-12 col-6 col-4 relative block text-center" href="https://www.linkedin.com/in/gauravlohkna/" target="_blank" rel="noopener" aria-label="Connect on LinkedIn">
+        <!-- LinkedIn Card -->
+        <a href="https://www.linkedin.com/in/gaurav-lohkna-799898187/" target="_blank" rel="noopener" class="contact-card">
+          <div class="icon-circle">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="#0a66c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 9H2V21H6V9Z" stroke="#0a66c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 6C5.10457 6 6 5.10457 6 4C6 2.89543 5.10457 2 4 2C2.89543 2 2 2.89543 2 4C2 5.10457 2.89543 6 4 6Z" stroke="#0a66c2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
           <h3>LinkedIn</h3>
-          <p class="muted">Let’s network professionally.</p>
-          <div class="mt-3">
-            <span class="px-4 py-2 inline-block rounded-xl text-white" style="background: #0a66c2">Connect on LinkedIn</span>
-          </div>
+          <p class="description">Connect with me professionally. Let's grow our network and share insights.</p>
+          <span class="cta-button linkedin-button">Connect on LinkedIn</span>
         </a>
 
-        <!-- Virtual Coffee -->
-        <a class="card col-12 col-6 col-4 relative block text-center" href="https://cal.com/" target="_blank" rel="noopener" aria-label="Book a virtual coffee">
-          <h3>Virtual Coffee ☕</h3>
-          <p class="muted">Book a virtual coffee chat with me.</p>
-          <div class="mt-3">
-            <span class="px-4 py-2 inline-block rounded-xl text-white" style="background: var(--brand-600)">Book an Appointment</span>
+        <!-- Calendar Card -->
+        <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" class="contact-card">
+          <div class="icon-circle">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8 2V6M16 2V6M3 10H21M5 4H19C20.1046 4 21 4.89543 21 6V20C21 21.1046 20.1046 22 19 22H5C3.89543 22 3 21.1046 3 20V6C3 4.89543 3.89543 4 5 4Z" stroke="var(--brand-600, #2563eb)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
+          <h3>Virtual Coffee ☕</h3>
+          <p class="description">Book a virtual coffee chat with me. Let's discuss ideas, share experiences, or just have a casual conversation.</p>
+          <span class="cta-button">Schedule a Chat</span>
         </a>
       </div>
     </div>
   </main>
 
   <footer class="site-footer">
-    <div class="container text-center">© 2024 Gaurav Lohkna. All rights reserved.</div>
+    <div class="container" style="text-align:center">© 2024 Gaurav Lohkna. All rights reserved.</div>
   </footer>
 
   <script src="assets/js/main.js"></script>
