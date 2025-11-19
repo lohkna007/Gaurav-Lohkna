@@ -1,196 +1,171 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Articles | Gaurav Lohkna</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="assets/css/base.css">
   <meta name="description" content="Featured research and writing by Gaurav Lohkna">
-  <style>
-    .card {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      padding: 1rem;
-      border-radius: 8px;
-      background: var(--card-bg, #fff);
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-    .card h3 {
-      font-size: 1.2rem;
-      line-height: 1.4;
-      margin: 1rem 0 0.5rem;
-    }
-    .card .muted {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      flex-grow: 1;
-    }
-    .badges {
-      margin: 0.5rem 0;
-      display: flex;
-      gap: 0.5rem;
-      align-items: center;
-    }
-    .badge {
-      display: inline-block;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.85rem;
-      background: var(--badge-bg, #f0f0f0);
-      border-radius: 4px;
-    }
-    .yale-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.85rem;
-      background: #00356b;
-      color: white;
-      border-radius: 4px;
-    }
-    .yale-badge::before {
-      content: "✓";
-      display: inline-block;
-      font-weight: bold;
-    }
-    .grid-3 {
-      gap: 2rem;
-    }
-  </style>
 </head>
+
 <body>
-<header class="site-header">
-  <div class="container navbar">
-    <a class="brand" href="index.html">Gaurav Lohkna</a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-    <nav id="primary-nav" class="nav-links">
-      <a href="index.html">Home</a><a href="article.html">Article</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main class="section">
-  <div class="container">
-    <h2>Featured Articles</h2>
-
-    <div class="grid grid-3" style="margin-top:1rem">
-
-      <article class="card">
-        <img src="article_images/yale_2.png" alt="Quantum mechanics illustration" loading="lazy" decoding="async">
-        <h3 class="mt-3">No Cause for Concern: Indefinite Causal Ordering as a Tool for Understanding Entanglement</h3>
-        <p class="muted">A fundamental point of quantum mechanics is that causality...</p>
-        <div class="badges">
-          <span class="badge">4 min read</span>
-          <span class="yale-badge">Yale Research</span>
-        </div>
-        <p><a href="https://inferenceproject.yale.edu/pre-talk-blog-post-crull-event-no-cause-concern-indefinite-causal-ordering-tool-understanding">Read more →</a></p>
-      </article>
-
-      <article class="card">
-          <img src="article_images/unstructured_data_insights.webp" alt="Unstructured healthcare data" loading="lazy" decoding="async">
-          <h3>Making Use of Unstructured Healthcare Data</h3>
-          <p class="muted">Where the value hides in clinical free text and scans.</p>
-          <p><a href="https://medium.com/nerd-for-tech/making-use-of-unstructured-healthcare-data-to-perform-advanced-analytics-5c7cea54c430" target="_blank" rel="noopener">Read on Medium →</a></p>
-      </article>
-
-      <article class="card">
-        <img src="article_images/yale_2.png" alt="Physics framework illustration" loading="lazy" decoding="async">
-        <h3 class="mt-3">Causation from the Point of View of Physics</h3>
-        <p class="muted">As humans, we are always striving to deduce the cause...</p>
-        <div class="badges">
-          <span class="badge">5 min read</span>
-          <span class="yale-badge">Yale Research</span>
-        </div>
-        <p><a href="https://inferenceproject.yale.edu/pre-talk-blog-post-ismael-event-causation-point-view-physics">Read more →</a></p>
-      </article>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">Gaurav Lohkna</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="nav-links">
+        <a href="index.html">Home</a><a href="article.html">Article</a><a href="blog.html">Blog</a><a
+          href="about.html">About</a><a href="contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <!-- All additional writing -->
-    <section class="section" style="padding-top:2rem">
-      <h2>More Writing</h2>
+  <main class="section">
+    <div class="container">
+      <h2>Featured Articles</h2>
+
       <div class="grid grid-3" style="margin-top:1rem">
-        <article class="card">
-          <img src="article_images/framework.webp" alt="AI-driven healthcare framework" loading="lazy" decoding="async">
-          <h3>Bridging the Gap: Proposing a Framework for AI-Driven Healthcare Solutions</h3>
-          <p class="muted">A practical approach to connecting clinical data, models, and decisions.</p>
-          <p><a href="https://lohkna007.medium.com/bridging-the-gap-proposing-a-framework-for-ai-driven-healthcare-solutions-481a2c8d66a9" target="_blank" rel="noopener">Read on Medium →</a></p>
-        </article>
 
         <article class="card">
-          <img src="article_images/smart_report.webp" alt="Smart Health Reports" loading="lazy" decoding="async">
-          <h3>Smart Health Reports: Improving Healthcare Efficiency</h3>
-          <p class="muted">How we can streamline reporting to unlock clinical efficiency.</p>
-          <p><a href="https://medium.com/nerd-for-tech/smart-health-reports-improving-healthcare-efficiency-9ee80dbba0c6" target="_blank" rel="noopener">Read on Medium →</a></p>
-        </article>
-
-        <article class="card">
-          <img src="article_images/chronic_disease.webp" alt="Chronic disease care" loading="lazy" decoding="async">
-          <h3>How AI is Changing the Game in Chronic Disease Care</h3>
-          <p class="muted">Applications of AI across chronic care workflows.</p>
-          <p><a href="https://medium.com/nerd-for-tech/how-ai-is-changing-the-game-in-chronic-disease-care-d4ca145a7f49" target="_blank" rel="noopener">Read on Medium →</a></p>
-        </article>
-
-        <article class="card">
-          <img src="article_images/quantum.webp" alt="Quantum computing" loading="lazy" decoding="async">
-          <h3>Quantum Computing: The Future</h3>
-          <p class="muted">A contributor essay exploring the horizon of quantum tech.</p>
-          <p><a href="https://medium.com/nerd-for-tech/quantum-computing-the-future-68ffedec5559" target="_blank" rel="noopener">Read on Medium →</a></p>
-        </article>
-
-        <article class="card">
-          <img src="article_images/yale_2.png" alt="DNA Helix" loading="lazy" decoding="async">
-          <h3 class="mt-3">The Inference of Nature: Cause and Effect in Molecular Biology</h3>
-          <p class="muted">A molecular structure that is three-dimensional, such as the double helix...</p>
+          <img src="article_images/yale_2.png" alt="Quantum mechanics illustration" loading="lazy" decoding="async">
+          <h3 class="mt-3">No Cause for Concern: Indefinite Causal Ordering as a Tool for Understanding Entanglement
+          </h3>
+          <p class="muted">A fundamental point of quantum mechanics is that causality...</p>
           <div class="badges">
-            <span class="badge">3 min read</span>
+            <span class="badge">4 min read</span>
             <span class="yale-badge">Yale Research</span>
           </div>
-          <p><a href="https://inferenceproject.yale.edu/post-talk-blog-post-teichmann-event-inference-nature-cause-and-effect-molecular-biology">Read more →</a></p>
+          <p><a
+              href="https://inferenceproject.yale.edu/pre-talk-blog-post-crull-event-no-cause-concern-indefinite-causal-ordering-tool-understanding">Read
+              more →</a></p>
         </article>
 
         <article class="card">
-          <img src="article_images/superintelligence.webp" alt="Superintelligence" loading="lazy" decoding="async">
-          <h3>How can we achieve Superintelligence? IQ: 1000+</h3>
-          <p class="muted">A thought experiment at the frontier of intelligence.</p>
-          <p><a href="https://medium.com/@lohkna007/can-we-achieve-superintelligence-d6bbf331599" target="_blank" rel="noopener">Read on Medium →</a></p>
+          <img src="article_images/unstructured_data_insights.webp" alt="Unstructured healthcare data" loading="lazy"
+            decoding="async">
+          <h3>Making Use of Unstructured Healthcare Data</h3>
+          <p class="muted">Where the value hides in clinical free text and scans.</p>
+          <p><a
+              href="https://medium.com/nerd-for-tech/making-use-of-unstructured-healthcare-data-to-perform-advanced-analytics-5c7cea54c430"
+              target="_blank" rel="noopener">Read on Medium →</a></p>
         </article>
 
         <article class="card">
-          <img src="article_images/DNA.webp" alt="DNA Data Storage" loading="lazy" decoding="async">
-          <h3>DNA Data Storage</h3>
-          <p class="muted">Exploring molecular media as an information substrate.</p>
-          <p><a href="https://medium.com/@lohkna007/dna-data-storage-6d23796c54d" target="_blank" rel="noopener">Read on Medium →</a></p>
-        </article>
-
-        <article class="card">
-          <img src="article_images/compute_brain.webp" alt="Computational power of a brain" loading="lazy" decoding="async">
-          <h3>The Computational Power of a Brain</h3>
-          <p class="muted">Back-of-the-envelope horsepower of the mind.</p>
-          <p><a href="https://medium.com/@lohkna007/the-computational-power-of-a-brain-1f4e39957056" target="_blank" rel="noopener">Read on Medium →</a></p>
-        </article>
-
-        <article class="card">
-          <img src="article_images/mimicking.webp" alt="Mimicking the Mind" loading="lazy" decoding="async">
-          <h3>Mimicking the Mind — AI</h3>
-          <p class="muted">Early notes from your dive into cognition and computation.</p>
-          <p><a href="https://medium.com/@lohkna007/contributor-gaurav-lohkna-aaf6566f47d6" target="_blank" rel="noopener">Read on Medium →</a></p>
+          <img src="article_images/yale_2.png" alt="Physics framework illustration" loading="lazy" decoding="async">
+          <h3 class="mt-3">Causation from the Point of View of Physics</h3>
+          <p class="muted">As humans, we are always striving to deduce the cause...</p>
+          <div class="badges">
+            <span class="badge">5 min read</span>
+            <span class="yale-badge">Yale Research</span>
+          </div>
+          <p><a
+              href="https://inferenceproject.yale.edu/pre-talk-blog-post-ismael-event-causation-point-view-physics">Read
+              more →</a></p>
         </article>
       </div>
 
-      
-    </section>
-  </div>
-</main>
+      <!-- All additional writing -->
+      <section class="section" style="padding-top:2rem">
+        <h2>More Writing</h2>
+        <div class="grid grid-3" style="margin-top:1rem">
+          <article class="card">
+            <img src="article_images/framework.webp" alt="AI-driven healthcare framework" loading="lazy"
+              decoding="async">
+            <h3>Bridging the Gap: Proposing a Framework for AI-Driven Healthcare Solutions</h3>
+            <p class="muted">A practical approach to connecting clinical data, models, and decisions.</p>
+            <p><a
+                href="https://lohkna007.medium.com/bridging-the-gap-proposing-a-framework-for-ai-driven-healthcare-solutions-481a2c8d66a9"
+                target="_blank" rel="noopener">Read on Medium →</a></p>
+          </article>
 
-<footer class="site-footer"><div class="container" style="text-align:center">© 2024 Gaurav Lohkna. All rights reserved.</div></footer>
-<script src="assets/js/main.js"></script>
+          <article class="card">
+            <img src="article_images/smart_report.webp" alt="Smart Health Reports" loading="lazy" decoding="async">
+            <h3>Smart Health Reports: Improving Healthcare Efficiency</h3>
+            <p class="muted">How we can streamline reporting to unlock clinical efficiency.</p>
+            <p><a
+                href="https://medium.com/nerd-for-tech/smart-health-reports-improving-healthcare-efficiency-9ee80dbba0c6"
+                target="_blank" rel="noopener">Read on Medium →</a></p>
+          </article>
+
+          <article class="card">
+            <img src="article_images/chronic_disease.webp" alt="Chronic disease care" loading="lazy" decoding="async">
+            <h3>How AI is Changing the Game in Chronic Disease Care</h3>
+            <p class="muted">Applications of AI across chronic care workflows.</p>
+            <p><a
+                href="https://medium.com/nerd-for-tech/how-ai-is-changing-the-game-in-chronic-disease-care-d4ca145a7f49"
+                target="_blank" rel="noopener">Read on Medium →</a></p>
+          </article>
+
+          <article class="card">
+            <img src="article_images/quantum.webp" alt="Quantum computing" loading="lazy" decoding="async">
+            <h3>Quantum Computing: The Future</h3>
+            <p class="muted">A contributor essay exploring the horizon of quantum tech.</p>
+            <p><a href="https://medium.com/nerd-for-tech/quantum-computing-the-future-68ffedec5559" target="_blank"
+                rel="noopener">Read on Medium →</a></p>
+          </article>
+
+          <article class="card">
+            <img src="article_images/yale_2.png" alt="DNA Helix" loading="lazy" decoding="async">
+            <h3 class="mt-3">The Inference of Nature: Cause and Effect in Molecular Biology</h3>
+            <p class="muted">A molecular structure that is three-dimensional, such as the double helix...</p>
+            <div class="badges">
+              <span class="badge">3 min read</span>
+              <span class="yale-badge">Yale Research</span>
+            </div>
+            <p><a
+                href="https://inferenceproject.yale.edu/post-talk-blog-post-teichmann-event-inference-nature-cause-and-effect-molecular-biology">Read
+                more →</a></p>
+          </article>
+
+          <article class="card">
+            <img src="article_images/superintelligence.webp" alt="Superintelligence" loading="lazy" decoding="async">
+            <h3>How can we achieve Superintelligence? IQ: 1000+</h3>
+            <p class="muted">A thought experiment at the frontier of intelligence.</p>
+            <p><a href="https://medium.com/@lohkna007/can-we-achieve-superintelligence-d6bbf331599" target="_blank"
+                rel="noopener">Read on Medium →</a></p>
+          </article>
+
+          <article class="card">
+            <img src="article_images/DNA.webp" alt="DNA Data Storage" loading="lazy" decoding="async">
+            <h3>DNA Data Storage</h3>
+            <p class="muted">Exploring molecular media as an information substrate.</p>
+            <p><a href="https://medium.com/@lohkna007/dna-data-storage-6d23796c54d" target="_blank" rel="noopener">Read
+                on Medium →</a></p>
+          </article>
+
+          <article class="card">
+            <img src="article_images/compute_brain.webp" alt="Computational power of a brain" loading="lazy"
+              decoding="async">
+            <h3>The Computational Power of a Brain</h3>
+            <p class="muted">Back-of-the-envelope horsepower of the mind.</p>
+            <p><a href="https://medium.com/@lohkna007/the-computational-power-of-a-brain-1f4e39957056" target="_blank"
+                rel="noopener">Read on Medium →</a></p>
+          </article>
+
+          <article class="card">
+            <img src="article_images/mimicking.webp" alt="Mimicking the Mind" loading="lazy" decoding="async">
+            <h3>Mimicking the Mind — AI</h3>
+            <p class="muted">Early notes from your dive into cognition and computation.</p>
+            <p><a href="https://medium.com/@lohkna007/contributor-gaurav-lohkna-aaf6566f47d6" target="_blank"
+                rel="noopener">Read on Medium →</a></p>
+          </article>
+        </div>
+
+
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align:center">© 2024 Gaurav Lohkna. All rights reserved.</div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header.js"></script>
 </body>
+
 </html>

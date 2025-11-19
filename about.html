@@ -1,55 +1,112 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>About Me | Gaurav Lohkna</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@700;800&display=swap"
+    rel="stylesheet">
   <link rel="stylesheet" href="assets/css/base.css">
   <meta name="description" content="About Gaurav Lohkna — Data & ML Engineer, research & writing.">
 </head>
+
 <body>
-<header class="site-header">
-  <div class="container navbar">
-    <a class="brand" href="index.html">Gaurav Lohkna</a>
-    <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-    <nav id="primary-nav" class="nav-links">
-      <a href="index.html">Home</a><a href="article.html">Article</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main>
-  <section class="section">
-    <div class="container" style="max-width:920px; text-align:center">
-      <h2>Hi, I'm Gaurav</h2>
-      <p class="muted">Ivy League labs taught me to ask questions; AI taught me to find answers. I build data & ML systems and write about science, technology, and the human side of progress.</p>
+  <header class="site-header">
+    <div class="container navbar">
+      <a class="brand" href="index.html">Gaurav Lohkna</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="primary-nav">Menu</button>
+      <nav id="primary-nav" class="nav-links">
+        <a href="index.html">Home</a><a href="article.html">Article</a><a href="blog.html">Blog</a><a
+          href="about.html">About</a><a href="contact.html">Contact</a>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <!-- ✅ single timeline image, as requested -->
-  <section class="section" style="padding-top:1rem">
-    <div class="container" style="display:grid; place-items:center">
-      <img src="timeline_journey.png" alt="Gaurav Lohkna — Journey timeline" style="width:min(100%, 1100px); border:1px solid var(--line); border-radius:16px">
-    </div>
-  </section>
-
-  <!-- Keep your short bio blocks if you want (optional). Feel free to delete this section. -->
-  <!-- <section class="section">
-    <div class="container grid grid-2">
-      <div class="card">
-        <h3>Curious Beginnings</h3>
-        <p>I embarked on a detour into neuroscience and computation early on, chasing questions about intelligence—natural and artificial. Those questions still drive my work today.</p>
+  <main>
+    <section class="section">
+      <div class="container" style="max-width:920px; text-align:center">
+        <h2>Hi, I'm Gaurav</h2>
+        <p class="muted" style="font-size:1.2rem; max-width:700px; margin:0 auto">Ivy League labs taught me to ask
+          questions; AI taught me to find answers. I build data & ML systems and write about science, technology, and
+          the human side of progress.</p>
       </div>
-      <div class="card">
-        <h3>Today</h3>
-        <p>I design data/ML systems, write about causality and cognition, and prototype tools that help people make better decisions—under uncertainty and at scale.</p>
-      </div>
-    </div>
-  </section> -->
-</main>
+    </section>
 
-<footer class="site-footer"><div class="container" style="text-align:center">© 2024 Gaurav Lohkna. All rights reserved.</div></footer>
-<script src="assets/js/main.js"></script>
+    <!-- Visual Journey -->
+    <section class="section" style="padding-top:0">
+      <div class="container" style="display:grid; place-items:center">
+        <div class="card" style="padding:1rem; border-radius:24px">
+          <img src="timeline_journey.png" alt="Gaurav Lohkna — Journey timeline" style="width:100%; border-radius:16px">
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Experience Timeline -->
+    <section class="section">
+      <div class="container">
+        <h3 style="text-align:center; margin-bottom:3rem">My Journey</h3>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span class="timeline-date">2024 — Present</span>
+            <h4 class="timeline-title">Data & Machine Learning Engineer</h4>
+            <div class="timeline-org">HRS Group</div>
+            <p class="timeline-desc">Building scalable data pipelines and machine learning systems to drive business
+              intelligence and innovation.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2022 — 2024</span>
+            <h4 class="timeline-title">Data Scientist</h4>
+            <div class="timeline-org">Minfy</div>
+            <p class="timeline-desc">Developed predictive models and analytics solutions for cloud-native applications,
+              optimizing data-driven decision making.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2022</span>
+            <h4 class="timeline-title">Masters in ML and AI</h4>
+            <div class="timeline-org">Plaksha University x UC Berkeley</div>
+            <p class="timeline-desc">Specialized in advanced machine learning, deep learning, and AI ethics through the
+              Tech Leaders Program.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2018</span>
+            <h4 class="timeline-title">Researcher</h4>
+            <div class="timeline-org">Yale University</div>
+            <p class="timeline-desc">Conducted research at the intersection of neuroscience and computation, exploring
+              the foundations of intelligence.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span class="timeline-date">2021</span>
+            <h4 class="timeline-title">Bachelors in Computer Science</h4>
+            <div class="timeline-org">University of Delhi</div>
+            <p class="timeline-desc">Built a strong foundation in algorithms, data structures, and software engineering.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section" style="background:transparent">
+      <div class="container">
+        <h2>Let's Build Something Together</h2>
+        <p>Always open to discussing new ideas, collaborations, or just chatting about the future of AI.</p>
+        <a href="contact.html" class="cta-button">Get in Touch</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container" style="text-align:center">© 2024 Gaurav Lohkna. All rights reserved.</div>
+  </footer>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/header.js"></script>
 </body>
+
 </html>
