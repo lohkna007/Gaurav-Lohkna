@@ -206,6 +206,8 @@
                         aria-label="Share on LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#" id="share-facebook" class="share-icon" target="_blank" rel="noopener noreferrer"
                         aria-label="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" id="share-whatsapp" class="share-icon" target="_blank" rel="noopener noreferrer"
+                        aria-label="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     <a href="#" id="share-email" class="share-icon" aria-label="Share via Email"><i
                             class="fas fa-envelope"></i></a>
                 </div>
@@ -388,11 +390,13 @@
         const twitterShare = document.getElementById('share-twitter');
         const linkedinShare = document.getElementById('share-linkedin');
         const facebookShare = document.getElementById('share-facebook');
+        const whatsappShare = document.getElementById('share-whatsapp');
         const emailShare = document.getElementById('share-email');
 
         if (twitterShare) twitterShare.href = `https://twitter.com/intent/tweet?text=${pageTitle}&url=${currentUrl}`;
         if (linkedinShare) linkedinShare.href = `https://www.linkedin.com/sharing/share-offsite/?url=${currentUrl}`;
         if (facebookShare) facebookShare.href = `https://www.facebook.com/sharer/sharer.php?u=${currentUrl}`;
+        if (whatsappShare) whatsappShare.href = `https://api.whatsapp.com/send?text=${pageTitle} ${currentUrl}`;
         if (emailShare) emailShare.href = `mailto:?subject=${pageTitle}&body=Check out this article: ${currentUrl}`;
     </script>
 </body>
