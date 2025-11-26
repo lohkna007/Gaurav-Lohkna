@@ -14,11 +14,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Mobile Menu Toggle
   if (menuToggle && navLinks) {
-    menuToggle.addEventListener('click', () => {
+    const toggleMenu = () => {
       const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
       menuToggle.setAttribute('aria-expanded', !isExpanded);
       navLinks.classList.toggle('is-open');
       menuToggle.textContent = isExpanded ? 'Menu' : 'Close';
+    };
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when a link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        if (navLinks.classList.contains('is-open')) {
+          toggleMenu();
+        }
+      });
     });
   }
 });
