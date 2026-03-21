@@ -10,7 +10,7 @@
     if (href === path) a.setAttribute('aria-current', 'page');
   });
 
-  /* Progress + ToC on blog detail */
+  /* Progress on blog detail (ToC generation removed) */
   if (/\/blog_content\//.test(location.pathname)) {
     const bar = document.createElement('div'); bar.className = 'reading-progress'; document.body.appendChild(bar);
     const onScroll = () => {
@@ -20,13 +20,6 @@
     };
     addEventListener('scroll', onScroll, { passive: true }); addEventListener('resize', onScroll); onScroll();
 
-    // Simple ToC
-    const main = document.querySelector('main') || document.body;
-    const hs = $$('h2, h3', main).filter(h => h.textContent.trim().length > 0);
-    hs.forEach(h => { if (!h.id) h.id = h.textContent.toLowerCase().replace(/\s+/g, '-').replace(/[^\w\-]/g, ''); });
-    if (hs.length > 1) {
-      const toc = document.createElement('nav'); toc.className = 'toc'; toc.innerHTML = `<h3>On this page</h3><ol>${hs.map(h => `<li style="padding-left:${h.tagName === 'H3' ? '.75rem' : '0'}"><a href="#${h.id}">${h.textContent}</a></li>`).join('')}</ol>`;
-      main.insertBefore(toc, main.firstChild);
-    }
+    // NOTE: Automatic ToC generation intentionally removed to prevent the "On this page" box
   }
 })();
